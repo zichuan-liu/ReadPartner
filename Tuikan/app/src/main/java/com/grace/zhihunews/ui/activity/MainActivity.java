@@ -52,13 +52,12 @@ public class MainActivity extends BaseActivity {
         }
         mBottomNavigationBar.setMode(BottomNavigationBar.MODE_FIXED);
         mBottomNavigationBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC)
-                .addItem(new BottomNavigationItem(R.mipmap.ic_main, "首页").setActiveColorResource(R.color.item_green))
-                .addItem(new BottomNavigationItem(R.mipmap.ic_discover, "发现").setActiveColorResource(R.color.item_green))
-                .addItem(new BottomNavigationItem(R.mipmap.ic_world, "世界").setActiveColorResource(R.color.item_green))
-                .addItem(new BottomNavigationItem(R.mipmap.ic_about_me, "我的").setActiveColorResource(R.color.item_green))
+                .addItem(new BottomNavigationItem(R.mipmap.ic_main, "首页").setInActiveColorResource(R.color.grey).setActiveColorResource(R.color.item_green))
+                .addItem(new BottomNavigationItem(R.mipmap.ic_discover, "发现").setInActiveColorResource(R.color.grey).setActiveColorResource(R.color.item_green))
+                .addItem(new BottomNavigationItem(R.mipmap.ic_world, "世界").setInActiveColorResource(R.color.grey).setActiveColorResource(R.color.item_green))
+                .addItem(new BottomNavigationItem(R.mipmap.ic_about_me, "我的").setInActiveColorResource(R.color.grey).setActiveColorResource(R.color.item_green))
                 .setFirstSelectedPosition(0)
                 .initialise();
-                //TODO 初始颜色无法修改
         mBottomNavigationBar.setTabSelectedListener(new BottomNavigationBar.OnTabSelectedListener() {
             @Override
             public void onTabSelected(int position) {
