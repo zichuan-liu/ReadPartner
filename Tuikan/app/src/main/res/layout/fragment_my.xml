@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@mipmap/bg">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_margin="16dp"
+            android:src="@mipmap/myhead"/>
+
+        <TextView
+            android:id="@+id/tv_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/iv_avatar"
+            android:layout_marginTop="@dimen/spacing_tiny"
+            android:layout_toEndOf="@id/iv_avatar"
+            android:layout_toRightOf="@id/iv_avatar"
+            android:text="@string/MyFragment_label_nickname"
+            android:textColor="@color/gray_dark"
+            android:textSize="@dimen/font_size_normal_high"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_love"
+            android:layout_width="23dp"
+            android:layout_height="26dp"
+            android:layout_alignBottom="@id/iv_avatar"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="1dp"
+            android:layout_toEndOf="@id/iv_avatar"
+            android:src="@mipmap/heart"/>
+
+        <TextView
+            android:id="@+id/tv_introduction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/iv_avatar"
+            android:layout_marginStart="41dp"
+            android:layout_marginLeft="41dp"
+            android:layout_marginBottom="6dp"
+            android:layout_toEndOf="@id/iv_avatar"
+            android:layout_toRightOf="@id/iv_avatar"
+            android:text="@string/MyFragment_label_number"
+            android:textSize="@dimen/font_size_normal"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_add"
+            android:layout_width="65dp"
+            android:layout_height="84dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="30dp"
+            android:paddingBottom="20dp"
+            android:src="@mipmap/add"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_wight"
+            android:layout_width="69dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="218dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginBottom="0dp"
+            android:layout_toEndOf="@+id/iv_add"
+            android:paddingBottom="10dp"
+            android:src="@mipmap/cake"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_card"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:orientation="vertical"
+        android:layout_marginTop="32dp">
+
+    </LinearLayout>
+
+</LinearLayout>

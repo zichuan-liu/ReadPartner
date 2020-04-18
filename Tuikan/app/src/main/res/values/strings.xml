@@ -11,6 +11,9 @@
 
     <string name="VideoFragment_label_developing">正在开发中</string>
 
+    <string name="MyFragment_label_nickname">地瓜干1号</string>
+    <string name="MyFragment_label_number">X  9</string>
+
     <string name="AboutFragment_label_nickname">刘子川、李彦佳、刘佳迎</string>
     <string name="AboutFragment_desc_introduction">武汉理工大学，Android 开发</string>
     <string name="AboutFragment_label_grade">评分</string>

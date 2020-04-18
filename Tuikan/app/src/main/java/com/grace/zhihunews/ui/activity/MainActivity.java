@@ -15,6 +15,7 @@ import com.grace.zhihunews.ui.base.BaseActivity;
 import com.grace.zhihunews.ui.fragment.AboutFragment;
 import com.grace.zhihunews.ui.fragment.FeatureListFragment;
 import com.grace.zhihunews.ui.fragment.GirlsFragment;
+import com.grace.zhihunews.ui.fragment.MyFragment;
 import com.grace.zhihunews.ui.fragment.NewsListFragment;
 
 import butterknife.BindView;
@@ -32,6 +33,7 @@ public class MainActivity extends BaseActivity {
     private NewsListFragment mNewsListFragment;
     private GirlsFragment mGirlsFragment;
     private AboutFragment mAboutFragment;
+    private MyFragment mMyFragment;
     private FeatureListFragment mFeatureListFragment;
     private FragmentManager fm;
 
@@ -96,6 +98,7 @@ public class MainActivity extends BaseActivity {
         showFragment(0);
     }
 
+
     @Override
     protected void loadData() {
 
@@ -148,11 +151,11 @@ public class MainActivity extends BaseActivity {
                         ft.add(R.id.frame_layout, mFeatureListFragment);
                     }
                 break;
-            case 3 : if (mAboutFragment != null) {
-                        ft.show(mAboutFragment);
+            case 3 : if (mMyFragment != null) {
+                        ft.show(mMyFragment);
                     } else {
-                        mAboutFragment = new AboutFragment();
-                        ft.add(R.id.frame_layout, mAboutFragment);
+                        mMyFragment = new MyFragment();
+                        ft.add(R.id.frame_layout, mMyFragment);
                     }
                 break;
         }
@@ -169,8 +172,8 @@ public class MainActivity extends BaseActivity {
         if (mFeatureListFragment != null) {
             ft.hide(mFeatureListFragment);
         }
-        if (mAboutFragment != null) {
-            ft.hide(mAboutFragment);
+        if (mMyFragment != null) {
+            ft.hide(mMyFragment);
         }
     }
 
