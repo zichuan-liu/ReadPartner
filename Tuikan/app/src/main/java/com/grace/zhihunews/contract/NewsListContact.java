@@ -13,10 +13,6 @@ import java.util.List;
 public interface NewsListContact {
 
     interface INewsListView extends BaseView {
-
-        //顶部Banner循环轮播图片
-        //void showTopStories(List<TopStory> topStories);
-
         void showLatestNews(LatestNews latestNews);
 
         void showBeforeNews(BeforeNews beforeNews);
@@ -26,14 +22,12 @@ public interface NewsListContact {
     }
 
     interface INewsListPresenter {
-
         void loadLatestNews();
 
         void loadBeforeNews(String date);
 
         void refreshData();
 
-        //void loadTopStories(Boolean needRefresh);
 
     }
 }

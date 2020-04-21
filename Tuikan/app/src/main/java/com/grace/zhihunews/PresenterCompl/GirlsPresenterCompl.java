@@ -1,10 +1,18 @@
 package com.grace.zhihunews.PresenterCompl;
 
+import com.grace.zhihunews.App;
 import com.grace.zhihunews.contract.GirlsContact;
+import com.grace.zhihunews.contract.NewsListContact;
 import com.grace.zhihunews.deliveryLayer.GirlsProvider;
 import com.grace.zhihunews.deliveryLayer.IGirlsProvider;
+import com.grace.zhihunews.deliveryLayer.INewsListProvider;
+import com.grace.zhihunews.deliveryLayer.NewsListProvider;
+import com.grace.zhihunews.event.BeforeNewsLoadedEvent;
 import com.grace.zhihunews.event.GirlsLoadedEvent;
+import com.grace.zhihunews.event.GotoNewsDetailEvent;
+import com.grace.zhihunews.event.LatestNewsLoadedEvent;
 import com.grace.zhihunews.event.LoadFailureEvent;
+import com.grace.zhihunews.event.TopStoriesLoadedEvent;
 
 import de.greenrobot.event.EventBus;
 
@@ -13,26 +21,54 @@ import de.greenrobot.event.EventBus;
  */
 public class GirlsPresenterCompl implements GirlsContact.IGirlsPresenter {
 
-    private GirlsContact.IGirlsView girlsView;
-    private IGirlsProvider girlsProvider;
+    private App app;
+    private GirlsContact.IGirlsView mIGirlsView;
+    private GirlsProvider girlsProvider;
 
-    public GirlsPresenterCompl(GirlsContact.IGirlsView girlsView) {
-        this.girlsView = girlsView;
-        girlsProvider = new GirlsProvider();
+    public GirlsPresenterCompl(App app, GirlsContact.IGirlsView iGirlsView) {
+        this.app = app;
+        mIGirlsView = iGirlsView;
+        girlsProvider = new GirlsProvider(app);
+
         EventBus.getDefault().register(this);
     }
 
     @Override
-    public void loadBenefit(int page, boolean isLoadMore, boolean needClear) {
-        girlsProvider.getGirls(page, isLoadMore, needClear);
+    public void loadLatestNews() {
+        girlsProvider.getLatestNews();
     }
 
-    public void onEvent(GirlsLoadedEvent event) {
-        girlsView.showGirls(event.girls);
+    @Override
+    public void loadBeforeNews(String date) {
+        girlsProvider.getBeforeNews(date);
+    }
+
+
+    @Override
+    public void refreshData() {
+        girlsProvider.refreshData();
+    }
+
+
+    //EventBus的onEvent
+    public void onEvent(LatestNewsLoadedEvent event) {
+        mIGirlsView.showLatestNews(event.latestNews);
+    }
+
+    public void onEvent(BeforeNewsLoadedEvent event) {
+        mIGirlsView.showBeforeNews(event.beforeNews);
+    }
+
+    public void onEvent(TopStoriesLoadedEvent event) {
+        //mNewsListView.showTopStories(event.topstories);
     }
 
     public void onEvent(LoadFailureEvent event) {
-        girlsView.showLoadFailureMsg(event.errorMsg);
+        mIGirlsView.showLoadFailureMsg(event.errorMsg);
+    }
+
+    public void onEvent(GotoNewsDetailEvent event) {
+        mIGirlsView.gotoNewsDetailActivity(event.id);
     }
 
 }
