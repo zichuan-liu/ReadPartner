@@ -3,25 +3,25 @@ package com.grace.zhihunews.ui.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 
 import com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader;
 import com.grace.zhihunews.App;
-import com.grace.zhihunews.PresenterCompl.NewsListPresenterCompl;
+import com.grace.zhihunews.PresenterCompl.BookListPresenterCompl;
 import com.grace.zhihunews.R;
-import com.grace.zhihunews.contract.NewsListContact;
+import com.grace.zhihunews.contract.BookListContact;
 import com.grace.zhihunews.network.entity.BeforeNews;
 import com.grace.zhihunews.network.entity.LatestNews;
 import com.grace.zhihunews.network.entity.Story;
-import com.grace.zhihunews.network.entity.TopStory;
 import com.grace.zhihunews.ui.activity.NewsDetailActivity;
 import com.grace.zhihunews.ui.adapter.StoriesAdapter;
-import com.grace.zhihunews.ui.adapter.TopStoriesAdapter;
 import com.grace.zhihunews.ui.base.BaseFragment;
 import com.grace.zhihunews.ui.listener.EndlessRecyclerViewScrollListener;
 import com.grace.zhihunews.util.DateUtil;
@@ -38,18 +38,20 @@ import butterknife.Unbinder;
 /**
  * Created by Administrator on 2016/9/1.
  */
-public class NewsListFragment extends BaseFragment implements NewsListContact.INewsListView {
+public class BookListFragment extends BaseFragment implements BookListContact.IBookListView {
 
     @BindView(R.id.swipe_refresh_layout)
     SwipeRefreshLayout mSwipeRefreshLayout;
+    @BindView(R.id.toolbar_book)
+    Toolbar toolbar;
+    @BindView(R.id.toolbar_title)
+    Button toolbarTitle;
     @BindView(R.id.rv_read)
     RecyclerView rvReadList;
     @BindView(R.id.rv_header)
     RecyclerViewHeader rvHeader;
-    @BindView(R.id.fab)
-    FloatingActionButton fab;
 
-    private NewsListContact.INewsListPresenter mNewsListPresenter;
+    private BookListContact.IBookListPresenter mBookListPresenter;
     private List<String> dateList;
     private Unbinder unbinder;
     private List<Story> mStories;
@@ -65,13 +67,17 @@ public class NewsListFragment extends BaseFragment implements NewsListContact.IN
         mStories = new ArrayList<>();
         dateList = new ArrayList<>();
         storiesAdapter = new StoriesAdapter(getActivity(), mStories);
-        mNewsListPresenter = new NewsListPresenterCompl((App) getActivity().getApplicationContext(), this);
+        mBookListPresenter = new BookListPresenterCompl((App) getActivity().getApplicationContext(), this);
     }
 
     @Override
     protected void initViews(View view, Bundle savedInstanceState) {
         unbinder = ButterKnife.bind(this, view);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+        toolbar.setTitle("");
+        toolbarTitle.setText(R.string.MainActivity_title_edit);
+        toolbar.inflateMenu(R.menu.menu_main);
+
         rvReadList.setLayoutManager(linearLayoutManager);
         rvReadList.setAdapter(storiesAdapter);
         rvReadList.addItemDecoration(new HorizontalDividerItemDecoration.Builder(getActivity())
@@ -94,34 +100,33 @@ public class NewsListFragment extends BaseFragment implements NewsListContact.IN
                 for (int i = 0; i < dateList.size(); i++) {
                     Log.d("dataList", i + dateList.get(i));
                 }
-                mNewsListPresenter.loadBeforeNews(previousDate);
+                mBookListPresenter.loadBeforeBook(previousDate);
             }
         });
         mSwipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.colorAccent));
         mSwipeRefreshLayout.setOnRefreshListener(() -> {
             mSwipeRefreshLayout.setRefreshing(true);
 
-            mNewsListPresenter.refreshData();
+            mBookListPresenter.refreshData();
             String latestDate = DateUtil.getLatestDate();
             if (dateList != null) {
                 dateList.clear();
                 dateList.add(latestDate);
             }
-            mNewsListPresenter.loadLatestNews();
+            mBookListPresenter.loadLatestBook();
 
             (new Handler()).postDelayed(() -> mSwipeRefreshLayout.setRefreshing(false), 1200);
         });
-        fab.setOnClickListener(v -> rvReadList.smoothScrollToPosition(0));
     }
 
     @Override
     protected void loadData() {
         String latestDate = DateUtil.getLatestDate();
         dateList.add(latestDate);
-        mNewsListPresenter.loadLatestNews();
+        mBookListPresenter.loadLatestBook();
     }
 
-    //NewsListContact.INewsListView接口方法实现
+    //BookListContact.INewsListView接口方法实现
     @Override
     public void onDestroyView() {
         super.onDestroyView();
@@ -129,7 +134,7 @@ public class NewsListFragment extends BaseFragment implements NewsListContact.IN
     }
 
     @Override
-    public void showLatestNews(LatestNews latestNews) {
+    public void showLatestBook(LatestNews latestNews) {
         mStories.clear();
         List<Story> stories = latestNews.getStories();
         mStories.addAll(stories);
@@ -137,7 +142,7 @@ public class NewsListFragment extends BaseFragment implements NewsListContact.IN
     }
 
     @Override
-    public void showBeforeNews(BeforeNews beforeNews) {
+    public void showBeforeBook(BeforeNews beforeNews) {
         List<Story> stories = beforeNews.getStories();
         mStories.addAll(stories);
         int curSize = storiesAdapter.getItemCount();
@@ -146,7 +151,7 @@ public class NewsListFragment extends BaseFragment implements NewsListContact.IN
 
 
     @Override
-    public void gotoNewsDetailActivity(int id) {
+    public void gotoNewsBookActivity(int id) {
         Intent intent = new Intent(getActivity(), NewsDetailActivity.class);
         intent.putExtra(NewsDetailActivity.KEY_STORY_ID, id);
         startActivity(intent);

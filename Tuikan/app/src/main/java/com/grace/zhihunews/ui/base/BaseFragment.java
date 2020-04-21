@@ -6,12 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.grace.zhihunews.R;
 
 /**
  * Created by Administrator on 2016/9/6.
  */
 public abstract  class BaseFragment extends Fragment {
+
 
     protected abstract int getLayoutResId();
 

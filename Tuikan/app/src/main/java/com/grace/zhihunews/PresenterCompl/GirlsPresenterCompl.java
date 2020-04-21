@@ -2,13 +2,8 @@ package com.grace.zhihunews.PresenterCompl;
 
 import com.grace.zhihunews.App;
 import com.grace.zhihunews.contract.GirlsContact;
-import com.grace.zhihunews.contract.NewsListContact;
 import com.grace.zhihunews.deliveryLayer.GirlsProvider;
-import com.grace.zhihunews.deliveryLayer.IGirlsProvider;
-import com.grace.zhihunews.deliveryLayer.INewsListProvider;
-import com.grace.zhihunews.deliveryLayer.NewsListProvider;
 import com.grace.zhihunews.event.BeforeNewsLoadedEvent;
-import com.grace.zhihunews.event.GirlsLoadedEvent;
 import com.grace.zhihunews.event.GotoNewsDetailEvent;
 import com.grace.zhihunews.event.LatestNewsLoadedEvent;
 import com.grace.zhihunews.event.LoadFailureEvent;

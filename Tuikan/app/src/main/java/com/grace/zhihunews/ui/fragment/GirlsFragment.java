@@ -1,35 +1,26 @@
 package com.grace.zhihunews.ui.fragment;
 
-import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader;
 import com.grace.zhihunews.App;
 import com.grace.zhihunews.PresenterCompl.GirlsPresenterCompl;
-import com.grace.zhihunews.PresenterCompl.NewsDetailPresenterCompl;
-import com.grace.zhihunews.PresenterCompl.NewsListPresenterCompl;
 import com.grace.zhihunews.R;
 import com.grace.zhihunews.contract.GirlsContact;
-import com.grace.zhihunews.contract.NewsListContact;
 import com.grace.zhihunews.network.entity.BeforeNews;
-import com.grace.zhihunews.network.entity.Girl;
 import com.grace.zhihunews.network.entity.LatestNews;
 import com.grace.zhihunews.network.entity.Story;
 import com.grace.zhihunews.network.entity.TopStory;
 import com.grace.zhihunews.ui.activity.NewsDetailActivity;
-import com.grace.zhihunews.ui.adapter.GirlsAdapter;
 import com.grace.zhihunews.ui.adapter.StoriesAdapter;
 import com.grace.zhihunews.ui.adapter.TopStoriesAdapter;
 import com.grace.zhihunews.ui.base.BaseFragment;
@@ -52,6 +43,8 @@ import butterknife.Unbinder;
 public class GirlsFragment extends BaseFragment implements GirlsContact.IGirlsView {
     @BindView(R.id.srl)
     SwipeRefreshLayout mSwipeRefreshLayout;
+    @BindView(R.id.toolbar_discover)
+    Toolbar toolbar;
     @BindView(R.id.rv_news_list)
     RecyclerView rvNewsList;
     @BindView(R.id.view_pager)
@@ -60,8 +53,7 @@ public class GirlsFragment extends BaseFragment implements GirlsContact.IGirlsVi
     CirclePageIndicator mIndicator;
     @BindView(R.id.rv_header)
     RecyclerViewHeader rvHeader;
-    @BindView(R.id.fab)
-    FloatingActionButton fab;
+
 
     private List<String> dateList;
     private Unbinder unbinder;
@@ -87,6 +79,9 @@ public class GirlsFragment extends BaseFragment implements GirlsContact.IGirlsVi
     protected void initViews(View view, Bundle savedInstanceState) {
         unbinder = ButterKnife.bind(this, view);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+        toolbar.setTitle("");
+        toolbar.inflateMenu(R.menu.menu_discover);
+
         rvNewsList.setLayoutManager(linearLayoutManager);
         rvNewsList.setAdapter(storiesAdapter);
         rvNewsList.addItemDecoration(new HorizontalDividerItemDecoration.Builder(getActivity())
@@ -126,14 +121,11 @@ public class GirlsFragment extends BaseFragment implements GirlsContact.IGirlsVi
 
             (new Handler()).postDelayed(() -> mSwipeRefreshLayout.setRefreshing(false), 1200);
         });
-        fab.setOnClickListener(v -> rvNewsList.smoothScrollToPosition(0));
 
     }
 
     @Override
     protected void loadData() {
-        //mNewsListPresenter.loadTopStories(false);
-
         String latestDate = DateUtil.getLatestDate();
         dateList.add(latestDate);
         mGirlsPresenter.loadLatestNews();

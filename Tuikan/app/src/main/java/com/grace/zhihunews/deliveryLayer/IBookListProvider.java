@@ -3,11 +3,11 @@ package com.grace.zhihunews.deliveryLayer;
 /**
  * Created by Administrator on 2016/9/1.
  */
-public interface INewsListProvider {
+public interface IBookListProvider {
 
-    void getLatestNews();
+    void getLatestBook();
 
-    void getBeforeNews(String date);
+    void getBeforeBook(String date);
 
     void refreshData();
 

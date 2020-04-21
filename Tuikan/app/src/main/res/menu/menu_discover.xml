@@ -5,15 +5,8 @@
     <item
         android:title=""
         android:id="@+id/action_search"
-        android:orderInCategory="80"
-        app:showAsAction="ifRoom"
-        android:icon="@mipmap/ic_search"
-        />
-    <item
-        android:title=""
-        android:id="@+id/action_add"
         android:orderInCategory="100"
         app:showAsAction="ifRoom"
-        android:icon="@mipmap/ic_add"
+        android:icon="@mipmap/ic_search"
         />
 </menu>

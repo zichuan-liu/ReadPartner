@@ -1,7 +1,5 @@
 package com.grace.zhihunews.deliveryLayer;
 
-import android.util.Log;
-
 import com.grace.zhihunews.App;
 import com.grace.zhihunews.cache.ACache;
 import com.grace.zhihunews.cache.DBHelper;
@@ -9,7 +7,6 @@ import com.grace.zhihunews.cache.LiteOrmManager;
 import com.grace.zhihunews.event.BeforeNewsLoadedEvent;
 import com.grace.zhihunews.event.LatestNewsLoadedEvent;
 import com.grace.zhihunews.event.LoadFailureEvent;
-import com.grace.zhihunews.event.TopStoriesLoadedEvent;
 import com.grace.zhihunews.network.RetrofitFactory;
 import com.grace.zhihunews.network.entity.BeforeNews;
 import com.grace.zhihunews.network.entity.LatestNews;
@@ -17,7 +14,6 @@ import com.grace.zhihunews.network.entity.Story;
 import com.grace.zhihunews.network.entity.TopStory;
 import com.grace.zhihunews.network.service.ZhifuService;
 import com.grace.zhihunews.util.DateUtil;
-import com.grace.zhihunews.util.NetworkUtil;
 import com.litesuits.orm.db.assit.QueryBuilder;
 import com.litesuits.orm.db.model.ConflictAlgorithm;
 
@@ -32,7 +28,7 @@ import retrofit2.Response;
 /**
  * Created by Administrator on 2016/9/1.
  */
-public class NewsListProvider implements INewsListProvider {
+public class BookListProvider implements IBookListProvider {
 
     public static final String LatestNews_FILE_NAME = "LatestNews";
 
@@ -40,14 +36,14 @@ public class NewsListProvider implements INewsListProvider {
     private ACache cache;
     private ZhifuService zhifuService;
 
-    public NewsListProvider(App app) {
+    public BookListProvider(App app) {
         this.app = app;
         cache = app.getCacheInstance();
         zhifuService = RetrofitFactory.getZhifuService();
     }
 
     @Override
-    public void getLatestNews(){
+    public void getLatestBook(){
         String todayDate = DateUtil.getTodayDate();
         QueryBuilder<LatestNews> qbLatestNews = new QueryBuilder<LatestNews>(LatestNews.class)
                 .where("date like ?",new Object[]{todayDate});
@@ -88,7 +84,7 @@ public class NewsListProvider implements INewsListProvider {
     }
 
     @Override
-    public void getBeforeNews(final String date){
+    public void getBeforeBook(final String date){
         QueryBuilder<BeforeNews> qb = new QueryBuilder<BeforeNews>(BeforeNews.class)
                 .where("date like ?", new Object[]{date});
         ArrayList<BeforeNews> beforeNewsArrayList = LiteOrmManager.getInstance(app).query(qb);
