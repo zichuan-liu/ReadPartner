@@ -2,9 +2,9 @@
     <string name="app_name">伴读</string>
     <string name="action_settings">Settings</string>
 
-    <string name="MainActivity_title_news">首页</string>
-    <string name="MainActivity_title_photo">发现</string>
-    <string name="MainActivity_title_video">世界</string>
+    <string name="MainActivity_title_edit">编辑</string>
+    <string name="MainActivity_title_photo"></string>
+    <string name="MainActivity_title_video"></string>
     <string name="MainActivity_title_about">我的</string>
 
     <string name="PhotoActivity_action_wallpaper">设为壁纸</string>

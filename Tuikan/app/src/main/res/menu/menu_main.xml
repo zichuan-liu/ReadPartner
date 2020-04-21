@@ -3,8 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.activity.MainActivity">
     <item
+        android:title=""
         android:id="@+id/action_search"
+        android:orderInCategory="80"
+        app:showAsAction="ifRoom"
+        android:icon="@mipmap/ic_search"
+        />
+    <item
+        android:title=""
+        android:id="@+id/action_search2"
         android:orderInCategory="100"
-        app:showAsAction="always"
-        android:icon="@mipmap/ic_search"/>
+        app:showAsAction="ifRoom"
+        android:icon="@mipmap/ic_add"
+        />
 </menu>

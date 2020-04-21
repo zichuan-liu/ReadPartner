@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
@@ -25,7 +26,7 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.toolbar)
     Toolbar toolbar;
     @BindView(R.id.toolbar_title)
-    TextView toolbarTitle;
+    Button toolbarTitle;
     @BindView(R.id.bottom_navigation_bar)
     BottomNavigationBar mBottomNavigationBar;
 
@@ -44,12 +45,8 @@ public class MainActivity extends BaseActivity {
     protected void initViews(Bundle savedInstanceState) {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        toolbar.setTitle("");
         setSupportActionBar(toolbar);
-        try {
-            getSupportActionBar().setDisplayShowHomeEnabled(true);
-        } catch (NullPointerException e) {
-            e.printStackTrace();
-        }
         mBottomNavigationBar.setMode(BottomNavigationBar.MODE_FIXED);
         mBottomNavigationBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC)
                 .addItem(new BottomNavigationItem(R.mipmap.ic_main, "首页").setInActiveColorResource(R.color.grey).setActiveColorResource(R.color.item_green))
@@ -63,7 +60,7 @@ public class MainActivity extends BaseActivity {
             public void onTabSelected(int position) {
                 switch (position) {
                     case 0:
-                        toolbarTitle.setText(R.string.MainActivity_title_news);
+                        toolbarTitle.setText(R.string.MainActivity_title_edit);
                         showFragment(0);
                         break;
                     case 1:
@@ -92,7 +89,7 @@ public class MainActivity extends BaseActivity {
 
             }
         });
-        toolbarTitle.setText(R.string.MainActivity_title_news);
+        toolbarTitle.setText(R.string.MainActivity_title_edit);
         showFragment(0);
     }
 
@@ -116,9 +113,9 @@ public class MainActivity extends BaseActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_search) {
-            return true;
-        }
+//        if (id == R.id.action_search) {
+//            return true;
+//        }
 
         return super.onOptionsItemSelected(item);
     }
