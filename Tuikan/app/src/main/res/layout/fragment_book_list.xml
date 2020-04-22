@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
 
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -24,27 +25,10 @@
             <com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader
                 android:id="@+id/rv_header"
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
+                android:layout_height="240dp"
                 android:layout_gravity="center_horizontal|top">
 
-                <com.zanlabs.widget.infiniteviewpager.InfiniteViewPager
-                    android:id="@+id/view_pager"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    />
-
-                <com.zanlabs.widget.infiniteviewpager.indicator.CirclePageIndicator
-                    android:id="@+id/indicator"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginBottom="@dimen/spacing_tiny"
-                    android:layout_marginRight="@dimen/spacing_tiny"
-                    app:strokeWidth="0dp"
-                    app:fillColor="@color/colorPrimary"
-                    app:pageColor="@color/gray_light"
-                    />
+                <include layout="@layout/rl_data" />
 
             </com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader>
         </RelativeLayout>
@@ -54,7 +38,7 @@
         android:id="@+id/toolbar_book"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/item_green">
+        android:background="#00000000">
         <Button
             android:id="@+id/toolbar_title"
             android:layout_width="wrap_content"

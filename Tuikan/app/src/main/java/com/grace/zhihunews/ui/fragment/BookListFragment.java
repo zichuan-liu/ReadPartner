@@ -1,16 +1,17 @@
 package com.grace.zhihunews.ui.fragment;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader;
 import com.grace.zhihunews.App;
@@ -50,6 +51,9 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
     RecyclerView rvReadList;
     @BindView(R.id.rv_header)
     RecyclerViewHeader rvHeader;
+    @BindView(R.id.rv_time)
+    TextView rvText;
+
 
     private BookListContact.IBookListPresenter mBookListPresenter;
     private List<String> dateList;
@@ -59,7 +63,7 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
 
     @Override
     protected int getLayoutResId() {
-        return R.layout.fragment_news_list;
+        return R.layout.fragment_book_list;
     }
 
     @Override
