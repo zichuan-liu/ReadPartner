@@ -28,7 +28,7 @@
                 android:layout_height="240dp"
                 android:layout_gravity="center_horizontal|top">
 
-                <include layout="@layout/rl_data" />
+                <include layout="@layout/main_data" />
 
             </com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader>
         </RelativeLayout>
@@ -40,7 +40,7 @@
         android:layout_height="?attr/actionBarSize"
         android:background="#00000000">
         <Button
-            android:id="@+id/toolbar_title"
+            android:id="@+id/toolbar_edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start"

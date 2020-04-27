@@ -11,9 +11,9 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/9/2.
  */
-public interface GirlsContact {
+public interface DiscoverContact {
 
-    interface IGirlsView extends BaseView {
+    interface IDiscoverView extends BaseView {
 
         void showLatestNews(LatestNews latestNews);
         void showBeforeNews(BeforeNews beforeNews);
@@ -21,7 +21,7 @@ public interface GirlsContact {
 
     }
 
-    interface IGirlsPresenter extends BasePresenter {
+    interface IDiscoverPresenter extends BasePresenter {
         void loadLatestNews();
 
         void loadBeforeNews(String date);

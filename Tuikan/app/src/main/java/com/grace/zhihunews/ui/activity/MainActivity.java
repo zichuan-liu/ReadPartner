@@ -3,11 +3,6 @@ package com.grace.zhihunews.ui.activity;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.WindowManager;
-import android.widget.Button;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
@@ -15,8 +10,8 @@ import com.grace.zhihunews.R;
 import com.grace.zhihunews.ui.base.BaseActivity;
 import com.grace.zhihunews.ui.fragment.AboutFragment;
 import com.grace.zhihunews.ui.fragment.BookListFragment;
-import com.grace.zhihunews.ui.fragment.FeatureListFragment;
-import com.grace.zhihunews.ui.fragment.GirlsFragment;
+import com.grace.zhihunews.ui.fragment.WorldFragment;
+import com.grace.zhihunews.ui.fragment.DiscoverFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -27,9 +22,9 @@ public class MainActivity extends BaseActivity {
     BottomNavigationBar mBottomNavigationBar;
 
     private BookListFragment mBookListFragment;
-    private GirlsFragment mGirlsFragment;
+    private DiscoverFragment mDiscoverFragment;
     private AboutFragment mAboutFragment;
-    private FeatureListFragment mFeatureListFragment;
+    private WorldFragment mWorldFragment;
     private FragmentManager fm;
 
     @Override
@@ -98,18 +93,18 @@ public class MainActivity extends BaseActivity {
                         ft.add(R.id.frame_layout, mBookListFragment);
                     }
                 break;
-            case 1 : if (mGirlsFragment != null) {
-                        ft.show(mGirlsFragment);
+            case 1 : if (mDiscoverFragment != null) {
+                        ft.show(mDiscoverFragment);
                     } else {
-                        mGirlsFragment = new GirlsFragment();
-                        ft.add(R.id.frame_layout, mGirlsFragment);
+                        mDiscoverFragment = new DiscoverFragment();
+                        ft.add(R.id.frame_layout, mDiscoverFragment);
                     }
                 break;
-            case 2 : if (mFeatureListFragment != null) {
-                        ft.show(mFeatureListFragment);
+            case 2 : if (mWorldFragment != null) {
+                        ft.show(mWorldFragment);
                     } else {
-                        mFeatureListFragment = new FeatureListFragment();
-                        ft.add(R.id.frame_layout, mFeatureListFragment);
+                        mWorldFragment = new WorldFragment();
+                        ft.add(R.id.frame_layout, mWorldFragment);
                     }
                 break;
             case 3 : if (mAboutFragment != null) {
@@ -127,11 +122,11 @@ public class MainActivity extends BaseActivity {
         if (mBookListFragment != null) {
             ft.hide(mBookListFragment);
         }
-        if (mGirlsFragment != null) {
-            ft.hide(mGirlsFragment);
+        if (mDiscoverFragment != null) {
+            ft.hide(mDiscoverFragment);
         }
-        if (mFeatureListFragment != null) {
-            ft.hide(mFeatureListFragment);
+        if (mWorldFragment != null) {
+            ft.hide(mWorldFragment);
         }
         if (mAboutFragment != null) {
             ft.hide(mAboutFragment);

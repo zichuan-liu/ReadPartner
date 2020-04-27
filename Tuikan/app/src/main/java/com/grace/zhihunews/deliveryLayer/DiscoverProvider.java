@@ -1,7 +1,5 @@
 package com.grace.zhihunews.deliveryLayer;
 
-import android.util.Log;
-
 import com.grace.zhihunews.App;
 import com.grace.zhihunews.cache.ACache;
 import com.grace.zhihunews.cache.DBHelper;
@@ -9,7 +7,6 @@ import com.grace.zhihunews.cache.LiteOrmManager;
 import com.grace.zhihunews.event.BeforeNewsLoadedEvent;
 import com.grace.zhihunews.event.LatestNewsLoadedEvent;
 import com.grace.zhihunews.event.LoadFailureEvent;
-import com.grace.zhihunews.event.TopStoriesLoadedEvent;
 import com.grace.zhihunews.network.RetrofitFactory;
 import com.grace.zhihunews.network.entity.BeforeNews;
 import com.grace.zhihunews.network.entity.LatestNews;
@@ -17,7 +14,6 @@ import com.grace.zhihunews.network.entity.Story;
 import com.grace.zhihunews.network.entity.TopStory;
 import com.grace.zhihunews.network.service.ZhifuService;
 import com.grace.zhihunews.util.DateUtil;
-import com.grace.zhihunews.util.NetworkUtil;
 import com.litesuits.orm.db.assit.QueryBuilder;
 import com.litesuits.orm.db.model.ConflictAlgorithm;
 
@@ -32,7 +28,7 @@ import retrofit2.Response;
 /**
  * Created by Administrator on 2016/9/1.
  */
-public class GirlsProvider implements IGirlsProvider {
+public class DiscoverProvider implements IDiscoverProvider {
 
     public static final String LatestNews_FILE_NAME = "LatestNews";
 
@@ -40,7 +36,7 @@ public class GirlsProvider implements IGirlsProvider {
     private ACache cache;
     private ZhifuService zhifuService;
 
-    public GirlsProvider(App app) {
+    public DiscoverProvider(App app) {
         this.app = app;
         cache = app.getCacheInstance();
         zhifuService = RetrofitFactory.getZhifuService();

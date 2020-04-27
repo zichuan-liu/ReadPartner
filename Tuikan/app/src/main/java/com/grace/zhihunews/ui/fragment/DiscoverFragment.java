@@ -3,7 +3,6 @@ package com.grace.zhihunews.ui.fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,9 +12,9 @@ import android.view.View;
 
 import com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader;
 import com.grace.zhihunews.App;
-import com.grace.zhihunews.PresenterCompl.GirlsPresenterCompl;
+import com.grace.zhihunews.PresenterCompl.DiscoverPresenterCompl;
 import com.grace.zhihunews.R;
-import com.grace.zhihunews.contract.GirlsContact;
+import com.grace.zhihunews.contract.DiscoverContact;
 import com.grace.zhihunews.network.entity.BeforeNews;
 import com.grace.zhihunews.network.entity.LatestNews;
 import com.grace.zhihunews.network.entity.Story;
@@ -40,13 +39,13 @@ import butterknife.Unbinder;
 /**
  * Created by Administrator on 2016/9/2.
  */
-public class GirlsFragment extends BaseFragment implements GirlsContact.IGirlsView {
-    @BindView(R.id.srl)
+public class DiscoverFragment extends BaseFragment implements DiscoverContact.IDiscoverView {
+    @BindView(R.id.srl_discover)
     SwipeRefreshLayout mSwipeRefreshLayout;
-    @BindView(R.id.toolbar_discover)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @BindView(R.id.rv_news_list)
-    RecyclerView rvNewsList;
+    @BindView(R.id.rv_recommend_list)
+    RecyclerView recommendList;
     @BindView(R.id.view_pager)
     InfiniteViewPager mViewPager;
     @BindView(R.id.indicator)
@@ -59,12 +58,12 @@ public class GirlsFragment extends BaseFragment implements GirlsContact.IGirlsVi
     private Unbinder unbinder;
     private List<Story> mStories;
     private StoriesAdapter storiesAdapter;
-    private GirlsContact.IGirlsPresenter mGirlsPresenter;
+    private DiscoverContact.IDiscoverPresenter iDiscoverPresenter;
 
 
     @Override
     protected int getLayoutResId() {
-        return R.layout.fragment_girls;
+        return R.layout.fragment_discover;
     }
 
     @Override
@@ -72,7 +71,7 @@ public class GirlsFragment extends BaseFragment implements GirlsContact.IGirlsVi
         mStories = new ArrayList<>();
         dateList = new ArrayList<>();
         storiesAdapter = new StoriesAdapter(getActivity(), mStories);
-        mGirlsPresenter = new GirlsPresenterCompl((App) getActivity().getApplicationContext(), this);
+        iDiscoverPresenter = new DiscoverPresenterCompl((App) getActivity().getApplicationContext(), this);
     }
 
     @Override
@@ -82,17 +81,17 @@ public class GirlsFragment extends BaseFragment implements GirlsContact.IGirlsVi
         toolbar.setTitle("");
         toolbar.inflateMenu(R.menu.menu_discover);
 
-        rvNewsList.setLayoutManager(linearLayoutManager);
-        rvNewsList.setAdapter(storiesAdapter);
-        rvNewsList.addItemDecoration(new HorizontalDividerItemDecoration.Builder(getActivity())
+        recommendList.setLayoutManager(linearLayoutManager);
+        recommendList.setAdapter(storiesAdapter);
+        recommendList.addItemDecoration(new HorizontalDividerItemDecoration.Builder(getActivity())
                 .colorResId(R.color.divider_grey)
                 .size(getResources().getDimensionPixelSize(R.dimen.divider_height))
                 .margin(getResources().getDimensionPixelSize(R.dimen.spacing_normal_high),
                         getResources().getDimensionPixelSize(R.dimen.spacing_normal_high))
                 .build());
 
-        rvHeader.attachTo(rvNewsList, true);
-        rvNewsList.addOnScrollListener(new EndlessRecyclerViewScrollListener(linearLayoutManager) {
+        rvHeader.attachTo(recommendList, true);
+        recommendList.addOnScrollListener(new EndlessRecyclerViewScrollListener(linearLayoutManager) {
             @Override
             public void onLoadMore(int page, int totalItemCount) {
                 String farthestDate;
@@ -104,20 +103,20 @@ public class GirlsFragment extends BaseFragment implements GirlsContact.IGirlsVi
                 for (int i = 0; i < dateList.size(); i++) {
                     Log.d("dataList", i + dateList.get(i));
                 }
-                mGirlsPresenter.loadBeforeNews(previousDate);
+                iDiscoverPresenter.loadBeforeNews(previousDate);
             }
         });
         mSwipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.colorAccent));
         mSwipeRefreshLayout.setOnRefreshListener(() -> {
             mSwipeRefreshLayout.setRefreshing(true);
 
-            mGirlsPresenter.refreshData();
+            iDiscoverPresenter.refreshData();
             String latestDate = DateUtil.getLatestDate();
             if (dateList != null) {
                 dateList.clear();
                 dateList.add(latestDate);
             }
-            mGirlsPresenter.loadLatestNews();
+            iDiscoverPresenter.loadLatestNews();
 
             (new Handler()).postDelayed(() -> mSwipeRefreshLayout.setRefreshing(false), 1200);
         });
@@ -128,7 +127,7 @@ public class GirlsFragment extends BaseFragment implements GirlsContact.IGirlsVi
     protected void loadData() {
         String latestDate = DateUtil.getLatestDate();
         dateList.add(latestDate);
-        mGirlsPresenter.loadLatestNews();
+        iDiscoverPresenter.loadLatestNews();
     }
 
 
