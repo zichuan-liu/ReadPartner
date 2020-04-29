@@ -1,8 +1,8 @@
 package com.grace.zhihunews.network.service;
 
-import com.grace.zhihunews.network.entity.BeforeNews;
-import com.grace.zhihunews.network.entity.LatestNews;
+import com.grace.zhihunews.network.entity.LoadBooks;
 import com.grace.zhihunews.network.entity.NewsDetail;
+import com.grace.zhihunews.network.entity.RecommondBooks;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -13,14 +13,16 @@ import retrofit2.http.Path;
  */
 public interface ZhifuService {
 
-    //http://news-at.zhihu.com/api/4/news/latest
-    @GET("api/4/news/latest")
-    Call<LatestNews> getLatestNews();
+    //https://www.fastmock.site/mock/1634373f74402d465e2c7dd9e40e743c/readPartner
+    @GET("api/getPreBooks")
+    Call<LoadBooks> getPreBooks();
+
+    //TODO 接口
 
     //http://news.at.zhihu.com/api/4/news/before/20160831
     //返回的是20160830的头条。url需延后一天。
-    @GET("api/4/news/before/{date}")
-    Call<BeforeNews> getBeforeNews(@Path("date") String date);
+    @GET("api/loadRecBooks")
+    Call<RecommondBooks> getRecBooks();
 
     //http://news-at.zhihu.com/api/4/news/8725424
     @GET("api/4/news/{id}")

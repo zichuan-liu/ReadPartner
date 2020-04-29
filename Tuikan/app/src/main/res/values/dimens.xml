@@ -11,6 +11,7 @@
     <!-- 字体定义 -->
     <dimen name="font_size_tiny">10sp</dimen>
     <dimen name="font_size_small">12sp</dimen>
+    <dimen name="font_size_middle">13sp</dimen>
     <dimen name="font_size_normal">14sp</dimen>
     <dimen name="font_size_normal_high">18sp</dimen>
     <dimen name="font_size_large">18sp</dimen>

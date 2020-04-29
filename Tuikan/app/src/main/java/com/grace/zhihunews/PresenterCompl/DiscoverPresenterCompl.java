@@ -3,10 +3,8 @@ package com.grace.zhihunews.PresenterCompl;
 import com.grace.zhihunews.App;
 import com.grace.zhihunews.contract.DiscoverContact;
 import com.grace.zhihunews.deliveryLayer.DiscoverProvider;
-import com.grace.zhihunews.event.BeforeNewsLoadedEvent;
-import com.grace.zhihunews.event.GotoNewsDetailEvent;
-import com.grace.zhihunews.event.LatestNewsLoadedEvent;
 import com.grace.zhihunews.event.LoadFailureEvent;
+import com.grace.zhihunews.event.RecBooksLoadEvent;
 import com.grace.zhihunews.event.TopStoriesLoadedEvent;
 
 import de.greenrobot.event.EventBus;
@@ -29,13 +27,8 @@ public class DiscoverPresenterCompl implements DiscoverContact.IDiscoverPresente
     }
 
     @Override
-    public void loadLatestNews() {
-        discoverProvider.getLatestNews();
-    }
-
-    @Override
-    public void loadBeforeNews(String date) {
-        discoverProvider.getBeforeNews(date);
+    public void loadRecBooks() {
+        discoverProvider.getRecBooks();
     }
 
 
@@ -46,12 +39,8 @@ public class DiscoverPresenterCompl implements DiscoverContact.IDiscoverPresente
 
 
     //EventBus的onEvent
-    public void onEvent(LatestNewsLoadedEvent event) {
-        mIDiscoverView.showLatestNews(event.latestNews);
-    }
-
-    public void onEvent(BeforeNewsLoadedEvent event) {
-        mIDiscoverView.showBeforeNews(event.beforeNews);
+    public void onEvent(RecBooksLoadEvent event) {
+        mIDiscoverView.showReBooks(event.recommondBooks);
     }
 
     public void onEvent(TopStoriesLoadedEvent event) {
@@ -62,8 +51,8 @@ public class DiscoverPresenterCompl implements DiscoverContact.IDiscoverPresente
         mIDiscoverView.showLoadFailureMsg(event.errorMsg);
     }
 
-    public void onEvent(GotoNewsDetailEvent event) {
-        mIDiscoverView.gotoNewsDetailActivity(event.id);
-    }
+//    public void onEvent(GotoNewsDetailEvent event) {
+//        mIDiscoverView.gotoNewsDetailActivity(event.id);
+//    }
 
 }

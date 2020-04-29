@@ -1,7 +1,6 @@
 package com.grace.zhihunews.network;
 
 import com.grace.zhihunews.network.service.EyepetizerService;
-import com.grace.zhihunews.network.service.GankService;
 import com.grace.zhihunews.network.service.ZhifuService;
 
 import retrofit2.Retrofit;
@@ -12,12 +11,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class RetrofitFactory {
 
-    public static final String ZHIHU_URL = "http://news-at.zhihu.com/";
+    public static final String ZHIHU_URL = "https://www.fastmock.site/mock/1634373f74402d465e2c7dd9e40e743c/readPartner/";
     public static final String GANK_URL = "http://gank.io/";
     public static final String EYEPETIZER_URL = "http://baobab.wandoujia.com/";
 
     private static ZhifuService mZhifuService;
-    private static GankService gankService;
     private static EyepetizerService eyepetizerService;
 
     //ZhifuService：单例模式。
@@ -32,16 +30,6 @@ public class RetrofitFactory {
         return mZhifuService;
     }
 
-    public static synchronized GankService getGankService() {
-        if (gankService == null) {
-            Retrofit retrofit = new Retrofit.Builder()
-                    .baseUrl(GANK_URL)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build();
-            gankService = retrofit.create(GankService.class);
-        }
-        return gankService;
-    }
 
     public static synchronized EyepetizerService getEyepetizerService() {
         if (eyepetizerService == null) {

@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.grace.zhihunews.network.entity.Story;
+import com.grace.zhihunews.network.entity.Book;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,18 +17,20 @@ import java.util.List;
 public class DBHelper extends SQLiteOpenHelper {
 
 
-    public static final String DB_NAME = "story.db";
+    public static final String DB_NAME = "book.db";
     public static final int VERSION = 1;
     private static DBHelper dbHelper;
     private SQLiteDatabase db;
 
-    private static final String CREATE_STORY = "create table Story (" +
+    private static final String CREATE_BOOK = "create table Book (" +
             "_id integer primary key autoincrement, " +
             "id integer unique, " +
-            "ga_prefix text," +
             "title text," +
+            "writer text," +
             "image text," +
-            "date text)";
+            "txt_path text," +
+            "progress text," +
+            "time text)";
 
     public DBHelper(Context context) {
         super(context, DB_NAME, null, VERSION);
@@ -43,58 +45,59 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(CREATE_STORY);
+        db.execSQL(CREATE_BOOK);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("drop table if exists Story");
+        db.execSQL("drop table if exists Book");
         onCreate(db);
     }
 
-    public long saveStory(Story story) {
-        long story_id = 0;
+    public long saveBook(Book book) {
+        long book_id = 0;
         SQLiteDatabase db = getWritableDatabase();
-        if (story != null) {
+        if (book != null) {
             ContentValues values = new ContentValues();
-            values.put("id", story.getId());
-            values.put("ga_prefix", story.getGa_prefix());
-            values.put("title", story.getTitle());
-            values.put("image", story.getImages().get(0));
-            values.put("date", story.getDate());
-            story_id = db.insert("Story", null, values);
+            values.put("id", book.getId());
+            values.put("title", book.getTitle());
+            values.put("writer", book.getWriter());
+            values.put("image", book.getImage());
+            values.put("txt_path", book.getTxt_path());
+            values.put("progress", book.getProgress());
+            values.put("time", book.getTime());
+            book_id = db.insert("Book", null, values);
         }
-        return story_id;
+        return book_id;
     }
 
-    public List<Story> loadStoriesByDate(String date) {
+    public List<Book> loadBooks() {
         SQLiteDatabase db = getWritableDatabase();
-        List<Story> stories = new ArrayList<>();
-        Cursor cursor = db.query("Story", null, "date = ?", new String[] {date}, null, null, null);
+        List<Book> books = new ArrayList<>();
+        Cursor cursor = db.query("Book", new String[] { "title","writer","image","txt_path","progress","time" }, null, null, null, null, "time");
         if (cursor.moveToFirst()) {
             do {
-                Story story = new Story();
-                story.setId(cursor.getInt(cursor.getColumnIndex("id")));
-                story.setGa_prefix(cursor.getString(cursor.getColumnIndex("ga_prefix")));
-                story.setTitle(cursor.getString(cursor.getColumnIndex("title")));
-                List<String> images = new ArrayList<>();
-                images.add(cursor.getString(cursor.getColumnIndex("image")));
-                story.setImages(images);
-                story.setDate(cursor.getColumnName(cursor.getColumnIndex("date")));
-                stories.add(story);
+                Book book = new Book();
+                book.setTitle(cursor.getString(cursor.getColumnIndex("title")));
+                book.setWriter(cursor.getString(cursor.getColumnIndex("writer")));
+                book.setImage(cursor.getString(cursor.getColumnIndex("image")));
+                book.setTxt_path(cursor.getString(cursor.getColumnIndex("txt_path")));
+                book.setProgress(cursor.getString(cursor.getColumnIndex("progress")));
+                book.setTime(cursor.getString(cursor.getColumnIndex("time")));
+                books.add(book);
             } while (cursor.moveToNext());
         }
         cursor.close();
-        return stories;
+        return books;
     }
 
-    public long deleteStoriesByDate(String date) {
-        SQLiteDatabase db = getWritableDatabase();
-        return db.delete("Story", "date = ?", new String[] {date});
-    }
+//    public long deleteStoriesByDate(String date) {
+//        SQLiteDatabase db = getWritableDatabase();
+//        return db.delete("Story", "date = ?", new String[] {date});
+//    }
 
-    public long deleteAllStory() {
+    public long deleteAllBook() {
         SQLiteDatabase db = getWritableDatabase();
-        return db.delete("Story", null, null);
+        return db.delete("Book", null, null);
     }
 }

@@ -9,19 +9,16 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.widget.RelativeLayout;
 
 import com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader;
 import com.grace.zhihunews.App;
 import com.grace.zhihunews.PresenterCompl.DiscoverPresenterCompl;
 import com.grace.zhihunews.R;
 import com.grace.zhihunews.contract.DiscoverContact;
-import com.grace.zhihunews.network.entity.BeforeNews;
-import com.grace.zhihunews.network.entity.LatestNews;
-import com.grace.zhihunews.network.entity.Story;
+import com.grace.zhihunews.network.entity.RecommondBooks;
 import com.grace.zhihunews.network.entity.TopStory;
 import com.grace.zhihunews.ui.activity.NewsDetailActivity;
-import com.grace.zhihunews.ui.adapter.StoriesAdapter;
+import com.grace.zhihunews.ui.adapter.BooksAdapter;
 import com.grace.zhihunews.ui.adapter.TopStoriesAdapter;
 import com.grace.zhihunews.ui.base.BaseFragment;
 import com.grace.zhihunews.ui.listener.EndlessRecyclerViewScrollListener;
@@ -57,8 +54,8 @@ public class WorldFragment extends BaseFragment implements DiscoverContact.IDisc
 
     private List<String> dateList;
     private Unbinder unbinder;
-    private List<Story> mStories;
-    private StoriesAdapter storiesAdapter;
+//    private List<Story> mStories;
+    private BooksAdapter storiesAdapter;
     private DiscoverContact.IDiscoverPresenter iDiscoverPresenter;
 
 
@@ -69,10 +66,10 @@ public class WorldFragment extends BaseFragment implements DiscoverContact.IDisc
 
     @Override
     protected void initVariables() {
-        mStories = new ArrayList<>();
-        dateList = new ArrayList<>();
-        storiesAdapter = new StoriesAdapter(getActivity(), mStories);
-        iDiscoverPresenter = new DiscoverPresenterCompl((App) getActivity().getApplicationContext(), this);
+//        mStories = new ArrayList<>();
+//        dateList = new ArrayList<>();
+//        storiesAdapter = new BooksAdapter(getActivity(), mStories);
+//        iDiscoverPresenter = new DiscoverPresenterCompl((App) getActivity().getApplicationContext(), this);
     }
 
     @Override
@@ -81,54 +78,54 @@ public class WorldFragment extends BaseFragment implements DiscoverContact.IDisc
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         toolbar.setTitle("");
         toolbar.inflateMenu(R.menu.menu_discover);
-
-        commendList.setLayoutManager(linearLayoutManager);
-        commendList.setAdapter(storiesAdapter);
-        commendList.addItemDecoration(new HorizontalDividerItemDecoration.Builder(getActivity())
-                .colorResId(R.color.divider_grey)
-                .size(getResources().getDimensionPixelSize(R.dimen.divider_height))
-                .margin(getResources().getDimensionPixelSize(R.dimen.spacing_normal_high),
-                        getResources().getDimensionPixelSize(R.dimen.spacing_normal_high))
-                .build());
-
-        rvHeader.attachTo(commendList, true);
-        commendList.addOnScrollListener(new EndlessRecyclerViewScrollListener(linearLayoutManager) {
-            @Override
-            public void onLoadMore(int page, int totalItemCount) {
-                String farthestDate;
-                farthestDate = dateList.get(dateList.size() - 1);
-                Log.d("farthestDate", farthestDate);
-                String previousDate = DateUtil.getPreviousDay(farthestDate);
-                Log.d("previousDate", previousDate);
-                dateList.add(previousDate);
-                for (int i = 0; i < dateList.size(); i++) {
-                    Log.d("dataList", i + dateList.get(i));
-                }
-                iDiscoverPresenter.loadBeforeNews(previousDate);
-            }
-        });
-        mSwipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.colorAccent));
-        mSwipeRefreshLayout.setOnRefreshListener(() -> {
-            mSwipeRefreshLayout.setRefreshing(true);
-
-            iDiscoverPresenter.refreshData();
-            String latestDate = DateUtil.getLatestDate();
-            if (dateList != null) {
-                dateList.clear();
-                dateList.add(latestDate);
-            }
-            iDiscoverPresenter.loadLatestNews();
-
-            (new Handler()).postDelayed(() -> mSwipeRefreshLayout.setRefreshing(false), 1200);
-        });
+//
+//        commendList.setLayoutManager(linearLayoutManager);
+//        commendList.setAdapter(storiesAdapter);
+//        commendList.addItemDecoration(new HorizontalDividerItemDecoration.Builder(getActivity())
+//                .colorResId(R.color.divider_grey)
+//                .size(getResources().getDimensionPixelSize(R.dimen.divider_height))
+//                .margin(getResources().getDimensionPixelSize(R.dimen.spacing_normal_high),
+//                        getResources().getDimensionPixelSize(R.dimen.spacing_normal_high))
+//                .build());
+//
+//        rvHeader.attachTo(commendList, true);
+//        commendList.addOnScrollListener(new EndlessRecyclerViewScrollListener(linearLayoutManager) {
+//            @Override
+//            public void onLoadMore(int page, int totalItemCount) {
+//                String farthestDate;
+//                farthestDate = dateList.get(dateList.size() - 1);
+//                Log.d("farthestDate", farthestDate);
+//                String previousDate = DateUtil.getPreviousDay(farthestDate);
+//                Log.d("previousDate", previousDate);
+//                dateList.add(previousDate);
+//                for (int i = 0; i < dateList.size(); i++) {
+//                    Log.d("dataList", i + dateList.get(i));
+//                }
+//                iDiscoverPresenter.loadBeforeNews(previousDate);
+//            }
+//        });
+//        mSwipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.colorAccent));
+//        mSwipeRefreshLayout.setOnRefreshListener(() -> {
+//            mSwipeRefreshLayout.setRefreshing(true);
+//
+//            iDiscoverPresenter.refreshData();
+//            String latestDate = DateUtil.getLatestDate();
+//            if (dateList != null) {
+//                dateList.clear();
+//                dateList.add(latestDate);
+//            }
+//            iDiscoverPresenter.loadLatestNews();
+//
+//            (new Handler()).postDelayed(() -> mSwipeRefreshLayout.setRefreshing(false), 1200);
+//        });
 
     }
 
     @Override
     protected void loadData() {
-        String latestDate = DateUtil.getLatestDate();
-        dateList.add(latestDate);
-        iDiscoverPresenter.loadLatestNews();
+//        String latestDate = DateUtil.getLatestDate();
+//        dateList.add(latestDate);
+//        iDiscoverPresenter.loadLatestNews();
     }
 
 
@@ -138,41 +135,45 @@ public class WorldFragment extends BaseFragment implements DiscoverContact.IDisc
         unbinder.unbind();
     }
 
-    @Override
-    public void showBeforeNews(BeforeNews beforeNews) {
-        List<Story> stories = beforeNews.getStories();
-        mStories.addAll(stories);
-        int curSize = storiesAdapter.getItemCount();
-        storiesAdapter.notifyItemRangeChanged(curSize, mStories.size() - 1);
-    }
+//    @Override
+//    public void showBeforeNews(BeforeNews beforeNews) {
+//        List<Story> stories = beforeNews.getStories();
+//        mStories.addAll(stories);
+//        int curSize = storiesAdapter.getItemCount();
+//        storiesAdapter.notifyItemRangeChanged(curSize, mStories.size() - 1);
+//    }
 
-    @Override
-    public void gotoNewsDetailActivity(int id) {
-        Intent intent = new Intent(getActivity(), NewsDetailActivity.class);
-        intent.putExtra(NewsDetailActivity.KEY_STORY_ID, id);
-        startActivity(intent);
-        //overridePendingTransition(R.anim.hold, android.R.anim.fade_in);
-    }
-
-
-    @Override
-    public void showLatestNews(LatestNews latestNews) {
-        List<TopStory> topStories = latestNews.getTopStories();
-        TopStoriesAdapter topStoriesAdapter = new TopStoriesAdapter(getActivity(), topStories);
-        mViewPager.setAdapter(topStoriesAdapter);
-        mViewPager.setAutoScrollTime(3000);
-        mViewPager.startAutoScroll();
-        mIndicator.setViewPager(mViewPager);
-
-        mStories.clear();
-        List<Story> stories = latestNews.getStories();
-        mStories.addAll(stories);
-        storiesAdapter.notifyDataSetChanged();
-    }
+//    @Override
+//    public void gotoNewsDetailActivity(int id) {
+//        Intent intent = new Intent(getActivity(), NewsDetailActivity.class);
+//        intent.putExtra(NewsDetailActivity.KEY_STORY_ID, id);
+//        startActivity(intent);
+//        //overridePendingTransition(R.anim.hold, android.R.anim.fade_in);
+//    }
+//
+//
+//    @Override
+//    public void showLatestNews(LatestNews latestNews) {
+//        List<TopStory> topStories = latestNews.getTopStories();
+//        TopStoriesAdapter topStoriesAdapter = new TopStoriesAdapter(getActivity(), topStories);
+//        mViewPager.setAdapter(topStoriesAdapter);
+//        mViewPager.setAutoScrollTime(3000);
+//        mViewPager.startAutoScroll();
+//        mIndicator.setViewPager(mViewPager);
+//
+//        mStories.clear();
+//        List<Story> stories = latestNews.getStories();
+//        mStories.addAll(stories);
+//        storiesAdapter.notifyDataSetChanged();
+//    }
 
     @Override
     public void showLoadFailureMsg(String errorMsg) {
 
     }
 
+    @Override
+    public void showReBooks(RecommondBooks recommondBooks) {
+
+    }
 }

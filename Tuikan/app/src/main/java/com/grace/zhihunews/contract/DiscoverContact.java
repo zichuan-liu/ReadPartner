@@ -2,9 +2,7 @@ package com.grace.zhihunews.contract;
 
 import com.grace.zhihunews.contract.base.BasePresenter;
 import com.grace.zhihunews.contract.base.BaseView;
-import com.grace.zhihunews.network.entity.BeforeNews;
-import com.grace.zhihunews.network.entity.Girl;
-import com.grace.zhihunews.network.entity.LatestNews;
+import com.grace.zhihunews.network.entity.RecommondBooks;
 
 import java.util.List;
 
@@ -15,17 +13,13 @@ public interface DiscoverContact {
 
     interface IDiscoverView extends BaseView {
 
-        void showLatestNews(LatestNews latestNews);
-        void showBeforeNews(BeforeNews beforeNews);
-        void gotoNewsDetailActivity(int id);
+        void showReBooks(RecommondBooks recommondBooks);
+//        void gotoNewsDetailActivity(int id);
 
     }
 
     interface IDiscoverPresenter extends BasePresenter {
-        void loadLatestNews();
-
-        void loadBeforeNews(String date);
-
+        void loadRecBooks();
         void refreshData();
 
     }

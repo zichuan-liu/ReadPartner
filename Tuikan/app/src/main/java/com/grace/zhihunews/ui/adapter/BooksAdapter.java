@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.grace.zhihunews.R;
 import com.grace.zhihunews.event.GotoNewsDetailEvent;
-import com.grace.zhihunews.network.entity.Story;
+import com.grace.zhihunews.network.entity.Book;
 import com.grace.zhihunews.util.DateUtil;
 import com.squareup.picasso.Picasso;
 
@@ -23,24 +23,31 @@ import de.greenrobot.event.EventBus;
 /**
  * Created by Administrator on 2016/9/1.
  */
-public class StoriesAdapter extends RecyclerView.Adapter<StoriesAdapter.ViewHolder> {
+public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder> {
 
     private Context mContext;
-    private List<Story> stories;
+    private List<Book> books;
 
-    public StoriesAdapter(Context context, List<Story> stories) {
+    public BooksAdapter(Context context, List<Book> books) {
         mContext = context;
-        this.stories = stories;
+        this.books = books;
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder{
 
-        @BindView(R.id.story_img)
-        ImageView ivStoryImage;
-        @BindView(R.id.story_title)
-        TextView tvStoryTitle;
-        @BindView(R.id.date)
-        TextView tvDate;
+        //TODO 适配器修改
+        @BindView(R.id.book_img)
+        ImageView bookImg;
+        @BindView(R.id.book_title)
+        TextView bookTitle;
+        @BindView(R.id.book_writer)
+        TextView bookWriter;
+        @BindView(R.id.book_progress)
+        TextView bookProgress;
+        @BindView(R.id.book_time)
+        TextView bookTime;
+
+
 
         public ViewHolder(View itemView){
             super(itemView);
@@ -51,28 +58,30 @@ public class StoriesAdapter extends RecyclerView.Adapter<StoriesAdapter.ViewHold
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
-        View storyView = LayoutInflater.from(context).inflate(R.layout.item_story, parent, false);
+        View storyView = LayoutInflater.from(context).inflate(R.layout.item_book, parent, false);
         final ViewHolder viewHolder = new ViewHolder(storyView);
         storyView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EventBus.getDefault().post(new GotoNewsDetailEvent(stories.get(viewHolder.getLayoutPosition()).getId()));
+                EventBus.getDefault().post(new GotoNewsDetailEvent(books.get(viewHolder.getLayoutPosition()).getId()));
             }
         });
         return viewHolder;
     }
 
     @Override
-    public void onBindViewHolder(StoriesAdapter.ViewHolder holder, int position) {
-        Story story = stories.get(position);
-        holder.tvStoryTitle.setText(story.getTitle());
-        holder.tvDate.setText(DateUtil.getDateDescription(story.getDate()));
-        Picasso.with(mContext).load(story.getImages().get(0)).into(holder.ivStoryImage);
+    public void onBindViewHolder(BooksAdapter.ViewHolder holder, int position) {
+        Book book = books.get(position);
+        holder.bookTitle.setText(book.getTitle());
+        holder.bookWriter.setText(book.getWriter());
+        holder.bookProgress.setText(book.getProgress());
+        holder.bookTime.setText(book.getTime());
+        Picasso.with(mContext).load(book.getImage()).into(holder.bookImg);
     }
 
     @Override
     public int getItemCount() {
-            return stories.size();
+            return books.size();
     }
 
 }

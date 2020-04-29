@@ -5,11 +5,6 @@ package com.grace.zhihunews.deliveryLayer;
  */
 public interface IBookListProvider {
 
-    void getLatestBook();
-
-    void getBeforeBook(String date);
-
+    void getBooks();
     void refreshData();
-
-    //void getTopStories(boolean needRefresh);
 }

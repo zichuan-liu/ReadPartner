@@ -1,6 +1,5 @@
 package com.grace.zhihunews.ui.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -17,14 +16,10 @@ import com.grace.zhihunews.App;
 import com.grace.zhihunews.PresenterCompl.BookListPresenterCompl;
 import com.grace.zhihunews.R;
 import com.grace.zhihunews.contract.BookListContact;
-import com.grace.zhihunews.network.entity.BeforeNews;
-import com.grace.zhihunews.network.entity.LatestNews;
-import com.grace.zhihunews.network.entity.Story;
-import com.grace.zhihunews.ui.activity.NewsDetailActivity;
-import com.grace.zhihunews.ui.adapter.StoriesAdapter;
+import com.grace.zhihunews.network.entity.Book;
+import com.grace.zhihunews.network.entity.LoadBooks;
+import com.grace.zhihunews.ui.adapter.BooksAdapter;
 import com.grace.zhihunews.ui.base.BaseFragment;
-import com.grace.zhihunews.ui.listener.EndlessRecyclerViewScrollListener;
-import com.grace.zhihunews.util.DateUtil;
 import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
 
 import java.util.ArrayList;
@@ -55,10 +50,9 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
 
 
     private BookListContact.IBookListPresenter mBookListPresenter;
-    private List<String> dateList;
     private Unbinder unbinder;
-    private List<Story> mStories;
-    private StoriesAdapter storiesAdapter;
+    private List<Book> mBooks;
+    private BooksAdapter booksAdapter;
 
     @Override
     protected int getLayoutResId() {
@@ -67,9 +61,8 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
 
     @Override
     protected void initVariables() {
-        mStories = new ArrayList<>();
-        dateList = new ArrayList<>();
-        storiesAdapter = new StoriesAdapter(getActivity(), mStories);
+        mBooks = new ArrayList<>();
+        booksAdapter = new BooksAdapter(getActivity(), mBooks);
         mBookListPresenter = new BookListPresenterCompl((App) getActivity().getApplicationContext(), this);
     }
 
@@ -82,7 +75,7 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
         toolbar.inflateMenu(R.menu.menu_main);
 
         rvReadList.setLayoutManager(linearLayoutManager);
-        rvReadList.setAdapter(storiesAdapter);
+        rvReadList.setAdapter(booksAdapter);
         rvReadList.addItemDecoration(new HorizontalDividerItemDecoration.Builder(getActivity())
                 .colorResId(R.color.divider_grey)
                 .size(getResources().getDimensionPixelSize(R.dimen.divider_height))
@@ -91,32 +84,27 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
                 .build());
 
         rvHeader.attachTo(rvReadList, true);
-        rvReadList.addOnScrollListener(new EndlessRecyclerViewScrollListener(linearLayoutManager) {
-            @Override
-            public void onLoadMore(int page, int totalItemCount) {
-                String farthestDate;
-                farthestDate = dateList.get(dateList.size() - 1);
-                Log.d("farthestDate", farthestDate);
-                String previousDate = DateUtil.getPreviousDay(farthestDate);
-                Log.d("previousDate", previousDate);
-                dateList.add(previousDate);
-                for (int i = 0; i < dateList.size(); i++) {
-                    Log.d("dataList", i + dateList.get(i));
-                }
-                mBookListPresenter.loadBeforeBook(previousDate);
-            }
-        });
+//        rvReadList.addOnScrollListener(new EndlessRecyclerViewScrollListener(linearLayoutManager) {
+//            @Override
+//            public void onLoadMore(int page, int totalItemCount) {
+//                String farthestDate;
+//                farthestDate = dateList.get(dateList.size() - 1);
+//                Log.d("farthestDate", farthestDate);
+//                String previousDate = DateUtil.getPreviousDay(farthestDate);
+//                Log.d("previousDate", previousDate);
+//                dateList.add(previousDate);
+//                for (int i = 0; i < dateList.size(); i++) {
+//                    Log.d("dataList", i + dateList.get(i));
+//                }
+//                mBookListPresenter.loadBeforeBook(previousDate);
+//            }
+//        });
         mSwipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.colorAccent));
         mSwipeRefreshLayout.setOnRefreshListener(() -> {
             mSwipeRefreshLayout.setRefreshing(true);
 
             mBookListPresenter.refreshData();
-            String latestDate = DateUtil.getLatestDate();
-            if (dateList != null) {
-                dateList.clear();
-                dateList.add(latestDate);
-            }
-            mBookListPresenter.loadLatestBook();
+            mBookListPresenter.loadBook();
 
             (new Handler()).postDelayed(() -> mSwipeRefreshLayout.setRefreshing(false), 1200);
         });
@@ -124,9 +112,7 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
 
     @Override
     protected void loadData() {
-        String latestDate = DateUtil.getLatestDate();
-        dateList.add(latestDate);
-        mBookListPresenter.loadLatestBook();
+        mBookListPresenter.loadBook();
     }
 
     //BookListContact.INewsListView接口方法实现
@@ -137,28 +123,11 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
     }
 
     @Override
-    public void showLatestBook(LatestNews latestNews) {
-        mStories.clear();
-        List<Story> stories = latestNews.getStories();
-        mStories.addAll(stories);
-        storiesAdapter.notifyDataSetChanged();
-    }
-
-    @Override
-    public void showBeforeBook(BeforeNews beforeNews) {
-        List<Story> stories = beforeNews.getStories();
-        mStories.addAll(stories);
-        int curSize = storiesAdapter.getItemCount();
-        storiesAdapter.notifyItemRangeChanged(curSize, mStories.size() - 1);
-    }
-
-
-    @Override
-    public void gotoNewsBookActivity(int id) {
-        Intent intent = new Intent(getActivity(), NewsDetailActivity.class);
-        intent.putExtra(NewsDetailActivity.KEY_STORY_ID, id);
-        startActivity(intent);
-        //overridePendingTransition(R.anim.hold, android.R.anim.fade_in);
+    public void showBook(LoadBooks loadBooks) {
+        mBooks.clear();
+        List<Book> books = loadBooks.getBooks();
+        mBooks.addAll(books);
+        booksAdapter.notifyDataSetChanged();
     }
 
     @Override
