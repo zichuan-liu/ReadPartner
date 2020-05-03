@@ -24,13 +24,13 @@
             <com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader
                 android:id="@+id/rv_header"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="310dp"
                 android:layout_gravity="center_horizontal|top">
 
                 <com.zanlabs.widget.infiniteviewpager.InfiniteViewPager
                     android:id="@+id/view_pager"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
+                    android:layout_height="210dp"
                     />
                 <com.zanlabs.widget.infiniteviewpager.indicator.CirclePageIndicator
                     android:id="@+id/indicator"

@@ -17,11 +17,7 @@ public interface ZhifuService {
     @GET("api/getPreBooks")
     Call<LoadBooks> getPreBooks();
 
-    //TODO 接口
-
-    //http://news.at.zhihu.com/api/4/news/before/20160831
-    //返回的是20160830的头条。url需延后一天。
-    @GET("api/loadRecBooks")
+    @GET("api/getRecBooks")
     Call<RecommondBooks> getRecBooks();
 
     //http://news-at.zhihu.com/api/4/news/8725424

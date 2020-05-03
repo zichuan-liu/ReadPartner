@@ -52,7 +52,6 @@ public class TopStoriesAdapter extends InfinitePagerAdapter {
         }
         TopStory topStory = mTopStories.get(position);
         Picasso.with(mContext).load(topStory.getImage()).into(viewHolder.ivImage);
-        viewHolder.tvTitle.setText(topStory.getTitle());
 
         view.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,8 +66,6 @@ public class TopStoriesAdapter extends InfinitePagerAdapter {
 
         @BindView(R.id.iv_top_story)
         ImageView ivImage;
-        @BindView(R.id.tv_top_story_title)
-        TextView tvTitle;
 
         public ViewHolder(View view) {
             ButterKnife.bind(this, view);

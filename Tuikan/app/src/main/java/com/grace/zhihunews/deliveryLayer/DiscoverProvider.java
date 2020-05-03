@@ -2,9 +2,6 @@ package com.grace.zhihunews.deliveryLayer;
 
 import com.grace.zhihunews.App;
 import com.grace.zhihunews.cache.ACache;
-import com.grace.zhihunews.cache.DBHelper;
-import com.grace.zhihunews.cache.LiteOrmManager;
-import com.grace.zhihunews.event.BooksLoadedEvent;
 import com.grace.zhihunews.event.LoadFailureEvent;
 import com.grace.zhihunews.event.RecBooksLoadEvent;
 import com.grace.zhihunews.network.RetrofitFactory;
@@ -12,11 +9,7 @@ import com.grace.zhihunews.network.entity.RecBook;
 import com.grace.zhihunews.network.entity.RecommondBooks;
 import com.grace.zhihunews.network.entity.TopStory;
 import com.grace.zhihunews.network.service.ZhifuService;
-import com.grace.zhihunews.util.DateUtil;
-import com.litesuits.orm.db.assit.QueryBuilder;
-import com.litesuits.orm.db.model.ConflictAlgorithm;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import de.greenrobot.event.EventBus;

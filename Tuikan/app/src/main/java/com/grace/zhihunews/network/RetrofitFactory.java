@@ -12,7 +12,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class RetrofitFactory {
 
     public static final String ZHIHU_URL = "https://www.fastmock.site/mock/1634373f74402d465e2c7dd9e40e743c/readPartner/";
-    public static final String GANK_URL = "http://gank.io/";
     public static final String EYEPETIZER_URL = "http://baobab.wandoujia.com/";
 
     private static ZhifuService mZhifuService;

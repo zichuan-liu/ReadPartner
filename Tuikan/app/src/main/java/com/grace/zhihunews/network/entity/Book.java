@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Administrator on 2016/9/1.
+ * 本地书籍实体类
  */
 public class Book extends BaseEntity implements Serializable {
 

@@ -33,11 +33,13 @@ public class RecBooksAdapter extends RecyclerView.Adapter<RecBooksAdapter.ViewHo
 
         //TODO 适配器修改
         @BindView(R.id.book_img)
-        ImageView ivStoryImage;
+        ImageView bookImg;
         @BindView(R.id.book_title)
-        TextView tvStoryTitle;
-        @BindView(R.id.time)
-        TextView tvTime;
+        TextView bookTitle;
+        @BindView(R.id.book_introduce)
+        TextView bookIntroduce;
+        @BindView(R.id.book_publish)
+        TextView bookPublish;
 
         public ViewHolder(View itemView){
             super(itemView);
@@ -48,7 +50,7 @@ public class RecBooksAdapter extends RecyclerView.Adapter<RecBooksAdapter.ViewHo
     @Override
     public RecBooksAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
-        View storyView = LayoutInflater.from(context).inflate(R.layout.item_book, parent, false);
+        View storyView = LayoutInflater.from(context).inflate(R.layout.item_recbook, parent, false);
         final RecBooksAdapter.ViewHolder viewHolder = new RecBooksAdapter.ViewHolder(storyView);
         storyView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,10 +63,11 @@ public class RecBooksAdapter extends RecyclerView.Adapter<RecBooksAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(RecBooksAdapter.ViewHolder holder, int position) {
-        RecBook story = recBooks.get(position);
-        holder.tvStoryTitle.setText(story.getTitle());
-        holder.tvTime.setText(DateUtil.getDateDescription(story.getPublish()));
-        Picasso.with(mContext).load(story.getImage()).into(holder.ivStoryImage);
+        RecBook recBook = recBooks.get(position);
+        holder.bookTitle.setText(recBook.getTitle());
+        holder.bookIntroduce.setText(recBook.getIntroduce());
+        holder.bookPublish.setText(recBook.getPublish());
+        Picasso.with(mContext).load(recBook.getImage()).into(holder.bookImg);
     }
 
     @Override

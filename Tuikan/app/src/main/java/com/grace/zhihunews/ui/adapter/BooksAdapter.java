@@ -11,7 +11,6 @@ import android.widget.TextView;
 import com.grace.zhihunews.R;
 import com.grace.zhihunews.event.GotoNewsDetailEvent;
 import com.grace.zhihunews.network.entity.Book;
-import com.grace.zhihunews.util.DateUtil;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
