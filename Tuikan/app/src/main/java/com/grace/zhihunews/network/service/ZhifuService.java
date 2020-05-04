@@ -3,6 +3,7 @@ package com.grace.zhihunews.network.service;
 import com.grace.zhihunews.network.entity.LoadBooks;
 import com.grace.zhihunews.network.entity.NewsDetail;
 import com.grace.zhihunews.network.entity.RecommondBooks;
+import com.grace.zhihunews.network.entity.SocialComments;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -19,6 +20,9 @@ public interface ZhifuService {
 
     @GET("api/getRecBooks")
     Call<RecommondBooks> getRecBooks();
+
+    @GET("api/getSocialComments")
+    Call<SocialComments> getSocialComments();
 
     //http://news-at.zhihu.com/api/4/news/8725424
     @GET("api/4/news/{id}")

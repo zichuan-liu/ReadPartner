@@ -7,22 +7,19 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 
 import com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader;
 import com.grace.zhihunews.App;
-import com.grace.zhihunews.PresenterCompl.DiscoverPresenterCompl;
+import com.grace.zhihunews.PresenterCompl.WorldPresenterCompl;
 import com.grace.zhihunews.R;
-import com.grace.zhihunews.contract.DiscoverContact;
-import com.grace.zhihunews.network.entity.RecommondBooks;
+import com.grace.zhihunews.contract.WorldContact;
+import com.grace.zhihunews.network.entity.Comment;
+import com.grace.zhihunews.network.entity.SocialComments;
 import com.grace.zhihunews.network.entity.TopStory;
-import com.grace.zhihunews.ui.activity.NewsDetailActivity;
-import com.grace.zhihunews.ui.adapter.BooksAdapter;
+import com.grace.zhihunews.ui.adapter.CommentsAdapater;
 import com.grace.zhihunews.ui.adapter.TopStoriesAdapter;
 import com.grace.zhihunews.ui.base.BaseFragment;
-import com.grace.zhihunews.ui.listener.EndlessRecyclerViewScrollListener;
-import com.grace.zhihunews.util.DateUtil;
 import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
 import com.zanlabs.widget.infiniteviewpager.InfiniteViewPager;
 import com.zanlabs.widget.infiniteviewpager.indicator.CirclePageIndicator;
@@ -37,7 +34,7 @@ import butterknife.Unbinder;
 /**
  * Created by Administrator on 2016/9/2.
  */
-public class WorldFragment extends BaseFragment implements DiscoverContact.IDiscoverView {
+public class WorldFragment extends BaseFragment implements WorldContact.IWorldView {
     @BindView(R.id.srl_world)
     SwipeRefreshLayout mSwipeRefreshLayout;
     @BindView(R.id.toolbar)
@@ -52,11 +49,10 @@ public class WorldFragment extends BaseFragment implements DiscoverContact.IDisc
     RecyclerViewHeader rvHeader;
 
 
-    private List<String> dateList;
     private Unbinder unbinder;
-//    private List<Story> mStories;
-    private BooksAdapter storiesAdapter;
-    private DiscoverContact.IDiscoverPresenter iDiscoverPresenter;
+    private List<Comment> comments;
+    private CommentsAdapater commentsAdapater;
+    private WorldContact.IWorldPresenter iWorldPresenter;
 
 
     @Override
@@ -66,10 +62,9 @@ public class WorldFragment extends BaseFragment implements DiscoverContact.IDisc
 
     @Override
     protected void initVariables() {
-//        mStories = new ArrayList<>();
-//        dateList = new ArrayList<>();
-//        storiesAdapter = new BooksAdapter(getActivity(), mStories);
-//        iDiscoverPresenter = new DiscoverPresenterCompl((App) getActivity().getApplicationContext(), this);
+        comments = new ArrayList<>();
+        commentsAdapater = new CommentsAdapater(getActivity(), comments);
+        iWorldPresenter = new WorldPresenterCompl((App) getActivity().getApplicationContext(), this);
     }
 
     @Override
@@ -78,17 +73,17 @@ public class WorldFragment extends BaseFragment implements DiscoverContact.IDisc
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         toolbar.setTitle("");
         toolbar.inflateMenu(R.menu.menu_discover);
-//
-//        commendList.setLayoutManager(linearLayoutManager);
-//        commendList.setAdapter(storiesAdapter);
-//        commendList.addItemDecoration(new HorizontalDividerItemDecoration.Builder(getActivity())
-//                .colorResId(R.color.divider_grey)
-//                .size(getResources().getDimensionPixelSize(R.dimen.divider_height))
-//                .margin(getResources().getDimensionPixelSize(R.dimen.spacing_normal_high),
-//                        getResources().getDimensionPixelSize(R.dimen.spacing_normal_high))
-//                .build());
-//
-//        rvHeader.attachTo(commendList, true);
+
+        commendList.setLayoutManager(linearLayoutManager);
+        commendList.setAdapter(commentsAdapater);
+        commendList.addItemDecoration(new HorizontalDividerItemDecoration.Builder(getActivity())
+                .colorResId(R.color.divider_grey)
+                .size(getResources().getDimensionPixelSize(R.dimen.divider_height))
+                .margin(getResources().getDimensionPixelSize(R.dimen.spacing_normal_high),
+                        getResources().getDimensionPixelSize(R.dimen.spacing_normal_high))
+                .build());
+
+        rvHeader.attachTo(commendList, true);
 //        commendList.addOnScrollListener(new EndlessRecyclerViewScrollListener(linearLayoutManager) {
 //            @Override
 //            public void onLoadMore(int page, int totalItemCount) {
@@ -104,28 +99,21 @@ public class WorldFragment extends BaseFragment implements DiscoverContact.IDisc
 //                iDiscoverPresenter.loadBeforeNews(previousDate);
 //            }
 //        });
-//        mSwipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.colorAccent));
-//        mSwipeRefreshLayout.setOnRefreshListener(() -> {
-//            mSwipeRefreshLayout.setRefreshing(true);
-//
-//            iDiscoverPresenter.refreshData();
-//            String latestDate = DateUtil.getLatestDate();
-//            if (dateList != null) {
-//                dateList.clear();
-//                dateList.add(latestDate);
-//            }
-//            iDiscoverPresenter.loadLatestNews();
-//
-//            (new Handler()).postDelayed(() -> mSwipeRefreshLayout.setRefreshing(false), 1200);
-//        });
+        mSwipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.colorAccent));
+        mSwipeRefreshLayout.setOnRefreshListener(() -> {
+            mSwipeRefreshLayout.setRefreshing(true);
+
+            iWorldPresenter.refreshData();
+            iWorldPresenter.loadComments();
+
+            (new Handler()).postDelayed(() -> mSwipeRefreshLayout.setRefreshing(false), 1200);
+        });
 
     }
 
     @Override
     protected void loadData() {
-//        String latestDate = DateUtil.getLatestDate();
-//        dateList.add(latestDate);
-//        iDiscoverPresenter.loadLatestNews();
+        iWorldPresenter.loadComments();
     }
 
 
@@ -135,45 +123,24 @@ public class WorldFragment extends BaseFragment implements DiscoverContact.IDisc
         unbinder.unbind();
     }
 
-//    @Override
-//    public void showBeforeNews(BeforeNews beforeNews) {
-//        List<Story> stories = beforeNews.getStories();
-//        mStories.addAll(stories);
-//        int curSize = storiesAdapter.getItemCount();
-//        storiesAdapter.notifyItemRangeChanged(curSize, mStories.size() - 1);
-//    }
+    @Override
+    public void showComments(SocialComments socialComments) {
+        List<TopStory> topStories = socialComments.getTopStories();
+        TopStoriesAdapter topStoriesAdapter = new TopStoriesAdapter(getActivity(), topStories);
+        mViewPager.setAdapter(topStoriesAdapter);
+        mViewPager.setAutoScrollTime(3000);
+        mViewPager.startAutoScroll();
+        mIndicator.setViewPager(mViewPager);
 
-//    @Override
-//    public void gotoNewsDetailActivity(int id) {
-//        Intent intent = new Intent(getActivity(), NewsDetailActivity.class);
-//        intent.putExtra(NewsDetailActivity.KEY_STORY_ID, id);
-//        startActivity(intent);
-//        //overridePendingTransition(R.anim.hold, android.R.anim.fade_in);
-//    }
-//
-//
-//    @Override
-//    public void showLatestNews(LatestNews latestNews) {
-//        List<TopStory> topStories = latestNews.getTopStories();
-//        TopStoriesAdapter topStoriesAdapter = new TopStoriesAdapter(getActivity(), topStories);
-//        mViewPager.setAdapter(topStoriesAdapter);
-//        mViewPager.setAutoScrollTime(3000);
-//        mViewPager.startAutoScroll();
-//        mIndicator.setViewPager(mViewPager);
-//
-//        mStories.clear();
-//        List<Story> stories = latestNews.getStories();
-//        mStories.addAll(stories);
-//        storiesAdapter.notifyDataSetChanged();
-//    }
+        comments.clear();
+        List<Comment> newComments = socialComments.getComments();
+        comments.addAll(newComments);
+        commentsAdapater.notifyDataSetChanged();
+    }
 
     @Override
     public void showLoadFailureMsg(String errorMsg) {
 
     }
 
-    @Override
-    public void showReBooks(RecommondBooks recommondBooks) {
-
-    }
 }

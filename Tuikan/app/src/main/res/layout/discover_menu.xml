@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<GridLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/discover_menu"
     android:layout_below="@+id/indicator"
     android:layout_width="match_parent"
     android:layout_height="100dp"
+    android:rowCount="1"
+    android:columnCount="4"
     android:background="@color/white">
 
     <Button
         android:id="@+id/discover_free"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginStart="15dp"
+        android:layout_gravity="center"
         android:background="@color/transparent"
         android:text="免费"
         android:textSize="16dp"
@@ -23,9 +24,7 @@
         android:id="@+id/discover_rank"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/discover_free"
-        android:layout_marginTop="25dp"
-        android:layout_marginStart="10dp"
+        android:layout_gravity="center"
         android:background="@color/transparent"
         android:text="排行榜"
         android:textSize="16dp"
@@ -36,9 +35,7 @@
         android:id="@+id/discover_vip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/discover_rank"
-        android:layout_marginTop="25dp"
-        android:layout_marginStart="10dp"
+        android:layout_gravity="center"
         android:background="@color/transparent"
         android:text="会员"
         android:textSize="16dp"
@@ -49,13 +46,11 @@
         android:id="@+id/discover_hear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/discover_vip"
-        android:layout_marginTop="25dp"
-        android:layout_marginLeft="10dp"
+        android:layout_gravity="center"
         android:background="@color/transparent"
         android:text="听书"
         android:textSize="16dp"
         android:drawableTop="@mipmap/ic_hear"
         />
 
-</RelativeLayout>
+</GridLayout>

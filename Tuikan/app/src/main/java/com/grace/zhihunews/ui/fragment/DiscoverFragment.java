@@ -141,8 +141,8 @@ public class DiscoverFragment extends BaseFragment implements DiscoverContact.ID
         mIndicator.setViewPager(mViewPager);
 
         recBooks.clear();
-        List<RecBook> Recbooks = recommondBooks.getRecBooks();
-        recBooks.addAll(Recbooks);
+        List<RecBook> newRecbooks = recommondBooks.getRecBooks();
+        recBooks.addAll(newRecbooks);
         recBooksAdapter.notifyDataSetChanged();
     }
 
