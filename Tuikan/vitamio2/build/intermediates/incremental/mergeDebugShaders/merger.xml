@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/home/bobo/Study/竞赛/计设/ReadPartner/Tuikan/vitamio2/src/main/shaders"/></dataSet><dataSet config="debug"><source path="/home/bobo/Study/竞赛/计设/ReadPartner/Tuikan/vitamio2/src/debug/shaders"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="D:\ReadPartner\Tuikan\vitamio2\src\main\shaders"/></dataSet><dataSet config="debug"><source path="D:\ReadPartner\Tuikan\vitamio2\src\debug\shaders"/></dataSet></merger>

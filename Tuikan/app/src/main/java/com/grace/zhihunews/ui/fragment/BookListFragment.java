@@ -1,12 +1,12 @@
 package com.grace.zhihunews.ui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -18,6 +18,7 @@ import com.grace.zhihunews.R;
 import com.grace.zhihunews.contract.BookListContact;
 import com.grace.zhihunews.network.entity.Book;
 import com.grace.zhihunews.network.entity.LoadBooks;
+import com.grace.zhihunews.ui.activity.BookActivity;
 import com.grace.zhihunews.ui.adapter.BooksAdapter;
 import com.grace.zhihunews.ui.base.BaseFragment;
 import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
@@ -47,7 +48,8 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
     RecyclerViewHeader rvHeader;
     @BindView(R.id.rv_time)
     TextView rvText;
-
+    @BindView(R.id.qiandao)
+    Button qiandao;
 
     private BookListContact.IBookListPresenter mBookListPresenter;
     private Unbinder unbinder;
@@ -107,6 +109,20 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
             mBookListPresenter.loadBook();
 
             (new Handler()).postDelayed(() -> mSwipeRefreshLayout.setRefreshing(false), 1200);
+        });
+
+        qiandao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                switch (v.getId()) {
+                    case R.id.qiandao:
+                        Intent intent = new Intent(getActivity(), BookActivity.class);
+                        startActivity(intent);
+                        break;
+                }
+            }
+
         });
     }
 

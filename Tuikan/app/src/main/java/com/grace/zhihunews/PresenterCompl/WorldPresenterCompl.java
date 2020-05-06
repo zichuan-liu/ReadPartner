@@ -1,20 +1,10 @@
 package com.grace.zhihunews.PresenterCompl;
 
-import android.util.Log;
-
 import com.grace.zhihunews.App;
-import com.grace.zhihunews.contract.DiscoverContact;
 import com.grace.zhihunews.contract.WorldContact;
-import com.grace.zhihunews.deliveryLayer.DiscoverProvider;
 import com.grace.zhihunews.deliveryLayer.WorldProvider;
-import com.grace.zhihunews.event.CategoriesLoadedEvent;
-import com.grace.zhihunews.event.CategoryFeatureLoadedEvent;
 import com.grace.zhihunews.event.CommentsLoadedEvent;
 import com.grace.zhihunews.event.LoadFailureEvent;
-import com.grace.zhihunews.network.entity.video.Category;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import de.greenrobot.event.EventBus;
 

@@ -10,6 +10,7 @@ import com.grace.zhihunews.R;
 import com.grace.zhihunews.ui.base.BaseActivity;
 import com.grace.zhihunews.ui.fragment.AboutFragment;
 import com.grace.zhihunews.ui.fragment.BookListFragment;
+import com.grace.zhihunews.ui.fragment.MyFragment;
 import com.grace.zhihunews.ui.fragment.WorldFragment;
 import com.grace.zhihunews.ui.fragment.DiscoverFragment;
 
@@ -24,6 +25,7 @@ public class MainActivity extends BaseActivity {
     private BookListFragment mBookListFragment;
     private DiscoverFragment mDiscoverFragment;
     private AboutFragment mAboutFragment;
+    private MyFragment mMyFragment;
     private WorldFragment mWorldFragment;
     private FragmentManager fm;
 
@@ -107,11 +109,11 @@ public class MainActivity extends BaseActivity {
                         ft.add(R.id.frame_layout, mWorldFragment);
                     }
                 break;
-            case 3 : if (mAboutFragment != null) {
-                        ft.show(mAboutFragment);
+            case 3 : if (mMyFragment != null) {
+                        ft.show(mMyFragment);
                     } else {
-                        mAboutFragment = new AboutFragment();
-                        ft.add(R.id.frame_layout, mAboutFragment);
+                        mMyFragment = new MyFragment();
+                        ft.add(R.id.frame_layout, mMyFragment);
                     }
                 break;
         }
@@ -128,8 +130,8 @@ public class MainActivity extends BaseActivity {
         if (mWorldFragment != null) {
             ft.hide(mWorldFragment);
         }
-        if (mAboutFragment != null) {
-            ft.hide(mAboutFragment);
+        if (mMyFragment != null) {
+            ft.hide(mMyFragment);
         }
     }
 

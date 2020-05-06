@@ -9,6 +9,9 @@
 
     <string name="VideoFragment_label_developing">正在开发中</string>
 
+    <string name="MyFragment_label_nickname">正在开发中</string>
+    <string name="MyFragment_label_number">X 4</string>
+
     <string name="AboutFragment_label_nickname">刘子川、李彦佳、刘佳迎</string>
     <string name="AboutFragment_desc_introduction">武汉理工大学，Android 开发</string>
     <string name="AboutFragment_label_grade">评分</string>
@@ -20,4 +23,12 @@
     <string name="PhotoActivity_toast_success">设置壁纸成功</string>
     <string name="PhotoActivity_dialog_msg">保存图片</string>
 
+
+    <string name="read_setting_directory">目录</string>
+    <string name="read_setting_night">夜间</string>
+    <string name="read_setting_day">日间</string>
+    <string name="read_setting_pagemode">翻页</string>
+    <string name="read_setting_set">设置</string>
+    <string name="read_setting_pre">上一章</string>
+    <string name="read_setting_next">下一章</string>
 </resources>

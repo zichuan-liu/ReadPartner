@@ -9,7 +9,7 @@ import com.grace.zhihunews.ui.base.BaseFragment;
 /**
  * Created by Administrator on 2016/9/3.
  */
-public class AboutFragment extends BaseFragment {
+public class AboutFragment extends BaseFragment{
 
     @Override
     protected int getLayoutResId() {
@@ -30,4 +30,5 @@ public class AboutFragment extends BaseFragment {
     protected void loadData() {
 
     }
+
 }
