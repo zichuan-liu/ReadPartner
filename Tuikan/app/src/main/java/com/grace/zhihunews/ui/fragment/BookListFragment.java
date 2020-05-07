@@ -1,6 +1,5 @@
 package com.grace.zhihunews.ui.fragment;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -18,7 +17,6 @@ import com.grace.zhihunews.R;
 import com.grace.zhihunews.contract.BookListContact;
 import com.grace.zhihunews.network.entity.Book;
 import com.grace.zhihunews.network.entity.LoadBooks;
-import com.grace.zhihunews.ui.activity.BookActivity;
 import com.grace.zhihunews.ui.adapter.BooksAdapter;
 import com.grace.zhihunews.ui.base.BaseFragment;
 import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
@@ -110,21 +108,25 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
 
             (new Handler()).postDelayed(() -> mSwipeRefreshLayout.setRefreshing(false), 1200);
         });
-
-        qiandao.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                switch (v.getId()) {
-                    case R.id.qiandao:
-                        Intent intent = new Intent(getActivity(), BookActivity.class);
-                        startActivity(intent);
-                        break;
-                }
-            }
-
-        });
+//
+//        /**
+//         * 测试阅读器
+//         */
+//        qiandao.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                switch (v.getId()) {
+//                    case R.id.qiandao:
+//                        Intent intent = new Intent(getActivity(), BookActivity.class);
+//                        startActivity(intent);
+//                        break;
+//                }
+//            }
+//
+//        });
     }
+
 
     @Override
     protected void loadData() {
