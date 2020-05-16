@@ -34,18 +34,21 @@
         android:background="@mipmap/ic_gift" />
 
     <Button
+        android:id="@+id/qiandao"
         android:layout_width="60dp"
         android:layout_height="30dp"
         android:layout_alignParentEnd="true"
-        android:id="@+id/qiandao"
         android:layout_alignParentBottom="true"
-        android:layout_margin="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/button_shape"
         android:minWidth="0dp"
         android:minHeight="0dp"
         android:text="签到"
         android:textColor="@color/white"
-        android:textSize="18dp" />
+        android:textSize="18dp"/>
 
     <TextView
         android:id="@+id/rv_award"

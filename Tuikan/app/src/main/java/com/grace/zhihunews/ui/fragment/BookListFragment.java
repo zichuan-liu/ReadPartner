@@ -108,23 +108,17 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
 
             (new Handler()).postDelayed(() -> mSwipeRefreshLayout.setRefreshing(false), 1200);
         });
-//
-//        /**
-//         * 测试阅读器
-//         */
-//        qiandao.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//
-//                switch (v.getId()) {
-//                    case R.id.qiandao:
-//                        Intent intent = new Intent(getActivity(), BookActivity.class);
-//                        startActivity(intent);
-//                        break;
-//                }
-//            }
-//
-//        });
+
+        /**
+         * 测试阅读器
+         */
+        qiandao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                qiandao.setText("已签到");
+            }
+
+        });
     }
 
 
