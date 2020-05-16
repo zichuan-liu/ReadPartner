@@ -4,6 +4,14 @@
         "source": "C:\\Users\\77526\\.android\\build-cache\\df99e35df17221fdf3b3f41b58c6c3108acfc00f\\output\\res\\drawable\\abc_dialog_material_background_light.xml"
     },
     {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\go_back_selector.xml",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\go_back_selector.xml"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\return2.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\return2.png"
+    },
+    {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\light_80.png",
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\light_80.png"
     },
@@ -14,6 +22,10 @@
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\videobg.9.png",
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\videobg.9.png"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\uers.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\uers.png"
     },
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_player_play.png",
@@ -60,12 +72,12 @@
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\light_20.png"
     },
     {
-        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_thumb_material.xml",
-        "source": "C:\\Users\\77526\\.android\\build-cache\\df99e35df17221fdf3b3f41b58c6c3108acfc00f\\output\\res\\drawable\\abc_seekbar_thumb_material.xml"
-    },
-    {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\vertical_line_red.xml",
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\vertical_line_red.xml"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_thumb_material.xml",
+        "source": "C:\\Users\\77526\\.android\\build-cache\\df99e35df17221fdf3b3f41b58c6c3108acfc00f\\output\\res\\drawable\\abc_seekbar_thumb_material.xml"
     },
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
@@ -108,6 +120,10 @@
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\boman_selector.xml"
     },
     {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\v2_piwgjc.jpg",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\v2_piwgjc.jpg"
+    },
+    {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bottom_line.xml",
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\bottom_line.xml"
     },
@@ -116,12 +132,20 @@
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\light_50.png"
     },
     {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\return1.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\return1.png"
+    },
+    {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\scrubber_control_selector_holo.xml",
         "source": "D:\\ReadPartner\\Tuikan\\vitamio2\\build\\intermediates\\bundles\\default\\res\\drawable\\scrubber_control_selector_holo.xml"
     },
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\button_bg.xml",
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\button_bg.xml"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\title_shape.xml",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\title_shape.xml"
     },
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
