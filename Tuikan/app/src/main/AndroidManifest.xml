@@ -30,6 +30,12 @@
             android:name=".ui.activity.NewsDetailActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
+            android:name=".ui.activity.RegisterActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".ui.activity.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
             android:name=".ui.activity.PhotoActivity"
             android:theme="@style/AppTheme.NoStatusBarAndActionBar"/>
         <activity
