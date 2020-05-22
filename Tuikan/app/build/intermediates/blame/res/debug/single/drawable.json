@@ -8,12 +8,12 @@
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\go_back_selector.xml"
     },
     {
-        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\light_80.png",
-        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\light_80.png"
-    },
-    {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\return2.png",
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\return2.png"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\light_80.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\light_80.png"
     },
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_player_close_white.png",
@@ -22,6 +22,10 @@
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\videobg.9.png",
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\videobg.9.png"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\v2_pjlsqk.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\v2_pjlsqk.png"
     },
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\uers.png",

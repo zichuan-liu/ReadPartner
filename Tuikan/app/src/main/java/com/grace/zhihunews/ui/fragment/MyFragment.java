@@ -1,10 +1,11 @@
 package com.grace.zhihunews.ui.fragment;
 
-import android.annotation.SuppressLint;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -33,8 +34,11 @@ public class MyFragment extends BaseFragment {
     ImageView iv_add;
     @BindView(R.id.rv_cake_word)
     TextView rv_cake_word;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
 
     private Unbinder unbinder;
+    private Context mContext;
 
 
     @Override
@@ -50,39 +54,38 @@ public class MyFragment extends BaseFragment {
     @Override
     protected void initViews(View view, Bundle savedInstanceState) {
         unbinder = ButterKnife.bind(this, view);
-        miv_avatar.setOnClickListener(new JumpAboutFragment());
+        mContext = getActivity();
+        toolbar.setTitle("");
+        toolbar.inflateMenu(R.menu.menu_my);
+        toolbar.setOnMenuItemClickListener(new JumpAboutFragment());
+//        miv_avatar.setOnClickListener(new JumpAboutFragment());
     }
 
     @Override
     protected void loadData() {}
 
 
-    public class JumpAboutFragment implements View.OnClickListener{
+    public class JumpAboutFragment implements Toolbar.OnMenuItemClickListener{
         /**
          * https://www.cnblogs.com/codingblock/p/4808809.html
-         * @param view
+         * @param item
          */
         //Fragment跳转Fragment
-        @SuppressLint("ResourceType")
+//        @SuppressLint("ResourceType")
         @Override
-        public void onClick(View view){
-            Log.i("lzc",  "嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻");
-//            getFragmentManager()
-//                    .beginTransaction()
-//                    .replace(R.layout.activity_main, new AboutFragment())
-//                    .commit();
-
-            //获取fragment的实例
-            AboutFragment aboutFragment=new AboutFragment();
-            //获取Fragment的管理器
-            FragmentManager fragmentManager=getActivity().getFragmentManager();
-            //开启fragment的事物,在这个对象里进行fragment的增删替换等操作。
-            FragmentTransaction ft=fragmentManager.beginTransaction();
-            //跳转到fragment，第一个参数为所要替换的位置id，第二个参数是替换后的fragment
-            ft.replace(R.id.frame_layout
-                    ,aboutFragment);
-            //提交事物
-            ft.commit();
+        public boolean onMenuItemClick(MenuItem item){
+            switch (item.getItemId()) {
+                case R.id.action_setting:
+                    Log.i("lzc",  "嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻");
+                    //            getFragmentManager()
+                    //                    .beginTransaction()
+                    //                    .replace(R.layout.activity_main, new AboutFragment())
+                    //                    .commit();
+                    Intent intent = new Intent(mContext, AboutFragment.class);
+                    mContext.startActivity(intent);
+                    break;
+            }
+            return true;
         }
     }
 

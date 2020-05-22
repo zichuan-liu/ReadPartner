@@ -36,6 +36,9 @@
             android:name=".ui.activity.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
+            android:name=".ui.fragment.AboutFragment"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
             android:name=".ui.activity.PhotoActivity"
             android:theme="@style/AppTheme.NoStatusBarAndActionBar"/>
         <activity

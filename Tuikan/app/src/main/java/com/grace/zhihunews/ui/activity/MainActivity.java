@@ -10,9 +10,9 @@ import com.grace.zhihunews.R;
 import com.grace.zhihunews.ui.base.BaseActivity;
 import com.grace.zhihunews.ui.fragment.AboutFragment;
 import com.grace.zhihunews.ui.fragment.BookListFragment;
+import com.grace.zhihunews.ui.fragment.DiscoverFragment;
 import com.grace.zhihunews.ui.fragment.MyFragment;
 import com.grace.zhihunews.ui.fragment.WorldFragment;
-import com.grace.zhihunews.ui.fragment.DiscoverFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -21,7 +21,6 @@ public class MainActivity extends BaseActivity {
 
     @BindView(R.id.bottom_navigation_bar)
     BottomNavigationBar mBottomNavigationBar;
-
     private BookListFragment mBookListFragment;
     private DiscoverFragment mDiscoverFragment;
     private AboutFragment mAboutFragment;
@@ -144,4 +143,10 @@ public class MainActivity extends BaseActivity {
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         //super.onRestoreInstanceState(savedInstanceState);
     }
+
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        getMenuInflater().inflate(R.menu.menu_main, menu);
+//        return true;
+//    }
 }

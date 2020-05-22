@@ -7,10 +7,36 @@
     android:layout_height="match_parent" >
 
     <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/title_shape">
+        <!--一个是显示返回键，一个是显示标题框-->
+        <!--通过TextView来显示，id ： tv_back , tv_main_title -->
+        <Button
+            android:id="@+id/tv_back"
+            android:layout_width="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/go_back_selector" />
+        <TextView
+            android:id="@+id/tv_main_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@android:color/white"
+            android:text="设 置"
+            android:textSize="20sp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_card"
-        android:layout_marginTop="16dp">
+        android:layout_marginTop="20dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/iv_avatar"
@@ -185,4 +211,18 @@
                 />
         </LinearLayout>
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_quit"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/button_shape"
+        android:text="退 出"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"/>
+
 </LinearLayout>

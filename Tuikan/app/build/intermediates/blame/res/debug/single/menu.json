@@ -12,6 +12,10 @@
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\menu\\menu_news_detail.xml"
     },
     {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_my.xml",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\menu\\menu_my.xml"
+    },
+    {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\menu\\menu_photo.xml",
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\menu\\menu_photo.xml"
     },

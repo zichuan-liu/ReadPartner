@@ -36,6 +36,15 @@
             android:name="com.grace.zhihunews.ui.activity.NewsDetailActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name="com.grace.zhihunews.ui.activity.RegisterActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.grace.zhihunews.ui.activity.LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.grace.zhihunews.ui.fragment.AboutFragment"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name="com.grace.zhihunews.ui.activity.PhotoActivity"
             android:theme="@style/AppTheme.NoStatusBarAndActionBar" />
         <activity
