@@ -42,6 +42,9 @@
             android:name=".ui.activity.PhotoActivity"
             android:theme="@style/AppTheme.NoStatusBarAndActionBar"/>
         <activity
+            android:name=".ui.activity.SearchActivity"
+            android:theme="@style/AppTheme.NoStatusBarAndActionBar"/>
+        <activity
             android:name=".ui.activity.BookActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity

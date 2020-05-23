@@ -24,12 +24,12 @@
         "source": "C:\\Users\\77526\\.android\\build-cache\\df99e35df17221fdf3b3f41b58c6c3108acfc00f\\output\\res\\layout\\abc_expanded_menu_layout.xml"
     },
     {
-        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
-        "source": "C:\\Users\\77526\\.android\\build-cache\\a5b444ab5e6314b82524871e48a874f30bc88fc2\\output\\res\\layout\\design_navigation_item.xml"
-    },
-    {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
         "source": "C:\\Users\\77526\\.android\\build-cache\\df99e35df17221fdf3b3f41b58c6c3108acfc00f\\output\\res\\layout\\abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
+        "source": "C:\\Users\\77526\\.android\\build-cache\\a5b444ab5e6314b82524871e48a874f30bc88fc2\\output\\res\\layout\\design_navigation_item.xml"
     },
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
@@ -192,6 +192,10 @@
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\layout\\item_text.xml"
     },
     {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_wx_search.xml",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\layout\\layout_wx_search.xml"
+    },
+    {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
         "source": "C:\\Users\\77526\\.android\\build-cache\\df99e35df17221fdf3b3f41b58c6c3108acfc00f\\output\\res\\layout\\abc_alert_dialog_material.xml"
     },
@@ -226,6 +230,10 @@
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_top_story.xml",
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\layout\\item_top_story.xml"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_search.xml",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\layout\\activity_search.xml"
     },
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
@@ -318,6 +326,10 @@
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_register.xml",
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\layout\\layout_base_seach.xml",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\layout\\layout_base_seach.xml"
     },
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",

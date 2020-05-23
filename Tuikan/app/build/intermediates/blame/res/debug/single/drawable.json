@@ -8,12 +8,12 @@
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\go_back_selector.xml"
     },
     {
-        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\return2.png",
-        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\return2.png"
-    },
-    {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\light_80.png",
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\light_80.png"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\return2.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\return2.png"
     },
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_player_close_white.png",
@@ -222,6 +222,10 @@
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_indicator_material.xml",
         "source": "C:\\Users\\77526\\.android\\build-cache\\df99e35df17221fdf3b3f41b58c6c3108acfc00f\\output\\res\\drawable\\abc_ratingbar_indicator_material.xml"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_search_default.xml",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\bg_search_default.xml"
     },
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",

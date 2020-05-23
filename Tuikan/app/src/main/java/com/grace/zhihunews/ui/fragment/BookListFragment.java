@@ -8,6 +8,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -21,6 +22,7 @@ import com.grace.zhihunews.contract.BookListContact;
 import com.grace.zhihunews.network.entity.Book;
 import com.grace.zhihunews.network.entity.LoadBooks;
 import com.grace.zhihunews.ui.activity.ExchangeActivity;
+import com.grace.zhihunews.ui.activity.SearchActivity;
 import com.grace.zhihunews.ui.adapter.BooksAdapter;
 import com.grace.zhihunews.ui.base.BaseFragment;
 import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
@@ -93,6 +95,7 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
                 .build());
 
         rvHeader.attachTo(rvReadList, true);
+
 //        rvReadList.addOnScrollListener(new EndlessRecyclerViewScrollListener(linearLayoutManager) {
 //            @Override
 //            public void onLoadMore(int page, int totalItemCount) {
@@ -135,6 +138,18 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
             }
 
         });
+
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.action_search:
+                        startActivity(new Intent(mContext, SearchActivity.class));
+                        break;
+                }
+                return true;
+            }
+        });
     }
 
 
@@ -162,4 +177,6 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
     public void showLoadFailureMsg(String errorMsg) {
 
     }
+
+
 }
