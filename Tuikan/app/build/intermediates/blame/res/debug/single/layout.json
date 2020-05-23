@@ -84,6 +84,10 @@
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\layout\\item_recbook.xml"
     },
     {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_exchange.xml",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\layout\\activity_exchange.xml"
+    },
+    {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
         "source": "C:\\Users\\77526\\.android\\build-cache\\df99e35df17221fdf3b3f41b58c6c3108acfc00f\\output\\res\\layout\\abc_screen_content_include.xml"
     },

@@ -1,5 +1,7 @@
 package com.grace.zhihunews.ui.fragment;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -18,6 +20,7 @@ import com.grace.zhihunews.R;
 import com.grace.zhihunews.contract.BookListContact;
 import com.grace.zhihunews.network.entity.Book;
 import com.grace.zhihunews.network.entity.LoadBooks;
+import com.grace.zhihunews.ui.activity.ExchangeActivity;
 import com.grace.zhihunews.ui.adapter.BooksAdapter;
 import com.grace.zhihunews.ui.base.BaseFragment;
 import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
@@ -56,6 +59,7 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
     private Unbinder unbinder;
     private List<Book> mBooks;
     private BooksAdapter booksAdapter;
+    private Context mContext;
 
     @Override
     protected int getLayoutResId() {
@@ -72,6 +76,8 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
     @Override
     protected void initViews(View view, Bundle savedInstanceState) {
         unbinder = ButterKnife.bind(this, view);
+        mContext = getActivity();
+
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         toolbar.setTitle("");
         toolbar_edit.setText(R.string.MainActivity_title_edit);
@@ -125,7 +131,7 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
         lvcheng.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                startActivity(new Intent(mContext, ExchangeActivity.class));
             }
 
         });
