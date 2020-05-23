@@ -45,6 +45,9 @@
             android:name=".ui.activity.BookActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
+            android:name=".ui.activity.ExchangeActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
             android:name=".ui.activity.ShowVideoActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="sensorLandscape"

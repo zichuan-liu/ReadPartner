@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader;
@@ -48,6 +49,8 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
     TextView rvText;
     @BindView(R.id.qiandao)
     Button qiandao;
+    @BindView(R.id.lvcheng)
+    ImageButton lvcheng;
 
     private BookListContact.IBookListPresenter mBookListPresenter;
     private Unbinder unbinder;
@@ -116,6 +119,13 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
             @Override
             public void onClick(View v) {
                 qiandao.setText("已签到");
+            }
+
+        });
+        lvcheng.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
             }
 
         });

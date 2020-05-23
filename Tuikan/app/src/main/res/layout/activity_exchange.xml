@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/title_shape">
+        <!--一个是显示返回键，一个是显示标题框-->
+        <!--通过TextView来显示，id ： tv_back , tv_main_title -->
+        <Button
+            android:id="@+id/tv_back"
+            android:layout_width="50dp"
+            android:layout_marginTop="5dp"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/go_back_selector" />
+        <TextView
+            android:id="@+id/tv_main_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@android:color/white"
+            android:text="阅读时长兑地瓜干"
+            android:textSize="20sp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_card">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_margin="16dp"
+            android:src="@mipmap/avatar" />
+
+        <TextView
+            android:id="@+id/tv_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/iv_avatar"
+            android:layout_toEndOf="@id/iv_avatar"
+            android:layout_toRightOf="@id/iv_avatar"
+            android:layout_marginTop="@dimen/spacing_tiny"
+            android:text="@string/ExchangeAcitity_title"
+            android:textSize="@dimen/font_size_normal_high"
+            android:textColor="@color/gray_dark"/>
+
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/tv_nickname"
+            android:layout_toEndOf="@id/tv_nickname"
+            android:layout_marginLeft="16dp"
+            android:layout_toRightOf="@id/tv_nickname"
+            android:text="@string/ExchangeAcitity_time"
+            android:textColor="@color/red"
+            android:textSize="@dimen/font_size_normal_high"/>
+
+        <TextView
+            android:id="@+id/tv_introduction"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/iv_avatar"
+            android:layout_marginRight="16dp"
+            android:layout_alignBottom="@id/iv_avatar"
+            android:layout_marginBottom="@dimen/spacing_tiny"
+            android:text="@string/ExchangeAcitity_info"
+            android:textSize="@dimen/font_size_normal"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_card"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/grade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/bottom_line">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/grade_icon"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_margin="1dp"
+                android:src="@mipmap/gitf" />
+
+            <TextView
+                android:id="@+id/tv_grade"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="16dp"
+                android:text="地瓜干 x 10"
+                android:textSize="@dimen/font_size_normal_high"
+                android:layout_gravity="center_vertical"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/button_shape"
+                android:layout_gravity="center_vertical"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:text="换 取"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/exchange_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/v2_pjkevi" />
+</LinearLayout>

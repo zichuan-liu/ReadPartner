@@ -7,4 +7,53 @@
 package io.vov.vitamio;
 
 public final class R {
+    public static final class color {
+        public static final int mediacontroller_bg = 0x7f0c014c;
+        public static final int mediacontroller_bg_pressed = 0x7f0c014d;
+        public static final int transparent = 0x7f0c016e;
+    }
+    public static final class drawable {
+        public static final int ic_launcher = 0x7f020055;
+        public static final int mediacontroller_button = 0x7f020062;
+        public static final int mediacontroller_pause = 0x7f020063;
+        public static final int mediacontroller_play = 0x7f020064;
+        public static final int scrubber_control_disabled_holo = 0x7f020068;
+        public static final int scrubber_control_focused_holo = 0x7f020069;
+        public static final int scrubber_control_normal_holo = 0x7f02006a;
+        public static final int scrubber_control_pressed_holo = 0x7f02006b;
+        public static final int scrubber_control_selector_holo = 0x7f02006c;
+        public static final int scrubber_primary_holo = 0x7f02006d;
+        public static final int scrubber_progress_horizontal_holo_dark = 0x7f02006e;
+        public static final int scrubber_secondary_holo = 0x7f02006f;
+        public static final int scrubber_track_holo_dark = 0x7f020070;
+    }
+    public static final class id {
+        public static final int mediacontroller_file_name = 0x7f0d00de;
+        public static final int mediacontroller_play_pause = 0x7f0d00da;
+        public static final int mediacontroller_seekbar = 0x7f0d00dd;
+        public static final int mediacontroller_time_current = 0x7f0d00db;
+        public static final int mediacontroller_time_total = 0x7f0d00dc;
+    }
+    public static final class layout {
+        public static final int mediacontroller = 0x7f040041;
+    }
+    public static final class string {
+        public static final int VideoView_error_button = 0x7f070023;
+        public static final int VideoView_error_text_invalid_progressive_playback = 0x7f070024;
+        public static final int VideoView_error_text_unknown = 0x7f070025;
+        public static final int VideoView_error_title = 0x7f070026;
+        public static final int mediacontroller_play_pause = 0x7f07002c;
+        public static final int permission_group_tools_description = 0x7f07002d;
+        public static final int permission_group_tools_label = 0x7f07002e;
+        public static final int permission_receive_messages_description = 0x7f07002f;
+        public static final int permission_receive_messages_label = 0x7f070030;
+        public static final int permission_write_providers_description = 0x7f070031;
+        public static final int permission_write_providers_label = 0x7f070032;
+        public static final int vitamio_init_decoders = 0x7f07003a;
+        public static final int vitamio_library_app_name = 0x7f07003b;
+    }
+    public static final class style {
+        public static final int MediaController_SeekBar = 0x7f0a00c4;
+        public static final int MediaController_Text = 0x7f0a00c5;
+    }
 }

@@ -40,7 +40,6 @@ public class AboutFragment extends AppCompatActivity {
 //                getApplication().startActivity(intent);
             }
         });
-
         tv_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
