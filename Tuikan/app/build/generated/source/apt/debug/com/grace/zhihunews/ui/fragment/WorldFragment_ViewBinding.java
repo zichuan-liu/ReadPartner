@@ -7,6 +7,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
 import com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader;
@@ -29,6 +30,7 @@ public class WorldFragment_ViewBinding<T extends WorldFragment> implements Unbin
     target.mViewPager = Utils.findRequiredViewAsType(source, R.id.view_pager, "field 'mViewPager'", InfiniteViewPager.class);
     target.mIndicator = Utils.findRequiredViewAsType(source, R.id.indicator, "field 'mIndicator'", CirclePageIndicator.class);
     target.rvHeader = Utils.findRequiredViewAsType(source, R.id.rv_header, "field 'rvHeader'", RecyclerViewHeader.class);
+    target.world_date = Utils.findRequiredViewAsType(source, R.id.world_date, "field 'world_date'", Button.class);
   }
 
   @Override
@@ -43,6 +45,7 @@ public class WorldFragment_ViewBinding<T extends WorldFragment> implements Unbin
     target.mViewPager = null;
     target.mIndicator = null;
     target.rvHeader = null;
+    target.world_date = null;
 
     this.target = null;
   }

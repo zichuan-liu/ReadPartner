@@ -3,10 +3,8 @@ package com.grace.zhihunews.ui.fragment;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.annotation.RequiresApi;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -51,7 +49,7 @@ public class CalendarFragment extends Fragment {
  //private RelativeLayout rlBtnSign;
  private ImageView signBack;
  private boolean isSign;
-
+    private TextView btn_sign;
  public static CalendarFragment newInstance(){
   Bundle arguments = new Bundle();
   CalendarFragment tabContentFragment = new CalendarFragment();
@@ -64,7 +62,6 @@ public class CalendarFragment extends Fragment {
  }
 
 
- @RequiresApi(api = Build.VERSION_CODES.M)
  @Nullable
  @Override
  public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
@@ -75,11 +72,11 @@ public class CalendarFragment extends Fragment {
             System.out.println("dataBean: null");
         }*/
 
-  View contentView = inflater.inflate(R.layout.activity_sign_calendar, null);
+        View contentView = inflater.inflate(R.layout.activity_sign_calendar, null);
+        btn_sign = (TextView) contentView.findViewById(R.id.btn_sign);
         /*ImageView i8show_attention_back = (ImageView) contentView.findViewById(R.id.i8show_attention_back);
         TextView i8show_attention_tittle = (TextView) contentView.findViewById(R.id.i8show_attention_tittle);
         TextView tv_sign_year_month = (TextView) contentView.findViewById(R.id.tv_sign_year_month);
-        TextView btn_sign = (TextView) contentView.findViewById(R.id.btn_sign);
         ImageView iv_huode = (ImageView) contentView.findViewById(R.id.iv_huode);
         ImageView iv_sun_bg = (ImageView) contentView.findViewById(R.id.iv_sun_bg);
         ImageView iv_sun = (ImageView) contentView.findViewById(R.id.iv_sun);
@@ -171,22 +168,23 @@ public class CalendarFragment extends Fragment {
                 }*/
 
 
-                /*if (dataBean.getIsSign() == 1) {//1是已签到，0是未签到
-                    rlBtnSign.setBackgroundResource(R.drawable.btn_sign_calendar_no);
-                    btn_sign.setText("已签到");
-                    rlBtnSign.setClickable(false);
-                } else {
-                    rlBtnSign.setBackgroundResource(R.drawable.btn_sign_calendar);
-                    btn_sign.setText("签 到");
-                }*/
+//                if (dataBean.getIsSign() == 1) {//1是已签到，0是未签到
+//                    rlBtnSign.setBackgroundResource(R.drawable.btn_sign_calendar_no);
+//                    btn_sign.setText("已签到");
+//                    rlBtnSign.setClickable(false);
+//                } else {
+//                    rlBtnSign.setBackgroundResource(R.drawable.btn_sign_calendar);
+//                    btn_sign.setText("签 到");
+//                }
    }
   }
 
-        /*btn_sign.setOnClickListener(new View.OnClickListener() {
+        btn_sign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (!isSign) {
                     signCalendarData();
+                    btn_sign.setText("已签到");
                 }
             }
         });
@@ -195,7 +193,7 @@ public class CalendarFragment extends Fragment {
             public void onClick(View v) {
                 rlGetGiftData.setVisibility(View.GONE);
             }
-        });*/
+        });
 
         /*signBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -209,7 +207,7 @@ public class CalendarFragment extends Fragment {
     Intent intent = new Intent();
     switch (v.getId()) {
      case R.id.i8show_attention_back:
-      //finish();
+//      finish();
       intent.setClass(getActivity(), MainActivity.class);
       break;
     }
@@ -220,7 +218,6 @@ public class CalendarFragment extends Fragment {
   return contentView;
  }
 
- @RequiresApi(api = Build.VERSION_CODES.M)
  private void initData() {
   //System.out.println("调用initData()方法");
   isSign = false;
@@ -237,7 +234,7 @@ public class CalendarFragment extends Fragment {
   Date curDate = new Date(System.currentTimeMillis());
   String curDateStr = formatter.format(curDate);
   data.setConSign(1);
-  String signDays = getSignDaysAndCheckToday(curDateStr.substring(0, 4), curDateStr.substring(5, 7), getContext(), curDateStr);
+  String signDays = getSignDaysAndCheckToday(curDateStr.substring(0, 4), curDateStr.substring(5, 7), getActivity(), curDateStr);
   data.setSignDay(signDays);
   data.setIsSign(0);
   if(isSign){
@@ -324,6 +321,7 @@ public class CalendarFragment extends Fragment {
   //list.add("2017-11-18");
   list.add(date);
   calendar.addMarks(list, 0);
+     isSign = true;
 
  }
 

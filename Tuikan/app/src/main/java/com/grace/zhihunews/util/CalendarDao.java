@@ -34,7 +34,7 @@ public class CalendarDao {
             ex.printStackTrace();
         }
 
-        return res.substring(0, res.length() - 1);
+        return res.substring(0, res.length());
     }
 
 

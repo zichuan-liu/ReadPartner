@@ -28,10 +28,10 @@ public class SDUtil {
             WRUtil wrUtil = new WRUtil();
             String calendar = readFromSD(RecordType.CALENDAR.getPath());
             if (calendar == null || calendar.equals("")) {
-                wrUtil.writeFile(context, "2019-06-19", RecordType.CALENDAR);
-                wrUtil.writeFile(context, "2019-06-20", RecordType.CALENDAR);
-                wrUtil.writeFile(context, "2019-06-21", RecordType.CALENDAR);
-                wrUtil.writeFile(context, "2019-06-22", RecordType.CALENDAR);
+                wrUtil.writeFile(context, "2020-05-19", RecordType.CALENDAR);
+                wrUtil.writeFile(context, "2020-05-20", RecordType.CALENDAR);
+                wrUtil.writeFile(context, "2020-05-21", RecordType.CALENDAR);
+                wrUtil.writeFile(context, "2020-05-22", RecordType.CALENDAR);
             }
             String today = readFromSD(RecordType.TODAY.getPath());
             if ( today == null || today.equals("") ) {

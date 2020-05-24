@@ -1,13 +1,18 @@
 package com.grace.zhihunews.ui.fragment;
 
-import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
 import android.view.View;
+import android.widget.Button;
 
 import com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader;
 import com.grace.zhihunews.App;
@@ -20,10 +25,15 @@ import com.grace.zhihunews.network.entity.TopStory;
 import com.grace.zhihunews.ui.adapter.CommentsAdapater;
 import com.grace.zhihunews.ui.adapter.TopStoriesAdapter;
 import com.grace.zhihunews.ui.base.BaseFragment;
+import com.grace.zhihunews.util.CalendarDao;
+import com.grace.zhihunews.util.RecordType;
+import com.grace.zhihunews.util.SDUtil;
+import com.grace.zhihunews.util.WRUtil;
 import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
 import com.zanlabs.widget.infiniteviewpager.InfiniteViewPager;
 import com.zanlabs.widget.infiniteviewpager.indicator.CirclePageIndicator;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,7 +57,8 @@ public class WorldFragment extends BaseFragment implements WorldContact.IWorldVi
     CirclePageIndicator mIndicator;
     @BindView(R.id.rv_header)
     RecyclerViewHeader rvHeader;
-
+    @BindView(R.id.world_date)
+    Button world_date;
 
     private Unbinder unbinder;
     private List<Comment> comments;
@@ -69,6 +80,79 @@ public class WorldFragment extends BaseFragment implements WorldContact.IWorldVi
 
     @Override
     protected void initViews(View view, Bundle savedInstanceState) {
+        SDUtil sdUtil = new SDUtil();
+
+
+        sdUtil = new SDUtil(getActivity());
+        WRUtil wrUtil = new WRUtil();
+        wrUtil.writeFile(getActivity(), "20", RecordType.DAY);
+        try {
+            sdUtil.saveFileToSD(RecordType.CALENDAR.getPath(), "");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            sdUtil.saveFileToSD(RecordType.CALENDAR.getPath(), "");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        wrUtil.writeFile(getActivity(), "2020-05-20", RecordType.CALENDAR);
+        wrUtil.writeFile(getActivity(), "2020-05-21", RecordType.CALENDAR);
+        wrUtil.writeFile(getActivity(), "2020-05-22", RecordType.CALENDAR);
+        wrUtil.writeFile(getActivity(), "2020-05-23", RecordType.CALENDAR);
+        wrUtil.writeFile(getActivity(), "2020-05-24", RecordType.CALENDAR);
+        String dayStr = null;
+        try {
+            dayStr = sdUtil.readFromSD(RecordType.DAY.getPath());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        String dayCountStr = dayStr + "/180";
+
+        Spannable dayCountStrSet = new SpannableString(dayCountStr);
+        dayCountStrSet.setSpan(new ForegroundColorSpan(Color.WHITE), 0, dayCountStrSet.length() - 1,
+                Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+
+//        dayCountStrSet.setSpan(new AbsoluteSizeSpan(40, true), 0, dayStr.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+//        dayCountStrSet.setSpan(new AbsoluteSizeSpan(18, true), dayStr.length(), dayCountStrSet.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        /**
+         * 这个try先执行一次，然后注释掉
+         */
+
+        try {
+            sdUtil.saveFileToSD(RecordType.CALENDAR.getPath(), "");
+            sdUtil.saveFileToSD(RecordType.WORD.getPath(), "");
+        } catch (Exception e) {
+            System.out.println("ERROR1");
+            e.printStackTrace();
+        }
+        sdUtil.initFile();
+
+        try {
+            String res = sdUtil.readFromSD("calendar.txt");
+            System.out.println(res);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        System.out.println("**********");
+        CalendarDao calendarDao = new CalendarDao();
+        //        String res = calendarDao.listDay("2019", "05", getContext());
+        //       System.out.println(res);
+        sdUtil = new SDUtil(getActivity());
+        sdUtil.verifyStoragePermissions(getActivity());
+        try {
+            sdUtil.saveFileToSD("day.txt", "2");
+            Thread.sleep(2000);
+            String content = sdUtil.readFromSD("day.txt");
+            System.out.println("ccccccontent" + content);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            //
+        }
         unbinder = ButterKnife.bind(this, view);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         toolbar.setTitle("");
@@ -107,6 +191,16 @@ public class WorldFragment extends BaseFragment implements WorldContact.IWorldVi
             iWorldPresenter.loadComments();
 
             (new Handler()).postDelayed(() -> mSwipeRefreshLayout.setRefreshing(false), 1200);
+        });
+
+        world_date.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.frame_layout, new CalendarFragment())
+                        .commit();
+            }
         });
 
     }
