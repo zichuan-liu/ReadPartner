@@ -21,6 +21,7 @@
     <color name="get_gray_code">#cccccc</color>
     <color name="read_dialog_bg">#2C2C2C</color>
     <color name="read_dialog_button_select">#E25754</color>
+    <color name="read_dialog_button_select2">#FF8C69</color>
 
     <color name="read_bg_default">#CEC29C</color>
     <color name="read_bg_1">#CCEBCC</color>

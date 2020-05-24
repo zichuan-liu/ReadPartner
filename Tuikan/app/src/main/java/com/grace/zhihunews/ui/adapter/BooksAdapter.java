@@ -50,7 +50,6 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder> 
         TextView bookTime;
 
 
-
         public ViewHolder(View itemView){
             super(itemView);
             ButterKnife.bind(this, itemView);

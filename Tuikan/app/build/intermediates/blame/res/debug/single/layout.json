@@ -8,8 +8,16 @@
         "source": "C:\\Users\\77526\\.android\\build-cache\\df99e35df17221fdf3b3f41b58c6c3108acfc00f\\output\\res\\layout\\support_simple_spinner_dropdown_item.xml"
     },
     {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\layout\\shop_dialog_layout.xml",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\layout\\shop_dialog_layout.xml"
+    },
+    {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_book.xml",
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\layout\\item_book.xml"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\layout\\common_dialog_layout.xml",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\layout\\common_dialog_layout.xml"
     },
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_sheet_dialog.xml",
@@ -76,12 +84,12 @@
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\layout\\item_preview.xml"
     },
     {
-        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\layout\\content_main.xml",
-        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\layout\\content_main.xml"
-    },
-    {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
         "source": "C:\\Users\\77526\\.android\\build-cache\\df99e35df17221fdf3b3f41b58c6c3108acfc00f\\output\\res\\layout\\abc_action_bar_up_container.xml"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\layout\\content_main.xml",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\layout\\content_main.xml"
     },
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\layout\\item_recbook.xml",
@@ -168,6 +176,10 @@
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\layout\\content_news_detail.xml"
     },
     {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\layout\\friend_dialog_layout.xml",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\layout\\friend_dialog_layout.xml"
+    },
+    {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
         "source": "C:\\Users\\77526\\.android\\build-cache\\df99e35df17221fdf3b3f41b58c6c3108acfc00f\\output\\res\\layout\\abc_list_menu_item_layout.xml"
     },
@@ -250,6 +262,10 @@
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
         "source": "C:\\Users\\77526\\.android\\build-cache\\df99e35df17221fdf3b3f41b58c6c3108acfc00f\\output\\res\\layout\\abc_screen_simple.xml"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\layout\\task_dialog_layout.xml",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\layout\\task_dialog_layout.xml"
     },
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",

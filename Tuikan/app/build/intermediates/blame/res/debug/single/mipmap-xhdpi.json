@@ -1,5 +1,9 @@
 [
     {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\share.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-xhdpi\\share.png"
+    },
+    {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\dayornight.png",
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-xhdpi\\dayornight.png"
     },
@@ -20,6 +24,10 @@
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-xhdpi\\discovery_icon_search.png"
     },
     {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\task.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-xhdpi\\task.png"
+    },
+    {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_setting.png",
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-xhdpi\\ic_setting.png"
     },
@@ -32,6 +40,10 @@
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-xhdpi\\heart.png"
     },
     {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\friends.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-xhdpi\\friends.png"
+    },
+    {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_action_social_share.png",
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-xhdpi\\ic_action_social_share.png"
     },
@@ -42,6 +54,10 @@
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_music_note_white_24dp.png",
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-xhdpi\\ic_music_note_white_24dp.png"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\friend.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-xhdpi\\friend.png"
     },
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_home_white_24dp.png",
@@ -66,6 +82,10 @@
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_search_black_24dp.png",
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-xhdpi\\ic_search_black_24dp.png"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\shop.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-xhdpi\\shop.png"
     },
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\gitf.png",
@@ -94,6 +114,10 @@
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_action_favorite.png",
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-xhdpi\\ic_action_favorite.png"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\timee.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-xhdpi\\timee.png"
     },
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi\\ic_save_white_24dp.png",

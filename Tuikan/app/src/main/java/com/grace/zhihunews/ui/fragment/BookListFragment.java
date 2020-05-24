@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader;
 import com.grace.zhihunews.App;
@@ -25,6 +26,7 @@ import com.grace.zhihunews.ui.activity.ExchangeActivity;
 import com.grace.zhihunews.ui.activity.SearchActivity;
 import com.grace.zhihunews.ui.adapter.BooksAdapter;
 import com.grace.zhihunews.ui.base.BaseFragment;
+import com.grace.zhihunews.ui.view.AddDialog;
 import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
 
 import java.util.ArrayList;
@@ -145,6 +147,33 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
                 switch (item.getItemId()) {
                     case R.id.action_search:
                         startActivity(new Intent(mContext, SearchActivity.class));
+                        break;
+                    case R.id.action_add:
+                        AddDialog addDialog = new AddDialog(mContext);
+                        addDialog.setOnClickBottomListener(
+                                new OnClickBottomListener() {
+
+                                    /**
+                                     * 点击确定按钮事件
+                                     */
+                                    @Override
+                                    public void onPositiveClick() {
+                                        Toast.makeText(mContext, "请正确填写书籍", Toast.LENGTH_SHORT).show();
+                                    }
+
+                                    /**
+                                     * 点击取消按钮事件
+                                     */
+                                    @Override
+                                    public void onNegtiveClick() {
+                                        addDialog.dismiss();
+                                    }
+                                }
+
+                        ).show();
+                        break;
+                    case R.id.toolbar_edit:
+                        Toast.makeText(mContext, "暂未开启编辑功能", Toast.LENGTH_SHORT).show();
                         break;
                 }
                 return true;

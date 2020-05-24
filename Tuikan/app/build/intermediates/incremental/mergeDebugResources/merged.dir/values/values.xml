@@ -372,6 +372,7 @@
     <color name="read_bg_default">#CEC29C</color>
     <color name="read_dialog_bg">#2C2C2C</color>
     <color name="read_dialog_button_select">#E25754</color>
+    <color name="read_dialog_button_select2">#FF8C69</color>
     <color name="read_font_1">#2F332D</color>
     <color name="read_font_2">#92918C</color>
     <color name="read_font_3">#383429</color>
@@ -1762,6 +1763,18 @@
     </style>
     <style name="CardView.Light">
         <item name="cardBackgroundColor">@color/cardview_light_background</item>
+    </style>
+    <style name="CustomDialog" parent="android:style/Theme.Dialog">
+        <!--背景颜色及和透明程度-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--是否去除标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!--是否去除边框-->
+        <item name="android:windowFrame">@null</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsFloating">true</item>
+        <!--是否模糊-->
+        <item name="android:backgroundDimEnabled">true</item>
     </style>
     <style name="MediaController_SeekBar" parent="android:Widget.SeekBar">
         <item name="android:progressDrawable">@drawable/scrubber_progress_horizontal_holo_dark</item>

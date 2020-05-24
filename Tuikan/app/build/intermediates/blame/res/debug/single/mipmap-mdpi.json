@@ -16,7 +16,19 @@
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-mdpi\\ic_action_content_save.png"
     },
     {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\friend.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-mdpi\\friend.png"
+    },
+    {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_navigation.png",
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-mdpi\\ic_navigation.png"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\shop.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-mdpi\\shop.png"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\task.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-mdpi\\task.png"
     }
 ]

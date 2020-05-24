@@ -164,12 +164,20 @@
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\title_shape.xml"
     },
     {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\task.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\task.png"
+    },
+    {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
         "source": "C:\\Users\\77526\\.android\\build-cache\\df99e35df17221fdf3b3f41b58c6c3108acfc00f\\output\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
     },
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\mediacontroller_button.xml",
         "source": "D:\\ReadPartner\\Tuikan\\vitamio2\\build\\intermediates\\bundles\\default\\res\\drawable\\mediacontroller_button.xml"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_dialog.xml",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\bg_dialog.xml"
     },
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\i8live_huoede.png",

@@ -1,5 +1,9 @@
 [
     {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\shop.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-hdpi\\shop.png"
+    },
+    {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_launcher.png",
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
@@ -8,8 +12,16 @@
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-hdpi\\ic_search.png"
     },
     {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\task.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-hdpi\\task.png"
+    },
+    {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_setting.png",
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-hdpi\\ic_setting.png"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\friend.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-hdpi\\friend.png"
     },
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi\\ic_action_content_save.png",
