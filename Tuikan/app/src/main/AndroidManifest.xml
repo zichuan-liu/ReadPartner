@@ -52,6 +52,12 @@
             android:name=".ui.activity.ExchangeActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
+            android:name=".ui.activity.TeamActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.activity.FriendApplyActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".ui.activity.ShowVideoActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="sensorLandscape"

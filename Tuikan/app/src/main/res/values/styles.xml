@@ -28,6 +28,15 @@
         <item name="android:windowFullscreen">true</item>
     </style>
 
+
+
+    <!--设置文本颜色 和大小-->
+    <style name="itemSpinnerStyle" parent="@android:style/Widget.TextView.SpinnerItem">
+        <item name="android:textColor">@color/item_green</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+    
+
     <style name="text_style">
         <item name="android:textSize">15sp</item>
         <item name="android:textColor">#FFFFFF</item>

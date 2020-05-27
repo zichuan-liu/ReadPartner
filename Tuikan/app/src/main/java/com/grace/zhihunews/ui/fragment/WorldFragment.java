@@ -25,6 +25,7 @@ import com.grace.zhihunews.network.entity.Comment;
 import com.grace.zhihunews.network.entity.SocialComments;
 import com.grace.zhihunews.network.entity.TopStory;
 import com.grace.zhihunews.ui.activity.SearchActivity;
+import com.grace.zhihunews.ui.activity.TeamActivity;
 import com.grace.zhihunews.ui.adapter.CommentsAdapater;
 import com.grace.zhihunews.ui.adapter.TopStoriesAdapter;
 import com.grace.zhihunews.ui.base.BaseFragment;
@@ -62,6 +63,9 @@ public class WorldFragment extends BaseFragment implements WorldContact.IWorldVi
     RecyclerViewHeader rvHeader;
     @BindView(R.id.world_date)
     Button world_date;
+    @BindView(R.id.world_team)
+    Button worldTeam;
+
 
     private Unbinder unbinder;
     private List<Comment> comments;
@@ -214,6 +218,11 @@ public class WorldFragment extends BaseFragment implements WorldContact.IWorldVi
                         break;
                 }
                 return true;
+        worldTeam.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), TeamActivity.class);
+                startActivity(intent);
             }
         });
 
