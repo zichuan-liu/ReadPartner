@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\raw\\a.txt",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\raw\\a.txt"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\raw\\today.txt",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\raw\\today.txt"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\raw\\day.txt",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\raw\\day.txt"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\raw\\calendar.txt",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\raw\\calendar.txt"
+    }
+]
