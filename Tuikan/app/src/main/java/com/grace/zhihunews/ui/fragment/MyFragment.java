@@ -48,6 +48,8 @@ public class MyFragment extends BaseFragment {
     TextView rv_cake_word;
     @BindView(R.id.toolbar)
     Toolbar toolbar;
+    @BindView(R.id.cake)
+    ImageView cake;
 
     private Unbinder unbinder;
     private Context mContext;
@@ -109,6 +111,18 @@ public class MyFragment extends BaseFragment {
                 }
             }
         });
+        cake.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ObjectAnimator.ofFloat(cake, "rotation", 0F, 720F).setDuration(800).start();//设置图片旋转效果为360度旋转
+                ObjectAnimator.ofFloat(cake,"alpha",0F,1F).setDuration(800).start();//设置图片透明效果为1像素
+                ObjectAnimator.ofFloat(cake,"translationY",0F,-ScreenUtils.getScreenHeight(mContext)/3).setDuration(1000).start();;//设置Y轴移动200像素
+                ObjectAnimator.ofFloat(cake,"translationX",0F,-ScreenUtils.getScreenWidth(mContext)/3).setDuration(1000).start();;//设置Y轴移动200像素
+
+                ObjectAnimator.ofFloat(cake,"translationY",-ScreenUtils.getScreenHeight(mContext)/3,0F).setDuration(1000).start();;//设置Y轴移动200像素
+                ObjectAnimator.ofFloat(cake,"translationX",-ScreenUtils.getScreenWidth(mContext)/3,0F).setDuration(1000).start();;//设置Y轴移动200像素
+            }
+        });
     }
 
     private void clickIconListen() {
@@ -160,6 +174,7 @@ public class MyFragment extends BaseFragment {
             public void onClick(View view) {
                 ShopDialog shopDialog = new ShopDialog(mContext);
                 shopDialog.isSingle(true);
+                shopDialog.setPositive("确 定");
                 shopDialog.setOnClickBottomListener(
                         new OnClickBottomListener() {
                             @Override
@@ -173,7 +188,7 @@ public class MyFragment extends BaseFragment {
                         }
 
                 ).show();
-                shopDialog.getWindow().setLayout((int)(ScreenUtils.getScreenWidth(mContext)*0.9),LinearLayout.LayoutParams.WRAP_CONTENT);
+                shopDialog.getWindow().setLayout(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
 
             }
         });

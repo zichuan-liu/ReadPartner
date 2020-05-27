@@ -20,6 +20,10 @@
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-mdpi\\friend.png"
     },
     {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\shop_img.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-mdpi\\shop_img.png"
+    },
+    {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi\\ic_navigation.png",
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-mdpi\\ic_navigation.png"
     },

@@ -49,7 +49,8 @@ public class CalendarFragment extends Fragment {
  //private RelativeLayout rlBtnSign;
  private ImageView signBack;
  private boolean isSign;
-    private TextView btn_sign;
+ private TextView btn_sign;
+
  public static CalendarFragment newInstance(){
   Bundle arguments = new Bundle();
   CalendarFragment tabContentFragment = new CalendarFragment();

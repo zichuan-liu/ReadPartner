@@ -1,5 +1,6 @@
 package com.grace.zhihunews.ui.fragment;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -7,6 +8,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
+import android.widget.GridLayout;
+import android.widget.Toast;
 
 import com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader;
 import com.grace.zhihunews.App;
@@ -46,12 +50,23 @@ public class DiscoverFragment extends BaseFragment implements DiscoverContact.ID
     CirclePageIndicator mIndicator;
     @BindView(R.id.rv_header)
     RecyclerViewHeader rvHeader;
+    @BindView(R.id.discover_free)
+    Button discover_free;
 
+    @BindView(R.id.discover_rank)
+    Button discover_rank;
+    @BindView(R.id.discover_vip)
+    Button discover_vip;
+    @BindView(R.id.discover_hear)
+    Button discover_hear;
+    @BindView(R.id.discover_menu)
+    GridLayout discover_menu;
 
     private Unbinder unbinder;
     private List<RecBook> recBooks;
     private RecBooksAdapter recBooksAdapter;
     private DiscoverContact.IDiscoverPresenter iDiscoverPresenter;
+    private Context mContext;
 
 
     @Override
@@ -62,6 +77,7 @@ public class DiscoverFragment extends BaseFragment implements DiscoverContact.ID
     @Override
     protected void initVariables() {
         recBooks = new ArrayList<>();
+        mContext = getActivity();
         recBooksAdapter = new RecBooksAdapter(getActivity(), recBooks);
         iDiscoverPresenter = new DiscoverPresenterCompl((App) getActivity().getApplicationContext(), this);
     }
@@ -108,6 +124,35 @@ public class DiscoverFragment extends BaseFragment implements DiscoverContact.ID
             (new Handler()).postDelayed(() -> mSwipeRefreshLayout.setRefreshing(false), 1200);
         });
 
+        discoverMenuClickListener();
+
+    }
+
+    private void discoverMenuClickListener() {
+        discover_free.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(mContext, "暂未开启编辑功能", Toast.LENGTH_SHORT).show();
+            }
+        });
+        discover_rank.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(mContext, "这个也没开启噢", Toast.LENGTH_SHORT).show();
+            }
+        });
+        discover_vip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(mContext, "没想到吧这个也没做", Toast.LENGTH_SHORT).show();
+            }
+        });
+        discover_hear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(mContext, "无可奉告", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override

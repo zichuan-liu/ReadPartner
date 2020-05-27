@@ -1,5 +1,6 @@
 package com.grace.zhihunews.ui.fragment;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,6 +12,7 @@ import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -22,6 +24,7 @@ import com.grace.zhihunews.contract.WorldContact;
 import com.grace.zhihunews.network.entity.Comment;
 import com.grace.zhihunews.network.entity.SocialComments;
 import com.grace.zhihunews.network.entity.TopStory;
+import com.grace.zhihunews.ui.activity.SearchActivity;
 import com.grace.zhihunews.ui.adapter.CommentsAdapater;
 import com.grace.zhihunews.ui.adapter.TopStoriesAdapter;
 import com.grace.zhihunews.ui.base.BaseFragment;
@@ -200,6 +203,17 @@ public class WorldFragment extends BaseFragment implements WorldContact.IWorldVi
                         .beginTransaction()
                         .replace(R.id.frame_layout, new CalendarFragment())
                         .commit();
+            }
+        });
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.action_search:
+                        startActivity(new Intent(getActivity(), SearchActivity.class));
+                        break;
+                }
+                return true;
             }
         });
 
