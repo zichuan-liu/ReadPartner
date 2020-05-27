@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 
 import com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader;
 import com.grace.zhihunews.App;
@@ -17,6 +18,7 @@ import com.grace.zhihunews.contract.WorldContact;
 import com.grace.zhihunews.network.entity.Comment;
 import com.grace.zhihunews.network.entity.SocialComments;
 import com.grace.zhihunews.network.entity.TopStory;
+import com.grace.zhihunews.ui.activity.TeamActivity;
 import com.grace.zhihunews.ui.adapter.CommentsAdapater;
 import com.grace.zhihunews.ui.adapter.TopStoriesAdapter;
 import com.grace.zhihunews.ui.base.BaseFragment;
@@ -47,6 +49,8 @@ public class WorldFragment extends BaseFragment implements WorldContact.IWorldVi
     CirclePageIndicator mIndicator;
     @BindView(R.id.rv_header)
     RecyclerViewHeader rvHeader;
+    @BindView(R.id.world_team)
+    Button worldTeam;
 
 
     private Unbinder unbinder;
@@ -107,6 +111,14 @@ public class WorldFragment extends BaseFragment implements WorldContact.IWorldVi
             iWorldPresenter.loadComments();
 
             (new Handler()).postDelayed(() -> mSwipeRefreshLayout.setRefreshing(false), 1200);
+        });
+
+        worldTeam.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), TeamActivity.class);
+                startActivity(intent);
+            }
         });
 
     }

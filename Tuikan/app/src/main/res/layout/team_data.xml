@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/team_data"
+    android:layout_width="match_parent"
+    android:layout_height="240dp"
+    android:background="@color/item_light_green">
+
+    <TextView
+        android:id="@+id/team_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:paddingTop="48dp"
+        android:includeFontPadding="false"
+        android:text="地瓜干一号"
+        android:textColor="@color/black"
+        android:textSize="@dimen/font_size_xlarge"
+        android:layout_marginBottom="@dimen/spacing_min"
+        />
+
+    <ImageView
+        android:id="@+id/team_pic"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_above="@+id/team_id"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-48dp"
+        android:src="@mipmap/ic_head"/>
+
+    <TextView
+        android:id="@+id/team_reading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/team_id"
+        android:layout_centerInParent="true"
+        android:includeFontPadding="false"
+        android:text="正在阅读《万历十五年》"
+        android:textColor="@color/md_grey_500"
+        android:textSize="@dimen/font_size_middle"
+        android:layout_marginBottom="@dimen/spacing_min"
+        />
+
+    <TextView
+        android:id="@+id/team_hoping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/team_reading"
+        android:layout_centerInParent="true"
+        android:includeFontPadding="false"
+        android:text="期待队友时间："
+        android:textColor="@color/md_grey_500"
+        android:textSize="@dimen/font_size_middle" />
+
+    <android.support.v7.widget.AppCompatSpinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:theme="@style/itemSpinnerStyle"
+        android:layout_marginTop="-5dp"
+        android:layout_marginStart="-10dp"
+        android:layout_alignTop="@id/team_hoping"
+        android:layout_toEndOf="@id/team_hoping"
+        android:entries="@array/hope_data"/>
+
+</RelativeLayout>
+
+

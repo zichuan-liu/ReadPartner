@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="hope_data">
+        <item>3天</item>
+        <item>4天</item>
+        <item>5天</item>
+        <item>6天</item>
+        <item>7天</item>
+        <item>8天</item>
+        <item>9天</item>
+        <item>10天</item>
+    </string-array>
+</resources>
