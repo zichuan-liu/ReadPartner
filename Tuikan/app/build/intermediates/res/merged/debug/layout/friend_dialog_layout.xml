@@ -172,7 +172,7 @@
             android:id="@+id/book_img3"
             android:layout_width="100dp"
             android:layout_height="104dp"
-            android:background="@mipmap/share"
+            android:background="@mipmap/ic_share"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_centerVertical="true"

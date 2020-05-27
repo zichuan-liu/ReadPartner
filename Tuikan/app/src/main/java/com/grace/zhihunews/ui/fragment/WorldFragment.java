@@ -218,6 +218,7 @@ public class WorldFragment extends BaseFragment implements WorldContact.IWorldVi
                         break;
                 }
                 return true;
+            }});
         worldTeam.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
