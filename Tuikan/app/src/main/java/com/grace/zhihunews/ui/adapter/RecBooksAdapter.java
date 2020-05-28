@@ -1,6 +1,7 @@
 package com.grace.zhihunews.ui.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +12,7 @@ import android.widget.TextView;
 import com.grace.zhihunews.R;
 import com.grace.zhihunews.event.GotoNewsDetailEvent;
 import com.grace.zhihunews.network.entity.RecBook;
-import com.grace.zhihunews.util.DateUtil;
+import com.grace.zhihunews.ui.activity.BookInfoActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -55,6 +56,8 @@ public class RecBooksAdapter extends RecyclerView.Adapter<RecBooksAdapter.ViewHo
         storyView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(mContext, BookInfoActivity.class);
+                mContext.startActivity(intent);
                 EventBus.getDefault().post(new GotoNewsDetailEvent(recBooks.get(viewHolder.getLayoutPosition()).getId()));
             }
         });

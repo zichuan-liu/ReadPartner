@@ -32,6 +32,8 @@
         <activity
             android:name=".ui.activity.RegisterActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ui.activity.BookInfoActivity"
+                  android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".ui.activity.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar"/>

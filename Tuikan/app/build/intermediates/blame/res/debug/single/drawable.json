@@ -12,12 +12,16 @@
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\go_back_selector.xml"
     },
     {
-        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\return2.png",
-        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\return2.png"
-    },
-    {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\light_80.png",
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\light_80.png"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon_work_like.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\icon_work_like.png"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\return2.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\return2.png"
     },
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_player_close_white.png",
@@ -140,6 +144,10 @@
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\v2_piwgjc.jpg"
     },
     {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon_comment_like.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\icon_comment_like.png"
+    },
+    {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bottom_line.xml",
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\bottom_line.xml"
     },
@@ -150,6 +158,10 @@
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\light_50.png",
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\light_50.png"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\comment_dialog_et_selector.xml",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\comment_dialog_et_selector.xml"
     },
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\return1.png",
@@ -216,6 +228,10 @@
         "source": "C:\\Users\\77526\\.android\\build-cache\\df99e35df17221fdf3b3f41b58c6c3108acfc00f\\output\\res\\drawable\\abc_spinner_textfield_background_material.xml"
     },
     {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\user_logo.jpg",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\user_logo.jpg"
+    },
+    {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\i8live_signin.png",
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\i8live_signin.png"
     },
@@ -240,6 +256,14 @@
         "source": "C:\\Users\\77526\\.android\\build-cache\\df99e35df17221fdf3b3f41b58c6c3108acfc00f\\output\\res\\drawable\\abc_item_background_holo_dark.xml"
     },
     {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon_collect.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\icon_collect.png"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\icon_focus.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\icon_focus.png"
+    },
+    {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\light_40.png",
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\light_40.png"
     },
@@ -258,6 +282,10 @@
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_indicator_material.xml",
         "source": "C:\\Users\\77526\\.android\\build-cache\\df99e35df17221fdf3b3f41b58c6c3108acfc00f\\output\\res\\drawable\\abc_ratingbar_indicator_material.xml"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\comment_bt_selector.xml",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\comment_bt_selector.xml"
     },
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_search_default.xml",
