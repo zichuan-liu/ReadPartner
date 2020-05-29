@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri May 29 16:06:43 CST 2020
+#Fri May 29 16:24:30 CST 2020
 20.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-release.ap_
 143.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-release.ap_
 493.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-release.ap_
