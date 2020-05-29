@@ -1,0 +1,34 @@
+[
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\menu\\menu_news_detail.xml",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\menu\\menu_news_detail.xml"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\menu\\menu_main.xml",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\menu\\menu_main.xml"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\menu\\menu_photo.xml",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\menu\\menu_photo.xml"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\menu\\menu_book_info.xml",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\menu\\menu_book_info.xml"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\menu\\menu_friend.xml",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\menu\\menu_friend.xml"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\menu\\menu_discover.xml",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\menu\\menu_discover.xml"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\menu\\menu_my.xml",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\menu\\menu_my.xml"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\menu\\menu_world.xml",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\menu\\menu_world.xml"
+    }
+]

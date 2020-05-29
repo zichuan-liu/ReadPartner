@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/srl_discover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_recommend_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+            <com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader
+                android:id="@+id/rv_header"
+                android:layout_width="match_parent"
+                android:layout_height="310dp"
+                android:layout_gravity="center_horizontal|top">
+
+                <com.zanlabs.widget.infiniteviewpager.InfiniteViewPager
+                    android:id="@+id/view_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="210dp"
+                    />
+                <com.zanlabs.widget.infiniteviewpager.indicator.CirclePageIndicator
+                    android:id="@+id/indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/view_pager"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginBottom="@dimen/spacing_tiny"
+                    android:layout_marginRight="@dimen/spacing_tiny"
+                    app:strokeWidth="0dp"
+                    app:fillColor="@color/colorPrimary"
+                    app:pageColor="@color/gray_light"
+                    />
+
+                <include layout="@layout/discover_menu"/>
+
+            </com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader>
+
+        </RelativeLayout>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#00000000">
+    </android.support.v7.widget.Toolbar>
+</FrameLayout>

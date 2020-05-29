@@ -12,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.grace.zhihunews.R;
-import com.grace.zhihunews.event.GotoBooksDetailEvent;
 import com.grace.zhihunews.network.entity.Book;
 import com.grace.zhihunews.ui.activity.BookActivity;
 import com.squareup.picasso.Picasso;
@@ -21,7 +20,6 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import de.greenrobot.event.EventBus;
 
 /**
  * Created by Administrator on 2016/9/1.
@@ -75,7 +73,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder> 
                 bundle.putSerializable("book", books.get(viewHolder.getLayoutPosition()));
                 intent.putExtras(bundle);
                 mContext.startActivity(intent);
-                EventBus.getDefault().post(new GotoNewsDetailEvent(books.get(viewHolder.getLayoutPosition()).getId()));
+//                EventBus.getDefault().post(new GotoNewsDetailEvent(books.get(viewHolder.getLayoutPosition()).getId()));
 
             }
         });
