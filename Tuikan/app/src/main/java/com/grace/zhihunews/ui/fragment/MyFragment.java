@@ -141,6 +141,9 @@ public class MyFragment extends BaseFragment {
                             public void onNegtiveClick() {
                                 taskDialog.dismiss();
                             }
+
+                            @Override
+                            public void onPathClick() { }
                         }
 
                 ).show();
@@ -161,6 +164,11 @@ public class MyFragment extends BaseFragment {
                             @Override
                             public void onNegtiveClick() {
                                 friendDialog.dismiss();
+                            }
+
+                            @Override
+                            public void onPathClick() {
+
                             }
                         }
 
@@ -184,6 +192,11 @@ public class MyFragment extends BaseFragment {
                             @Override
                             public void onNegtiveClick() {
                                 shopDialog.dismiss();
+                            }
+
+                            @Override
+                            public void onPathClick() {
+
                             }
                         }
 

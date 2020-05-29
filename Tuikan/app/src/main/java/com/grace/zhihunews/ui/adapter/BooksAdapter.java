@@ -2,6 +2,7 @@ package com.grace.zhihunews.ui.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -70,12 +71,10 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder> 
                  */
                 Log.i("lzc",  "嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻");
                 Intent intent = new Intent(mContext, BookActivity.class);
-//                Bundle bundle =new Bundle();
-//
-//                intent.putExtras(bundle);
+                Bundle bundle=new Bundle();
+                bundle.putSerializable("book", books.get(viewHolder.getLayoutPosition()));
+                intent.putExtras(bundle);
                 mContext.startActivity(intent);
-
-
                 EventBus.getDefault().post(new GotoNewsDetailEvent(books.get(viewHolder.getLayoutPosition()).getId()));
 
             }

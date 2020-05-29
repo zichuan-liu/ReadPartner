@@ -20,10 +20,13 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.Scroller;
+import android.widget.Toast;
 
 import com.grace.zhihunews.R;
+import com.grace.zhihunews.network.entity.Book;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
@@ -59,6 +62,9 @@ public class BookPageView extends View {
 
     //滑动用
     private Scroller mScroller;
+    private InputStream inputStream;
+    private String filePath;
+    private Book mBook;
 
     public BookPageView(Context context) {
         this(context, null);
@@ -81,7 +87,6 @@ public class BookPageView extends View {
 
         width = 600;
         height = 1000;
-
         mScroller = new Scroller(getContext(), new AccelerateDecelerateInterpolator());
 
         initPoint();
@@ -953,6 +958,7 @@ public class BookPageView extends View {
         MyPoint(float x, float y) {
             this.x = x;
             this.y = y;
+
         }
 
         @Override
@@ -1032,7 +1038,17 @@ public class BookPageView extends View {
 
             String[] result = new String[endPage - startPage + 1];
 
-            InputStream inputStream = mContext.getResources().openRawResource(R.raw.a);
+            if (filePath == "" || filePath==null){
+                Toast.makeText(getContext(), "未找到文件，打开初始书籍", Toast.LENGTH_LONG).show();
+                inputStream = mContext.getResources().openRawResource(R.raw.a);
+            }
+            else {
+                try {
+                    inputStream = new FileInputStream(filePath);
+                } catch (java.io.FileNotFoundException e) {
+                    Log.d("TestFile", "The File doesn't not exist.");
+                }
+            }
             BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
             int pageNum = 1;//当前页码，每次加载都是从txt第一行读取
 
@@ -1145,5 +1161,16 @@ public class BookPageView extends View {
     //设置字体大小，影响显示及内容数量
     public void setTextSize(int textSize) {
         this.textSize = textSize;
+    }
+
+    public void setBook(Book book) {
+        mBook = book;
+        filePath = mBook.getTxt_path();
+        Toast.makeText(getContext(), filePath, Toast.LENGTH_LONG).show();
+
+    }
+
+    public Book getBook() {
+        return mBook;
     }
 }

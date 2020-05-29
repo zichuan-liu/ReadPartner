@@ -9,4 +9,6 @@ public interface OnClickBottomListener{
          * 点击取消按钮事件
          */
         public void onNegtiveClick();
-    }
+
+        public void onPathClick();
+}

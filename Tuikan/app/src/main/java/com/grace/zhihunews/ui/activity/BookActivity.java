@@ -1,9 +1,12 @@
 package com.grace.zhihunews.ui.activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.grace.zhihunews.R;
+import com.grace.zhihunews.network.entity.Book;
+import com.grace.zhihunews.ui.view.BookPageContainer;
 
 /**
  * author : 刘子川
@@ -13,9 +16,17 @@ import com.grace.zhihunews.R;
  */
 public class BookActivity extends Activity {
 
+    BookPageContainer book_page_container;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_read);
+
+        book_page_container = (BookPageContainer) findViewById(R.id.book_page_container);
+
+        Intent intent=getIntent();
+        Book book = (Book) intent.getSerializableExtra("book");
+        book_page_container.setFilePath(book);
     }
 }

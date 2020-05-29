@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.grace.zhihunews.R;
+import com.grace.zhihunews.network.entity.Book;
 
 public class BookPageContainer extends ViewGroup {//继承ViewGroup,代码布局比xml布局效率更高
 
@@ -20,6 +21,7 @@ public class BookPageContainer extends ViewGroup {//继承ViewGroup,代码布局
     private ViewGroup bottomToolVg;
     private TextView pageNumTv;
 
+    private Book mBook;
     private int width, height;
 
     //工具栏显示状态
@@ -33,6 +35,7 @@ public class BookPageContainer extends ViewGroup {//继承ViewGroup,代码布局
         this.offset = offset;
         requestLayout();
     }
+
 
     public BookPageContainer(Context context) {
         this(context, null);
@@ -146,4 +149,12 @@ public class BookPageContainer extends ViewGroup {//继承ViewGroup,代码布局
         mAnimator.start();
     }
 
+    public void setFilePath(Book book) {
+        this.mBook = book;
+        bookPager.setBook(mBook);
+    }
+
+    public Book getBook() {
+        return mBook;
+    }
 }

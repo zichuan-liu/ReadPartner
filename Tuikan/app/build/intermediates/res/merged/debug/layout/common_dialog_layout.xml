@@ -109,6 +109,16 @@
                 android:textSize="14sp"/>
         </LinearLayout>
     </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="点我添加书籍路径"
+        android:id="@+id/bt_get_path"
+        android:textSize="@dimen/font_size_large_high"
+        android:background="@drawable/online_get_gift_btn"/>
+
+
     <View
         android:layout_width="match_parent"
         android:layout_height="10px"

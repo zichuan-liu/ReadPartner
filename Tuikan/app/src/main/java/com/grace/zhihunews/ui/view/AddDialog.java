@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.grace.zhihunews.R;
-import com.grace.zhihunews.ui.fragment.OnClickBottomListener;
+import com.grace.zhihunews.ui.fragment.OnClickAddListener;
 
 /**
  * author : 刘子川
@@ -37,7 +37,7 @@ public class AddDialog extends Dialog {
     /**
      * 确认和取消按钮
      */
-    private Button negtiveBn ,positiveBn;
+    private Button negtiveBn ,positiveBn, bt_get_path;
 
     /**
      * 按钮之间的分割线
@@ -82,8 +82,8 @@ public class AddDialog extends Dialog {
         positiveBn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if ( onClickBottomListener!= null) {
-                    onClickBottomListener.onPositiveClick();
+                if ( onClickAddListener!= null) {
+                    onClickAddListener.onPositiveClick();
                 }
             }
         });
@@ -91,8 +91,40 @@ public class AddDialog extends Dialog {
         negtiveBn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if ( onClickBottomListener!= null) {
-                    onClickBottomListener.onNegtiveClick();
+                if ( onClickAddListener!= null) {
+                    onClickAddListener.onNegtiveClick();
+                }
+            }
+        });
+        imageIv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if ( onClickAddListener!= null) {
+                    onClickAddListener.onImgClick();
+                }
+            }
+        });
+        bt_get_path.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if ( onClickAddListener!= null) {
+                    onClickAddListener.onPathClick();
+                }
+            }
+        });
+        titleTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if ( onClickAddListener!= null) {
+                    onClickAddListener.onTitleClick();
+                }
+            }
+        });
+        messageTv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if ( onClickAddListener!= null) {
+                    onClickAddListener.onWriteClick();
                 }
             }
         });
@@ -102,13 +134,6 @@ public class AddDialog extends Dialog {
      * 初始化界面控件的显示数据
      */
     private void refreshView() {
-        //如果用户自定了title和message
-//        if (!TextUtils.isEmpty(title)) {
-//            titleTv.setText(title);
-//            titleTv.setVisibility(View.VISIBLE);
-//        }else {
-//            titleTv.setVisibility(View.GONE);
-//        }
         if (!TextUtils.isEmpty(message)) {
             messageTv.setText(message);
         }
@@ -124,12 +149,6 @@ public class AddDialog extends Dialog {
             negtiveBn.setText("取消");
         }
 
-//        if (imageResId!=-1){
-//            imageIv.setImageResource(imageResId);
-//            imageIv.setVisibility(View.VISIBLE);
-//        }else {
-//            imageIv.setVisibility(View.GONE);
-//        }
         /**
          * 只显示一个按钮的时候隐藏取消按钮，回掉只执行确定的事件
          */
@@ -154,6 +173,7 @@ public class AddDialog extends Dialog {
     private void initView() {
         negtiveBn = (Button) findViewById(R.id.negtive);
         positiveBn = (Button) findViewById(R.id.positive);
+        bt_get_path = (Button) findViewById(R.id.bt_get_path);
         titleTv = (TextView) findViewById(R.id.title);
         messageTv = (TextView) findViewById(R.id.message);
         imageIv = (ImageView) findViewById(R.id.image);
@@ -163,9 +183,9 @@ public class AddDialog extends Dialog {
     /**
      * 设置确定取消按钮的回调
      */
-    public OnClickBottomListener onClickBottomListener;
-    public AddDialog setOnClickBottomListener(OnClickBottomListener onClickBottomListener) {
-        this.onClickBottomListener = onClickBottomListener;
+    public OnClickAddListener onClickAddListener;
+    public AddDialog setOnClickAddListener(OnClickAddListener onClickAddListener) {
+        this.onClickAddListener = onClickAddListener;
         return this;
     }
 
@@ -197,6 +217,10 @@ public class AddDialog extends Dialog {
         return this ;
     }
 
+    public void setBt_get_path(String bt_get_path) {
+        this.bt_get_path.setText(bt_get_path);
+    }
+
     public String getNegtive() {
         return negtive;
     }
@@ -219,8 +243,4 @@ public class AddDialog extends Dialog {
         return this ;
     }
 
-//    public AddDialog setImageResId(int imageResId) {
-//        this.imageResId = imageResId;
-//        return this ;
-//    }
 }

@@ -234,7 +234,6 @@ public class BookInfoActivity extends Activity{
         });
     }
 
-
     private List<CommentDetailBean> generateTestData(){
         Gson gson = new Gson();
         commentBean = gson.fromJson(testJson, CommentBean.class);
