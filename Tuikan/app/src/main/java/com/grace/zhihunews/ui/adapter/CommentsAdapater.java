@@ -9,8 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.grace.zhihunews.R;
-import com.grace.zhihunews.event.GotoNewsDetailEvent;
-import com.grace.zhihunews.network.entity.Book;
+import com.grace.zhihunews.event.GotoBooksDetailEvent;
 import com.grace.zhihunews.network.entity.Comment;
 import com.squareup.picasso.Picasso;
 
@@ -58,7 +57,7 @@ public class CommentsAdapater extends RecyclerView.Adapter<CommentsAdapater.View
         storyView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EventBus.getDefault().post(new GotoNewsDetailEvent(comments.get(viewHolder.getLayoutPosition()).getId()));
+                EventBus.getDefault().post(new GotoBooksDetailEvent(comments.get(viewHolder.getLayoutPosition()).getId()));
             }
         });
         return viewHolder;

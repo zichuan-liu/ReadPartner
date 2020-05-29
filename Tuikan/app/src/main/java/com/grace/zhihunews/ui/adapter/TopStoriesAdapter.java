@@ -5,10 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.grace.zhihunews.R;
-import com.grace.zhihunews.event.GotoNewsDetailEvent;
+import com.grace.zhihunews.event.GotoBooksDetailEvent;
 import com.grace.zhihunews.network.entity.TopStory;
 import com.squareup.picasso.Picasso;
 import com.zanlabs.widget.infiniteviewpager.InfinitePagerAdapter;
@@ -56,7 +55,7 @@ public class TopStoriesAdapter extends InfinitePagerAdapter {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EventBus.getDefault().post(new GotoNewsDetailEvent(topStory.getId()));
+                EventBus.getDefault().post(new GotoBooksDetailEvent(topStory.getId()));
             }
         });
         return view;

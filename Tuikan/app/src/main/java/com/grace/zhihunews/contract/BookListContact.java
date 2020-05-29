@@ -11,16 +11,10 @@ public interface BookListContact {
     interface IBookListView extends BaseView {
         void showBook(LoadBooks loadBooks);
 
-        //TODO 链接到阅读器
-//        void gotoNewsBookActivity(int id);
-
     }
 
     interface IBookListPresenter {
         void loadBook();
-
         void refreshData();
-
-
     }
 }

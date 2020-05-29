@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.activity.NewsDetailActivity"
+            android:name=".ui.activity.BooksDetailActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".ui.activity.RegisterActivity"

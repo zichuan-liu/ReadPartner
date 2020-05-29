@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context="com.grace.zhihunews.ui.activity.BookInfoActivity">
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_normal"
@@ -65,16 +66,31 @@
                     android:textColor="@color/gray_dark"
                     android:singleLine="false" />
 
-                <ImageView
+                <android.support.v7.widget.AppCompatRatingBar
                     android:id="@+id/book_score"
+                    android:layout_below="@id/book_title"
+                    android:layout_toEndOf="@id/book_img"
+                    style="?android:attr/ratingBarStyleSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/book_title"
+                    android:layout_marginStart="@dimen/spacing_high"
                     android:layout_marginTop="8dp"
-                    android:paddingLeft="10dp"
-                    android:layout_toEndOf="@id/book_img"
-                    android:background="@mipmap/sorce"
-                    android:layout_marginStart="@dimen/spacing_small"/>
+                    android:progressBackgroundTint="@color/white"
+                    android:secondaryProgressTint="@color/white"
+                    android:progressTint="@color/md_yellow_500"
+                    android:numStars="5"
+                    android:rating="3.5"
+                    />
+
+                <TextView
+                    android:id="@+id/book_score_data"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/book_title"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/md_yellow_500"
+                    android:layout_toEndOf="@id/book_score"
+                    android:textSize="@dimen/font_size_middle" />
 
                 <TextView
                     android:id="@+id/book_writer"
@@ -95,8 +111,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/book_writer"
                     android:layout_marginTop="8dp"
-                    android:paddingLeft="10dp"
-                    android:text="10.6亿/字   50.3万/本"
+                    android:paddingStart="10dp"
                     android:textColor="@color/gray_light"
                     android:layout_toEndOf="@id/book_img"
                     android:layout_marginStart="@dimen/spacing_small"
@@ -108,9 +123,10 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/book_writer"
                     android:layout_alignParentEnd="true"
-                    android:layout_alignTop="@id/book_writer"
+                    android:layout_alignTop="@id/book_progress"
                     android:layout_marginStart="@dimen/spacing_small"
-                    android:textSize="@dimen/font_size_middle" />
+                    android:textSize="@dimen/font_size_middle"
+                    android:textColor="@color/gray_light"/>
 
             </RelativeLayout>
 
@@ -128,7 +144,6 @@
                     android:layout_weight="1"
                     android:textColor="@color/white"
                     android:layout_marginEnd="@dimen/spacing_small"
-
                     android:layout_marginStart="@dimen/spacing_small"
                     android:textSize="@dimen/font_size_large" />
 
@@ -147,32 +162,100 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="10px"
-                android:background="#E4E4E4"
+                android:layout_height="0.5dp"
+                android:background="@color/md_grey_300"
+                android:padding="5dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="5dp"/>
             <include layout="@layout/book_info_menu"/>
 
             <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="作品简介"
+                android:textColor="@color/item_green"
+                android:textStyle="bold"
+                android:layout_marginStart="@dimen/spacing_normal_high"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:textSize="@dimen/spacing_normal_high" />
+
+            <TextView
                 android:id="@+id/book_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="差评，傻逼书籍，真他妈的难学。差评，傻逼书籍，真他妈的难学。差评，傻逼书籍，真他妈的难学。差评，傻逼书籍，真他妈的难学。差评，傻逼书籍，真他妈的难学。"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:layout_marginStart="@dimen/spacing_small"
-                android:textSize="@dimen/font_size_middle" />
+                android:text="test"
+                android:layout_marginStart="@dimen/spacing_normal_high"
+                android:layout_marginEnd="@dimen/spacing_normal_high"
+                android:textSize="@dimen/font_size_middle"
+                android:maxLines="5"
+                android:ellipsize="end"
+                />
             <View
                 android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
-                android:layout_height="5px"
-                android:background="#E4E4E4" />
+                android:layout_height="0.5px"
+                android:padding="5dp"
+                android:background="@color/md_grey_300" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="原文节选"
+                android:textColor="@color/item_green"
+                android:textStyle="bold"
+                android:layout_marginStart="@dimen/spacing_normal_high"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:textSize="@dimen/spacing_normal_high" />
+
+            <TextView
+                android:id="@+id/book_paragraph"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_normal_high"
+                android:layout_marginEnd="@dimen/spacing_normal_high"
+                android:textSize="@dimen/font_size_middle"
+                android:maxLines="6"
+                android:ellipsize="end"
+                />
+            <View
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.5px"
+                android:padding="5dp"
+                android:background="@color/md_grey_300" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="相似书籍"
+                android:textColor="@color/item_green"
+                android:textStyle="bold"
+                android:layout_marginStart="@dimen/spacing_normal_high"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:textSize="@dimen/spacing_normal_high" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_similar_list"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                />
 
             <View
+                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
-                android:layout_height="5px"
-                android:background="#E4E4E4" />
+                android:layout_height="0.5px"
+                android:padding="5dp"
+                android:background="@color/md_grey_300" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="书籍讨论"
+                android:textColor="@color/item_green"
+                android:textStyle="bold"
+                android:layout_marginStart="@dimen/spacing_normal_high"
+                android:layout_marginTop="@dimen/spacing_normal"
+                android:textSize="@dimen/spacing_normal_high" />
 
 
             <include layout="@layout/book_comment"/>
@@ -202,6 +285,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/white"
+            android:paddingTop="5dp"
             android:text="下载"
             android:textColor="@color/gray_light"
             android:layout_weight="1"
@@ -213,6 +297,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/button_shape"
+            android:paddingTop="5dp"
             android:text="阅读"
             android:textColor="@color/white"
             android:layout_weight="1"
@@ -224,6 +309,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/white"
+            android:paddingTop="5dp"
             android:text="已在书架"
             android:layout_weight="1"
             android:drawableTop="@mipmap/icon_book"

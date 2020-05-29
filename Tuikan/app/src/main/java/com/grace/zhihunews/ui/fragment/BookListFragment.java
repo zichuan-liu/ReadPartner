@@ -31,6 +31,7 @@ import com.grace.zhihunews.R;
 import com.grace.zhihunews.contract.BookListContact;
 import com.grace.zhihunews.network.entity.Book;
 import com.grace.zhihunews.network.entity.LoadBooks;
+import com.grace.zhihunews.ui.activity.BooksDetailActivity;
 import com.grace.zhihunews.ui.activity.ExchangeActivity;
 import com.grace.zhihunews.ui.activity.SearchActivity;
 import com.grace.zhihunews.ui.adapter.BooksAdapter;
@@ -92,11 +93,11 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
         unbinder = ButterKnife.bind(this, view);
         mContext = getActivity();
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         toolbar.setTitle("");
         toolbar_edit.setText(R.string.MainActivity_title_edit);
         toolbar.inflateMenu(R.menu.menu_main);
 
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         rvReadList.setLayoutManager(linearLayoutManager);
         rvReadList.setAdapter(booksAdapter);
         rvReadList.addItemDecoration(new HorizontalDividerItemDecoration.Builder(getActivity())
@@ -257,6 +258,7 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
         mBooks.addAll(books);
         booksAdapter.notifyDataSetChanged();
     }
+
 
     @Override
     public void showLoadFailureMsg(String errorMsg) {

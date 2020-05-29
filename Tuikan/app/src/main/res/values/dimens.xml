@@ -25,6 +25,7 @@
     <dimen name="spacing_small">10dp</dimen>
     <dimen name="spacing_normal">14dp</dimen>
     <dimen name="spacing_normal_high">16dp</dimen>
+    <dimen name="spacing_high">18dp</dimen>
     <dimen name="spacing_large">24dp</dimen>
     <dimen name="spacing_huge">40dp</dimen>
     <dimen name="fab_margin">16dp</dimen>

@@ -54,7 +54,7 @@ public class FriendAdapater extends RecyclerView.Adapter<FriendAdapater.ViewHold
         storyView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                EventBus.getDefault().post(new GotoNewsDetailEvent(friends.get(viewHolder.getLayoutPosition()).getId()));
+//                EventBus.getDefault().post(new GotoBooksDetailEvent(friends.get(viewHolder.getLayoutPosition()).getId()));
             }
         });
         return viewHolder;
