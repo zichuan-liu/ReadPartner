@@ -26,7 +26,6 @@ import com.grace.zhihunews.R;
 import com.grace.zhihunews.network.entity.Book;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
@@ -1038,17 +1037,25 @@ public class BookPageView extends View {
 
             String[] result = new String[endPage - startPage + 1];
 
-            if (filePath == "" || filePath==null){
-                Toast.makeText(getContext(), "未找到文件，打开初始书籍", Toast.LENGTH_LONG).show();
-                inputStream = mContext.getResources().openRawResource(R.raw.a);
-            }
-            else {
-                try {
-                    inputStream = new FileInputStream(filePath);
-                } catch (java.io.FileNotFoundException e) {
-                    Log.d("TestFile", "The File doesn't not exist.");
-                }
-            }
+            /**
+             * 这里貌似得判断filepath打开的文件有没有字
+             * 而且必须是txt文件，每一行是一段
+             * 如果inputStream读出来的没有文字，(String content)会报空。
+             */
+            inputStream = mContext.getResources().openRawResource(R.raw.a);
+
+//            if (filePath == "" || filePath==null){
+//                Toast.makeText(getContext(), "未找到文件，打开初始书籍", Toast.LENGTH_LONG).show();
+//                inputStream = mContext.getResources().openRawResource(R.raw.a);
+//            }
+//            else {
+//                try {
+//                    inputStream = new FileInputStream(filePath);
+//                } catch (java.io.FileNotFoundException e) {
+//                    Log.d("TestFile", "The File doesn't not exist.");
+//                }
+//            }
+
             BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
             int pageNum = 1;//当前页码，每次加载都是从txt第一行读取
 
