@@ -3,7 +3,7 @@ package com.grace.zhihunews.network.service;
 import com.grace.zhihunews.network.entity.LoadApplies;
 import com.grace.zhihunews.network.entity.LoadBooks;
 import com.grace.zhihunews.network.entity.LoadFriends;
-import com.grace.zhihunews.network.entity.NewsDetail;
+import com.grace.zhihunews.network.entity.BooksDetail;
 import com.grace.zhihunews.network.entity.RecommondBooks;
 import com.grace.zhihunews.network.entity.SocialComments;
 
@@ -32,7 +32,6 @@ public interface ZhifuService {
     @GET("api/getLoadApplies")
     Call<LoadApplies> getLoadApplies();
 
-    //http://news-at.zhihu.com/api/4/news/8725424
-    @GET("api/4/news/{id}")
-    Call<NewsDetail> getNewsDetail(@Path("id") int id);
+    @GET("api/getBooksDetail/{id}")
+    Call<BooksDetail> getBooksDetail(@Path("id") int id);
 }

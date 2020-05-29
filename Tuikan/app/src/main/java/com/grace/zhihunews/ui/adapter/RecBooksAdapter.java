@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.grace.zhihunews.R;
-import com.grace.zhihunews.event.GotoNewsDetailEvent;
+import com.grace.zhihunews.event.GotoBooksDetailEvent;
 import com.grace.zhihunews.network.entity.RecBook;
 import com.grace.zhihunews.ui.activity.BookInfoActivity;
 import com.squareup.picasso.Picasso;
@@ -56,9 +56,7 @@ public class RecBooksAdapter extends RecyclerView.Adapter<RecBooksAdapter.ViewHo
         storyView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext, BookInfoActivity.class);
-                mContext.startActivity(intent);
-                EventBus.getDefault().post(new GotoNewsDetailEvent(recBooks.get(viewHolder.getLayoutPosition()).getId()));
+                EventBus.getDefault().post(new GotoBooksDetailEvent(recBooks.get(viewHolder.getLayoutPosition()).getId()));
             }
         });
         return viewHolder;

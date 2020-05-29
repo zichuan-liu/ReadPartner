@@ -1,12 +1,16 @@
 package com.grace.zhihunews.ui.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.BottomSheetDialog;
+import android.support.v7.widget.AppCompatRatingBar;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -18,18 +22,33 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ExpandableListView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
+import com.grace.zhihunews.App;
+import com.grace.zhihunews.PresenterCompl.BooksDetailPresenterCompl;
 import com.grace.zhihunews.R;
+import com.grace.zhihunews.contract.BooksDetailContract;
+import com.grace.zhihunews.network.entity.BooksDetail;
 import com.grace.zhihunews.network.entity.CommentBean;
 import com.grace.zhihunews.network.entity.CommentDetailBean;
 import com.grace.zhihunews.network.entity.ReplyDetailBean;
+import com.grace.zhihunews.network.entity.SimilarBook;
 import com.grace.zhihunews.ui.adapter.CommentExpandAdapter;
+import com.grace.zhihunews.ui.adapter.SimilarBookAdapter;
+import com.grace.zhihunews.ui.base.BaseActivity;
 import com.grace.zhihunews.ui.view.CommentExpandableListView;
+import com.squareup.picasso.Picasso;
+import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * author : 刘子川
@@ -37,12 +56,59 @@ import java.util.List;
  * date   : 2020/5/60:30
  * version: 1.0
  */
-public class BookInfoActivity extends Activity{
+public class BookInfoActivity extends BaseActivity implements BooksDetailContract.IBooksDetailView {
+
+    public static final String KEY_STORY_ID = "story_id";
+
+
+    @BindView(R.id.book_img)
+    ImageView book_img;
+    @BindView(R.id.book_title)
+    TextView book_title;
+    @BindView(R.id.book_score)
+    AppCompatRatingBar book_score;
+    @BindView(R.id.book_score_data)
+    TextView book_score_data;
+    @BindView(R.id.book_writer)
+    TextView book_writer;
+    @BindView(R.id.book_progress)
+    TextView book_progress;
+    @BindView(R.id.book_time)
+    TextView book_time;
+    @BindView(R.id.book_info)
+    TextView book_info;
+    @BindView(R.id.book_paragraph)
+    TextView book_paragraph;
+
+    @BindView(R.id.rv_similar_list)
+    RecyclerView rv_similar_list;
+
+
+    @BindView(R.id.toolbar_normal)
     Toolbar toolbar;
-    Button book_onload, book_read, book_download, book_histor, book_light;
+    @BindView(R.id.book_onload)
+    Button book_onload;
+    @BindView(R.id.book_download)
+    Button book_download;
+    @BindView(R.id.book_read)
+    Button book_read;
+    @BindView(R.id.book_histor)
+    Button book_histor;
+    @BindView(R.id.book_light)
+    Button book_light;
+
+    @BindView(R.id.detail_page_lv_comment)
+    CommentExpandableListView expandableListView;
+    @BindView(R.id.detail_page_do_comment)
+    TextView bt_comment;
+
+    private int id;
+    private BooksDetailContract.IBooksDetailPresenter mBooksDetailPresenter;
+    private BooksDetail mBooksDetail;
+    private List<SimilarBook> similarBooks;
+    private SimilarBookAdapter similarBookAdapter;
+
     TextView detail_page_do_comment;
-    private TextView bt_comment;
-    private CommentExpandableListView expandableListView;
     private CommentExpandAdapter adapter;
     private CommentBean commentBean;
     private List<CommentDetailBean> commentsList;
@@ -103,28 +169,55 @@ public class BookInfoActivity extends Activity{
             "}";
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_book_info);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        init();
+    protected void initVariables() {
+        mBooksDetailPresenter = new BooksDetailPresenterCompl((App)getApplication(), this);
+        similarBooks = new ArrayList<>();
+        similarBookAdapter = new SimilarBookAdapter(BookInfoActivity.this, similarBooks);
+        id = getIntent().getIntExtra(KEY_STORY_ID, 8740001);
     }
 
-    private void init() {
-        toolbar = (Toolbar) findViewById(R.id.toolbar_normal);
-        book_onload = (Button) findViewById(R.id.book_onload);
-        book_download = (Button) findViewById(R.id.book_download);
-        book_read = (Button) findViewById(R.id.book_read);
-        book_histor = (Button) findViewById(R.id.book_histor);
-        book_light = (Button) findViewById(R.id.book_light);
+    @Override
+    protected void initViews(Bundle savedInstanceState) {
+        setContentView(R.layout.activity_book_info);
+        ButterKnife.bind(this);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         toolbar.inflateMenu(R.menu.menu_book_info);
-        expandableListView = (CommentExpandableListView) findViewById(R.id.detail_page_lv_comment);
-        bt_comment = (TextView) findViewById(R.id.detail_page_do_comment);
+
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+        linearLayoutManager.setOrientation(LinearLayout.HORIZONTAL);
+        rv_similar_list.setLayoutManager(linearLayoutManager);
+        rv_similar_list.setAdapter(similarBookAdapter);
+
         commentsList = generateTestData();
         initExpandableListView(commentsList);
-
         onClick();
     }
+
+    @Override
+    protected void loadData() {
+        mBooksDetailPresenter.loadBooksDetail(id);
+    }
+
+    @Override
+    public void showBooksDetail(BooksDetail booksDetail) {
+        mBooksDetail=booksDetail;
+        book_title.setText(mBooksDetail.getBook_title());
+        book_score.setRating(Float.valueOf(mBooksDetail.getBook_score()));
+        book_score_data.setText(mBooksDetail.getBook_score());
+        book_writer.setText(mBooksDetail.getBook_writer());
+        book_progress.setText(mBooksDetail.getBook_progress());
+        book_time.setText(mBooksDetail.getBook_time());
+        book_time.setText(mBooksDetail.getBook_time());
+        book_info.setText(mBooksDetail.getBook_info());
+        book_paragraph.setText(mBooksDetail.getBook_paragraph());
+        Picasso.with(this).load(mBooksDetail.getBook_img()).into(book_img);
+
+        similarBooks.clear();
+        List<SimilarBook> books = booksDetail.getSimilarBooks();
+        similarBooks.addAll(books);
+        similarBookAdapter.notifyDataSetChanged();
+    }
+
 
     /**
      * 初始化评论和回复列表
@@ -221,8 +314,8 @@ public class BookInfoActivity extends Activity{
         book_read.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplication(), BookActivity.class);
-                getApplication().startActivity(intent);
+                Intent intent = new Intent(BookInfoActivity.this, BookActivity.class);
+                startActivity(intent);
 
             }
         });
@@ -354,4 +447,8 @@ public class BookInfoActivity extends Activity{
         dialog.show();
     }
 
+    @Override
+    public void showLoadFailureMsg(String errorMsg) {
+
+    }
 }

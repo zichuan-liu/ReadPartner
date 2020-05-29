@@ -9,8 +9,8 @@ import android.content.Context;
 /**
  * 数据交付层接口
  */
-public interface INewsDetailProvider {
+public interface IBooksDetailProvider {
 
-    void getNewsDetail(int id);
+    void getBooksDetail(int id);
 
 }

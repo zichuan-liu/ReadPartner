@@ -1,6 +1,7 @@
 package com.grace.zhihunews.ui.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -20,6 +21,8 @@ import com.grace.zhihunews.contract.DiscoverContact;
 import com.grace.zhihunews.network.entity.RecBook;
 import com.grace.zhihunews.network.entity.RecommondBooks;
 import com.grace.zhihunews.network.entity.TopStory;
+import com.grace.zhihunews.ui.activity.BookInfoActivity;
+import com.grace.zhihunews.ui.activity.BooksDetailActivity;
 import com.grace.zhihunews.ui.adapter.RecBooksAdapter;
 import com.grace.zhihunews.ui.adapter.TopStoriesAdapter;
 import com.grace.zhihunews.ui.base.BaseFragment;
@@ -169,8 +172,8 @@ public class DiscoverFragment extends BaseFragment implements DiscoverContact.ID
 
 //    @Override
 //    public void gotoNewsDetailActivity(int id) {
-//        Intent intent = new Intent(getActivity(), NewsDetailActivity.class);
-//        intent.putExtra(NewsDetailActivity.KEY_STORY_ID, id);
+//        Intent intent = new Intent(getActivity(), BooksDetailActivity.class);
+//        intent.putExtra(BooksDetailActivity.KEY_STORY_ID, id);
 //        startActivity(intent);
 //        //overridePendingTransition(R.anim.hold, android.R.anim.fade_in);
 //    }
@@ -189,6 +192,13 @@ public class DiscoverFragment extends BaseFragment implements DiscoverContact.ID
         List<RecBook> newRecbooks = recommondBooks.getRecBooks();
         recBooks.addAll(newRecbooks);
         recBooksAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void gotoBooksDetailActivity(int id) {
+        Intent intent = new Intent(getActivity(), BookInfoActivity.class);
+        intent.putExtra(BooksDetailActivity.KEY_STORY_ID, id);
+        startActivity(intent);
     }
 
     @Override

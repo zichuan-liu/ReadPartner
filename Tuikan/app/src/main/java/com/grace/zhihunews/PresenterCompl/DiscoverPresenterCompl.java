@@ -3,6 +3,7 @@ package com.grace.zhihunews.PresenterCompl;
 import com.grace.zhihunews.App;
 import com.grace.zhihunews.contract.DiscoverContact;
 import com.grace.zhihunews.deliveryLayer.DiscoverProvider;
+import com.grace.zhihunews.event.GotoBooksDetailEvent;
 import com.grace.zhihunews.event.LoadFailureEvent;
 import com.grace.zhihunews.event.RecBooksLoadEvent;
 import com.grace.zhihunews.event.TopStoriesLoadedEvent;
@@ -51,8 +52,8 @@ public class DiscoverPresenterCompl implements DiscoverContact.IDiscoverPresente
         mIDiscoverView.showLoadFailureMsg(event.errorMsg);
     }
 
-//    public void onEvent(GotoNewsDetailEvent event) {
-//        mIDiscoverView.gotoNewsDetailActivity(event.id);
-//    }
+    public void onEvent(GotoBooksDetailEvent event) {
+        mIDiscoverView.gotoBooksDetailActivity(event.id);
+    }
 
 }

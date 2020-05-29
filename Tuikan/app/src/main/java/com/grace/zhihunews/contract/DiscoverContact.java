@@ -14,7 +14,7 @@ public interface DiscoverContact {
     interface IDiscoverView extends BaseView {
 
         void showReBooks(RecommondBooks recommondBooks);
-//        void gotoNewsDetailActivity(int id);
+        void gotoBooksDetailActivity(int id);
 
     }
 

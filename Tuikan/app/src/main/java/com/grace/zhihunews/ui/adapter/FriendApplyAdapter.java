@@ -62,7 +62,7 @@ public class FriendApplyAdapter extends RecyclerView.Adapter<FriendApplyAdapter.
         storyView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                EventBus.getDefault().post(new GotoNewsDetailEvent(friends.get(viewHolder.getLayoutPosition()).getId()));
+//                EventBus.getDefault().post(new GotoBooksDetailEvent(friends.get(viewHolder.getLayoutPosition()).getId()));
             }
         });
         return viewHolder;
