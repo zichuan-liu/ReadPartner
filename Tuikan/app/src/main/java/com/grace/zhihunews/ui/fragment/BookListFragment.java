@@ -203,7 +203,10 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
 
                                     @Override
                                     public void onPathClick() {
-
+                                        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+                                        intent.setType("*/*");//无类型限制
+                                        intent.addCategory(Intent.CATEGORY_OPENABLE);
+                                        startActivityForResult(intent, 1);
                                     }
                                 }
 
