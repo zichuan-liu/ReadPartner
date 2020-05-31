@@ -33,7 +33,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.grace.zhihunews.ui.activity.NewsDetailActivity"
+            android:name="com.grace.zhihunews.ui.activity.BooksDetailActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.grace.zhihunews.ui.activity.RegisterActivity"

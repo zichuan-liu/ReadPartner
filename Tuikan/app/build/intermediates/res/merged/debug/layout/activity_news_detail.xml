@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.grace.zhihunews.ui.activity.NewsDetailActivity">
+    tools:context="com.grace.zhihunews.ui.activity.BooksDetailActivity">
 
     <!--
     <android.support.design.widget.AppBarLayout
@@ -24,12 +24,5 @@
 
     <include layout="@layout/content_news_detail" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        android:src="@android:drawable/ic_menu_share" />
 
 </android.support.design.widget.CoordinatorLayout>

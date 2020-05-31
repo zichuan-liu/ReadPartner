@@ -659,6 +659,7 @@
     <dimen name="shifting_min_width_active">96dp</dimen>
     <dimen name="shifting_min_width_inactive">64dp</dimen>
     <dimen name="shifting_width_custom_padding">6dp</dimen>
+    <dimen name="spacing_high">18dp</dimen>
     <dimen name="spacing_huge">40dp</dimen>
     <dimen name="spacing_large">24dp</dimen>
     <dimen name="spacing_min">2dp</dimen>

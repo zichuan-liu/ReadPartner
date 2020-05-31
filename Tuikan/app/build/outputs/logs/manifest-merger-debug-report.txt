@@ -82,12 +82,12 @@ category#android.intent.category.LAUNCHER
 ADDED from D:\ReadPartner\Tuikan\app\src\main\AndroidManifest.xml:26:17-76
 	android:name
 		ADDED from D:\ReadPartner\Tuikan\app\src\main\AndroidManifest.xml:26:27-74
-activity#com.grace.zhihunews.ui.activity.NewsDetailActivity
+activity#com.grace.zhihunews.ui.activity.BooksDetailActivity
 ADDED from D:\ReadPartner\Tuikan\app\src\main\AndroidManifest.xml:29:9-31:58
 	android:theme
 		ADDED from D:\ReadPartner\Tuikan\app\src\main\AndroidManifest.xml:31:13-56
 	android:name
-		ADDED from D:\ReadPartner\Tuikan\app\src\main\AndroidManifest.xml:30:13-59
+		ADDED from D:\ReadPartner\Tuikan\app\src\main\AndroidManifest.xml:30:13-60
 activity#com.grace.zhihunews.ui.activity.RegisterActivity
 ADDED from D:\ReadPartner\Tuikan\app\src\main\AndroidManifest.xml:32:9-34:58
 	android:theme
