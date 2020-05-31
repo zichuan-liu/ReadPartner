@@ -1686,12 +1686,9 @@ int mipmap task 0x7f030048
 int mipmap timee 0x7f030049
 int mipmap v2_pis5of 0x7f03004a
 int mipmap v2_pjkevi 0x7f03004b
-int raw a 0x7f060000
-int raw b 0x7f060001
-int raw c 0x7f060002
-int raw calendar 0x7f060003
-int raw day 0x7f060004
-int raw today 0x7f060005
+int raw calendar 0x7f060000
+int raw day 0x7f060001
+int raw today 0x7f060002
 int string AboutFragment_desc_introduction 0x7f070014
 int string AboutFragment_label_check_update 0x7f070015
 int string AboutFragment_label_contact_me 0x7f070016

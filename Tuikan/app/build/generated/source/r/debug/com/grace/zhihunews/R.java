@@ -3873,12 +3873,9 @@ containing a value of this type.
         public static final int v2_pjkevi=0x7f03004b;
     }
     public static final class raw {
-        public static final int a=0x7f060000;
-        public static final int b=0x7f060001;
-        public static final int c=0x7f060002;
-        public static final int calendar=0x7f060003;
-        public static final int day=0x7f060004;
-        public static final int today=0x7f060005;
+        public static final int calendar=0x7f060000;
+        public static final int day=0x7f060001;
+        public static final int today=0x7f060002;
     }
     public static final class string {
         public static final int AboutFragment_desc_introduction=0x7f070014;
