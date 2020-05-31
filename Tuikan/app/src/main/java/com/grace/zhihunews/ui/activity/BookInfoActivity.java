@@ -1,6 +1,5 @@
 package com.grace.zhihunews.ui.activity;
 
-import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -311,9 +310,7 @@ public class BookInfoActivity extends BaseActivity implements BooksDetailContrac
         book_read.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(BookInfoActivity.this, BookActivity.class);
-                startActivity(intent);
-
+                Toast.makeText(getApplication(), "未获得版权", Toast.LENGTH_SHORT).show();
             }
         });
         bt_comment.setOnClickListener(new View.OnClickListener() {

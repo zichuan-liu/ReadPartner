@@ -3326,7 +3326,7 @@ containing a value of this type.
         public static final int book_introduce=0x7f0e0131;
         public static final int book_light=0x7f0e0083;
         public static final int book_onload=0x7f0e008a;
-        public static final int book_page_container=0x7f0e00a3;
+        public static final int book_pager=0x7f0e00a3;
         public static final int book_paragraph=0x7f0e0085;
         public static final int book_progress=0x7f0e0080;
         public static final int book_progress2=0x7f0e0114;

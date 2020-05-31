@@ -4,8 +4,8 @@
              android:layout_height="match_parent">
 
     <com.grace.zhihunews.ui.view.BookPageContainer
+        android:id="@+id/book_pager"
         android:layout_width="match_parent"
-        android:id="@+id/book_page_container"
         android:layout_height="match_parent" />
 
 </FrameLayout>

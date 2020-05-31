@@ -4,10 +4,9 @@ import android.content.Context;
 
 import com.grace.zhihunews.App;
 import com.grace.zhihunews.contract.BookListContact;
-import com.grace.zhihunews.deliveryLayer.IBookListProvider;
 import com.grace.zhihunews.deliveryLayer.BookListProvider;
+import com.grace.zhihunews.deliveryLayer.IBookListProvider;
 import com.grace.zhihunews.event.BooksLoadedEvent;
-import com.grace.zhihunews.event.GotoBooksDetailEvent;
 import com.grace.zhihunews.event.GotoBooksPagerEvent;
 import com.grace.zhihunews.event.LoadFailureEvent;
 

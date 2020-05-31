@@ -1,4 +1,4 @@
-#Sun May 31 17:16:52 CST 2020
+#Sun May 31 19:23:25 CST 2020
 base.0=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
 file.0=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex

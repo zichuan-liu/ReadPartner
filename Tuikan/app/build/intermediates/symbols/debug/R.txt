@@ -1149,7 +1149,7 @@ int id book_info 0x7f0e0084
 int id book_introduce 0x7f0e0131
 int id book_light 0x7f0e0083
 int id book_onload 0x7f0e008a
-int id book_page_container 0x7f0e00a3
+int id book_pager 0x7f0e00a3
 int id book_paragraph 0x7f0e0085
 int id book_progress 0x7f0e0080
 int id book_progress2 0x7f0e0114

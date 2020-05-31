@@ -604,6 +604,7 @@ public class BookPageView extends View {
 //        bitmapContentA = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565);
         Canvas canvas = new Canvas(bitmapContentA);
 //        canvas.drawPath(getPathAreaA(), paintAreaA);
+        content = content+" ";
         StaticLayout staticLayout = new StaticLayout(content, paintText, width, Layout.Alignment.ALIGN_NORMAL, 1, 0, true);
         canvas.translate(20, 0);
         staticLayout.draw(canvas);
@@ -614,6 +615,7 @@ public class BookPageView extends View {
 //        bitmapContentB = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565);
         Canvas canvas = new Canvas(bitmapContentB);
 //        canvas.drawPath(getPathAreaA(), paintAreaB);
+        content = content+" ";
         StaticLayout staticLayout = new StaticLayout(content, paintText, width, Layout.Alignment.ALIGN_NORMAL, 1, 0, true);
         canvas.translate(20, 0);
         staticLayout.draw(canvas);

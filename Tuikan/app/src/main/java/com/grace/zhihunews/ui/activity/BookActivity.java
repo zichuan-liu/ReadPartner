@@ -20,7 +20,7 @@ public class BookActivity extends Activity {
 
     public static final String KEY_PATH = "book_path";
 
-    @BindView(R.id.book_page_container)
+    @BindView(R.id.book_pager)
     BookPageContainer book_pager;
 
     @Override
