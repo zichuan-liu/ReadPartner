@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri May 29 16:19:00 CST 2020
+#Fri May 29 16:30:02 CST 2020
 20.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
 143.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
 439.set=ANDROID_RESOURCE

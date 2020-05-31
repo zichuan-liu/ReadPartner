@@ -34,6 +34,84 @@
         </RelativeLayout>
     </android.support.v4.widget.SwipeRefreshLayout>
 
+
+    <RelativeLayout
+        android:id="@+id/rl_get_gift_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#dd000000"
+        android:visibility="gone"
+        android:clickable="false">
+
+        <ImageView
+            android:id="@+id/iv_huode"
+            android:layout_width="229dp"
+            android:layout_height="59dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="120dp"
+            android:src="@drawable/i8live_huoede" />
+
+        <RelativeLayout
+            android:id="@+id/rl_sun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_huode"
+            android:layout_centerHorizontal="true">
+
+            <ImageView
+                android:id="@+id/iv_sun_bg"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/signed_on_rotate_bg" />
+
+            <ImageView
+                android:id="@+id/iv_sun"
+                android:layout_width="98dp"
+                android:layout_height="95dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/i8live_sun" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_text_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_sun"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/tv_text_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:text="第一天签到可获得20个人气币，经验200，免费弹幕1次"
+                android:textColor="#ffffff"
+                android:textSize="13sp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_queding_btn"
+            android:layout_width="218dp"
+            android:layout_height="38dp"
+            android:layout_below="@id/rl_text_info"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="19dp"
+            android:background="@drawable/online_get_gift_btn">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="确定"
+                android:textColor="#ffffff"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar_book"
         android:layout_width="match_parent"

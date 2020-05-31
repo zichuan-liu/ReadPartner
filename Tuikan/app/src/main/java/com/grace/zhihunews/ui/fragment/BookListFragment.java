@@ -21,6 +21,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,14 +33,19 @@ import com.grace.zhihunews.R;
 import com.grace.zhihunews.contract.BookListContact;
 import com.grace.zhihunews.network.entity.Book;
 import com.grace.zhihunews.network.entity.LoadBooks;
+import com.grace.zhihunews.network.entity.SignCalendarReq;
 import com.grace.zhihunews.ui.activity.ExchangeActivity;
 import com.grace.zhihunews.ui.activity.SearchActivity;
 import com.grace.zhihunews.ui.adapter.BooksAdapter;
 import com.grace.zhihunews.ui.base.BaseFragment;
 import com.grace.zhihunews.ui.view.AddDialog;
+import com.grace.zhihunews.ui.view.SignCalendar;
+import com.grace.zhihunews.util.CalendarDao;
 import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import butterknife.BindView;
@@ -67,6 +74,17 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
     Button qiandao;
     @BindView(R.id.lvcheng)
     ImageButton lvcheng;
+    @BindView(R.id.rl_get_gift_view)
+    RelativeLayout rlGetGiftData;
+    @BindView(R.id.rl_queding_btn)
+    RelativeLayout rlQuedingBtn;
+    @BindView(R.id.iv_sun)
+    ImageView ivSun;
+    @BindView(R.id.tv_text_one)
+    TextView tvGetSunValue;
+    @BindView(R.id.iv_sun_bg)
+    ImageView ivSunBg;
+
 
     private BookListContact.IBookListPresenter mBookListPresenter;
     private Unbinder unbinder;
@@ -74,6 +92,11 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
     private BooksAdapter booksAdapter;
     private Context mContext;
     private String filePath;
+    private SignCalendar calendar;
+    private String date;
+    List<String> list = new ArrayList<>();//list中存储的格式为2019-06-02
+    private boolean isSign;
+
 
     @Override
     protected int getLayoutResId() {
@@ -83,6 +106,7 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
     @Override
     protected void initVariables() {
         mBooks = new ArrayList<>();
+        isSign=false;
         booksAdapter = new BooksAdapter(getActivity(), mBooks);
         mBookListPresenter = new BookListPresenterCompl((App) getActivity().getApplicationContext(), this);
     }
@@ -140,6 +164,22 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
             @Override
             public void onClick(View v) {
                 qiandao.setText("已签到");
+                SignCalendarReq signCalendarReq = new SignCalendarReq();
+                SignCalendarReq.StateBean state = new SignCalendarReq.StateBean();
+                state.setCode(1);
+                state.setMsg("成功");
+                signCalendarReq.setState(state);
+
+                SignCalendarReq.DataBean data = new SignCalendarReq.DataBean();
+                SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+                Date curDate = new Date(System.currentTimeMillis());
+                String curDateStr = formatter.format(curDate);
+                data.setConSign(1);
+                String signDays = getSignDaysAndCheckToday(curDateStr.substring(0, 4), curDateStr.substring(5, 7), mContext, curDateStr);
+                data.setSignDay(signDays);
+                data.setIsSign(1);
+                data.setUid("3347922");
+                signCalendarReq.setData(data);
             }
 
         });
@@ -150,7 +190,12 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
             }
 
         });
-
+        rlQuedingBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                rlGetGiftData.setVisibility(View.GONE);
+            }
+        });
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
@@ -220,7 +265,28 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
             }
         });
     }
+    private String getSignDaysAndCheckToday(String year, String month, Context context, String date_today) {
+        String signDays = "";
 
+        CalendarDao calendarDao = new CalendarDao();
+        calendarDao.punch(mContext);
+        String dates = calendarDao.listDay(year, month, context);
+        //System.out.println("dates: " + dates);
+        String datesArr[] = dates.split(",");
+        for (int i = 0; i < datesArr.length; i++) {
+            if (date_today.equals(datesArr[i])) {
+                isSign = true;
+            }
+            if (i == 0) {
+                signDays = datesArr[i].substring(8);
+            } else {
+                signDays = signDays + "," + datesArr[i].substring(8);  //yyyy-MM-dd，取"dd"
+            }
+        }
+        System.out.println("signDays: " + signDays);
+
+        return signDays;
+    }
     /**
      * 导入添加的部分
      */

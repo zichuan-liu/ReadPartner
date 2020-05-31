@@ -9,6 +9,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import butterknife.Unbinder;
 import butterknife.internal.Utils;
@@ -32,6 +34,11 @@ public class BookListFragment_ViewBinding<T extends BookListFragment> implements
     target.rvText = Utils.findRequiredViewAsType(source, R.id.rv_time, "field 'rvText'", TextView.class);
     target.qiandao = Utils.findRequiredViewAsType(source, R.id.qiandao, "field 'qiandao'", Button.class);
     target.lvcheng = Utils.findRequiredViewAsType(source, R.id.lvcheng, "field 'lvcheng'", ImageButton.class);
+    target.rlGetGiftData = Utils.findRequiredViewAsType(source, R.id.rl_get_gift_view, "field 'rlGetGiftData'", RelativeLayout.class);
+    target.rlQuedingBtn = Utils.findRequiredViewAsType(source, R.id.rl_queding_btn, "field 'rlQuedingBtn'", RelativeLayout.class);
+    target.ivSun = Utils.findRequiredViewAsType(source, R.id.iv_sun, "field 'ivSun'", ImageView.class);
+    target.tvGetSunValue = Utils.findRequiredViewAsType(source, R.id.tv_text_one, "field 'tvGetSunValue'", TextView.class);
+    target.ivSunBg = Utils.findRequiredViewAsType(source, R.id.iv_sun_bg, "field 'ivSunBg'", ImageView.class);
   }
 
   @Override
@@ -48,6 +55,11 @@ public class BookListFragment_ViewBinding<T extends BookListFragment> implements
     target.rvText = null;
     target.qiandao = null;
     target.lvcheng = null;
+    target.rlGetGiftData = null;
+    target.rlQuedingBtn = null;
+    target.ivSun = null;
+    target.tvGetSunValue = null;
+    target.ivSunBg = null;
 
     this.target = null;
   }

@@ -56,7 +56,10 @@
             android:name=".ui.activity.TeamActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ui.activity.FriendApplyActivity"
+        android:name=".ui.activity.FriendApplyActivity"
+        android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.fragment.CalendarFragment"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.activity.ShowVideoActivity"

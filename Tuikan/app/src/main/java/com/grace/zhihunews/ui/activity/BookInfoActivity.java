@@ -3,8 +3,6 @@ package com.grace.zhihunews.ui.activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.BottomSheetDialog;
@@ -42,7 +40,6 @@ import com.grace.zhihunews.ui.adapter.SimilarBookAdapter;
 import com.grace.zhihunews.ui.base.BaseActivity;
 import com.grace.zhihunews.ui.view.CommentExpandableListView;
 import com.squareup.picasso.Picasso;
-import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;

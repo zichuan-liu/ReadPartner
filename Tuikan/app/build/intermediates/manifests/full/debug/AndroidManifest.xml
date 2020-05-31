@@ -66,6 +66,9 @@
             android:name="com.grace.zhihunews.ui.activity.FriendApplyActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name="com.grace.zhihunews.ui.fragment.CalendarFragment"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name="com.grace.zhihunews.ui.activity.ShowVideoActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="sensorLandscape"
