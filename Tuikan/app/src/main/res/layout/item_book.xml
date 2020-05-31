@@ -12,6 +12,7 @@
         android:id="@+id/book_img"
         android:layout_width="72dp"
         android:layout_height="104dp"
+        android:background="@drawable/wenhao"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_centerVertical="true"

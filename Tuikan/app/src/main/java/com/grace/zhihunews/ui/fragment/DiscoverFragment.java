@@ -135,25 +135,25 @@ public class DiscoverFragment extends BaseFragment implements DiscoverContact.ID
         discover_free.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(mContext, "暂未开启编辑功能", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "尚未获得版权", Toast.LENGTH_SHORT).show();
             }
         });
         discover_rank.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(mContext, "这个也没开启噢", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "尚未获得版权", Toast.LENGTH_SHORT).show();
             }
         });
         discover_vip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(mContext, "没想到吧这个也没做", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "尚未获得版权", Toast.LENGTH_SHORT).show();
             }
         });
         discover_hear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(mContext, "无可奉告", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "尚未获得版权", Toast.LENGTH_SHORT).show();
             }
         });
     }

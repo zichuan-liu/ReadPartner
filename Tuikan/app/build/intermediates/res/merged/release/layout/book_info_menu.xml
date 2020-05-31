@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/discover_menu"
+    android:layout_below="@+id/indicator"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:rowCount="1"
+    android:columnCount="4"
+    android:background="@color/white">
+
+    <Button
+        android:id="@+id/discover_free"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/transparent"
+        android:text="历史"
+        android:textColor="@color/gray_light"
+        android:layout_columnWeight="1"
+        android:textSize="16dp"
+        android:drawableTop="@mipmap/lzc"
+        />
+
+    <Button
+        android:id="@+id/discover_rank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_columnWeight="1"
+        android:textColor="@color/gray_light"
+
+        android:layout_gravity="center"
+        android:background="@color/transparent"
+        android:text="互动"
+        android:textSize="16dp"
+        android:drawableTop="@mipmap/lzccchh"
+        />
+
+    <Button
+        android:id="@+id/discover_vip"
+        android:layout_width="wrap_content"
+        android:layout_columnWeight="1"
+        android:textColor="@color/gray_light"
+
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@color/transparent"
+        android:text="评论"
+        android:textSize="16dp"
+        android:drawableTop="@mipmap/lzccsb"
+        />
+
+    <Button
+        android:id="@+id/discover_hear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/gray_light"
+        android:layout_columnWeight="1"
+        android:background="@color/transparent"
+        android:text="相关"
+        android:textSize="16dp"
+        android:drawableTop="@mipmap/lzcmua"
+        />
+
+</GridLayout>

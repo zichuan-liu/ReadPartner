@@ -24,6 +24,7 @@ import com.grace.zhihunews.contract.WorldContact;
 import com.grace.zhihunews.network.entity.Comment;
 import com.grace.zhihunews.network.entity.SocialComments;
 import com.grace.zhihunews.network.entity.TopStory;
+import com.grace.zhihunews.ui.activity.CalendarActivity;
 import com.grace.zhihunews.ui.activity.SearchActivity;
 import com.grace.zhihunews.ui.activity.TeamActivity;
 import com.grace.zhihunews.ui.adapter.CommentsAdapater;
@@ -203,10 +204,8 @@ public class WorldFragment extends BaseFragment implements WorldContact.IWorldVi
         world_date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                getFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.frame_layout, new CalendarFragment())
-                        .commit();
+                Intent intent = new Intent(getActivity(), CalendarActivity.class);
+                startActivity(intent);
             }
         });
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {

@@ -15,7 +15,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="@color/white"
+            android:background="@color/item_green"
             android:gravity="center_vertical"
             android:padding="@dimen/font_size_small">
 
@@ -24,7 +24,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:src="@drawable/i8live_nav_bcak" />
+                android:src="@drawable/lzcsb" />
 
             <TextView
                 android:id="@+id/i8show_attention_tittle"
@@ -35,8 +35,8 @@
                 android:gravity="center"
                 android:singleLine="true"
                 android:text="我的签到"
-                android:textColor="@android:color/black"
-                android:textSize="@dimen/font_size_large" />
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/font_size_large_high" />
 
         </RelativeLayout>
     </LinearLayout>

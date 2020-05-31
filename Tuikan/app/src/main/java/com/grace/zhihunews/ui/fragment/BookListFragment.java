@@ -8,6 +8,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -23,7 +24,6 @@ import com.grace.zhihunews.contract.BookListContact;
 import com.grace.zhihunews.network.entity.Book;
 import com.grace.zhihunews.network.entity.LoadBooks;
 import com.grace.zhihunews.ui.activity.BookActivity;
-import com.grace.zhihunews.ui.activity.BooksDetailActivity;
 import com.grace.zhihunews.ui.activity.ExchangeActivity;
 import com.grace.zhihunews.ui.activity.SearchActivity;
 import com.grace.zhihunews.ui.adapter.BooksAdapter;
@@ -154,14 +154,27 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
                     case R.id.action_add:
                         AddDialog addDialog = new AddDialog(mContext);
                         addDialog.setOnClickBottomListener(
-                                new OnClickBottomListener() {
+                                new OnClickDEMOListener() {
 
                                     /**
                                      * 点击确定按钮事件
                                      */
                                     @Override
                                     public void onPositiveClick() {
-                                        Toast.makeText(mContext, "请正确填写书籍", Toast.LENGTH_SHORT).show();
+                                        Book newBook = new Book();
+                                        if(TextUtils.isEmpty(addDialog.getTitle())){
+                                            newBook.setTitle("未知书籍");
+                                        }else {
+                                            newBook.setTitle(addDialog.getTitle());
+                                        }
+                                        if(TextUtils.isEmpty(addDialog.getMessage())){
+                                            newBook.setWriter("未知信息");
+                                        }else {
+                                            newBook.setWriter(addDialog.getMessage());
+                                        }
+                                        mBooks.add(newBook);
+                                        booksAdapter.notifyDataSetChanged();
+                                        addDialog.dismiss();
                                     }
 
                                     /**
@@ -170,6 +183,11 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
                                     @Override
                                     public void onNegtiveClick() {
                                         addDialog.dismiss();
+                                    }
+
+                                    @Override
+                                    public void onPathClick() {
+
                                     }
                                 }
 
@@ -183,7 +201,6 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
             }
         });
     }
-
 
     @Override
     protected void loadData() {

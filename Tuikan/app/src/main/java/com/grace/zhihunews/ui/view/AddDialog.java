@@ -3,14 +3,17 @@ package com.grace.zhihunews.ui.view;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.grace.zhihunews.R;
-import com.grace.zhihunews.ui.fragment.OnClickBottomListener;
+import com.grace.zhihunews.ui.fragment.OnClickDEMOListener;
 
 /**
  * author : 刘子川
@@ -28,7 +31,6 @@ public class AddDialog extends Dialog {
      * 显示的标题
      */
     private TextView titleTv ;
-
     /**
      * 显示的消息
      */
@@ -38,11 +40,13 @@ public class AddDialog extends Dialog {
      * 确认和取消按钮
      */
     private Button negtiveBn ,positiveBn;
+    private EditText et_book_name,et_at;
 
     /**
      * 按钮之间的分割线
      */
     private View columnLineView ;
+
     public AddDialog(Context context) {
         super(context, R.style.CustomDialog);
     }
@@ -53,7 +57,6 @@ public class AddDialog extends Dialog {
     private String message;
     private String title;
     private String positive,negtive ;
-//    private int imageResId = -1 ;
 
     /**
      * 底部是否只有一个按钮
@@ -96,19 +99,21 @@ public class AddDialog extends Dialog {
                 }
             }
         });
+        imageIv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if ( onClickBottomListener!= null) {
+                    onClickBottomListener.onPathClick();
+                }
+            }
+        });
     }
 
     /**
      * 初始化界面控件的显示数据
      */
     private void refreshView() {
-        //如果用户自定了title和message
-//        if (!TextUtils.isEmpty(title)) {
-//            titleTv.setText(title);
-//            titleTv.setVisibility(View.VISIBLE);
-//        }else {
-//            titleTv.setVisibility(View.GONE);
-//        }
+
         if (!TextUtils.isEmpty(message)) {
             messageTv.setText(message);
         }
@@ -124,12 +129,6 @@ public class AddDialog extends Dialog {
             negtiveBn.setText("取消");
         }
 
-//        if (imageResId!=-1){
-//            imageIv.setImageResource(imageResId);
-//            imageIv.setVisibility(View.VISIBLE);
-//        }else {
-//            imageIv.setVisibility(View.GONE);
-//        }
         /**
          * 只显示一个按钮的时候隐藏取消按钮，回掉只执行确定的事件
          */
@@ -158,13 +157,50 @@ public class AddDialog extends Dialog {
         messageTv = (TextView) findViewById(R.id.message);
         imageIv = (ImageView) findViewById(R.id.image);
         columnLineView = findViewById(R.id.column_line);
+        et_book_name = (EditText)findViewById(R.id.et_book_name);
+        et_at = (EditText)findViewById(R.id.et_at);
+        et_book_name.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                title=s.toString().trim();
+            }
+
+        });
+
+        et_at.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                message=s.toString().trim();
+            }
+
+        });
     }
 
     /**
      * 设置确定取消按钮的回调
      */
-    public OnClickBottomListener onClickBottomListener;
-    public AddDialog setOnClickBottomListener(OnClickBottomListener onClickBottomListener) {
+    public OnClickDEMOListener onClickBottomListener;
+    public AddDialog setOnClickBottomListener(OnClickDEMOListener onClickBottomListener) {
         this.onClickBottomListener = onClickBottomListener;
         return this;
     }
@@ -206,21 +242,5 @@ public class AddDialog extends Dialog {
         return this ;
     }
 
-//    public int getImageResId() {
-//        return imageResId;
-//    }
 
-    public boolean isSingle() {
-        return isSingle;
-    }
-
-    public AddDialog setSingle(boolean single) {
-        isSingle = single;
-        return this ;
-    }
-
-//    public AddDialog setImageResId(int imageResId) {
-//        this.imageResId = imageResId;
-//        return this ;
-//    }
 }

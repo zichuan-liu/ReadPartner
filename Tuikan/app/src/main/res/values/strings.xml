@@ -9,7 +9,7 @@
 
     <string name="VideoFragment_label_developing">正在开发中</string>
 
-    <string name="MyFragment_label_nickname">正在开发中</string>
+    <string name="MyFragment_label_nickname">地瓜干一号</string>
     <string name="MyFragment_label_number">X 4</string>
 
     <string name="ExchangeAcitity_title">本周已累计阅读时长</string>
@@ -17,7 +17,7 @@
     <string name="ExchangeAcitity_info">每累计半小时可兑换随机地瓜干，阅读时长越长地瓜干数依次递增</string>
 
 
-    <string name="AboutFragment_label_nickname">刘子川、李彦佳、刘佳迎</string>
+    <string name="AboutFragment_label_nickname">地瓜干一号</string>
     <string name="AboutFragment_desc_introduction">武汉理工大学，Android 开发</string>
     <string name="AboutFragment_label_grade">评分</string>
     <string name="AboutFragment_label_contact_me">联系我</string>
