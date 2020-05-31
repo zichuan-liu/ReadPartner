@@ -29,6 +29,7 @@ import com.bartoszlipinski.recyclerviewheader.RecyclerViewHeader;
 import com.grace.zhihunews.App;
 import com.grace.zhihunews.PresenterCompl.BookListPresenterCompl;
 import com.grace.zhihunews.R;
+import com.grace.zhihunews.cache.DBHelper;
 import com.grace.zhihunews.contract.BookListContact;
 import com.grace.zhihunews.network.entity.Book;
 import com.grace.zhihunews.network.entity.LoadBooks;
@@ -187,7 +188,17 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
                                             return;
                                         }else {
                                             newBook.setTxt_path(filePath);
+                                            filePath="";
                                         }
+                                        newBook.setTime("刚刚");
+                                        newBook.setProgress("0%");
+
+//                                        DBHelper dbHelper = new DBHelper(mContext);
+                                        List<Book> Tempbooks= DBHelper.getInstance(getActivity()).loadBooks();
+//                                        Toast.makeText(mContext, Tempbooks.size(), Toast.LENGTH_SHORT).show();
+                                        newBook.setId(Tempbooks.size()+1);
+                                        DBHelper.getInstance(getActivity()).saveBook(newBook);
+
                                         mBooks.add(newBook);
                                         booksAdapter.notifyDataSetChanged();
                                         addDialog.dismiss();

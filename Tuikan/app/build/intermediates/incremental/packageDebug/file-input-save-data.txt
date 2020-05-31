@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun May 31 21:32:57 CST 2020
+#Sun May 31 22:13:32 CST 2020
 20.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
 143.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\folders\\2000\\1f\\main
 439.set=ANDROID_RESOURCE
@@ -97,7 +97,7 @@
 221.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
 333.set=ANDROID_RESOURCE
 280.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\scrubber_progress_horizontal_holo_dark.xml
-451.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\button_bg.xml
+451.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\anim\\abc_popup_exit.xml
 256.set=ANDROID_RESOURCE
 134.set=ANDROID_RESOURCE
 117.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
@@ -173,7 +173,7 @@
 425.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\comment_item_layout.xml
 47.set=ANDROID_RESOURCE
 287.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\light_70.png
-458.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\mipmap-xhdpi-v4\\ic_videogame_asset_white_24dp.png
+458.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\activity_photo.xml
 172.set=ANDROID_RESOURCE
 151.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\folders\\2000\\1f\\main
 322.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
@@ -217,6 +217,7 @@
 248.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xxhdpi-v4\\abc_ic_star_half_black_36dp.png
 206.set=ANDROID_RESOURCE
 112.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
+462.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
 145.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
 22.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
 171.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\abc_textfield_search_material.xml
@@ -312,7 +313,7 @@
 353.set=ANDROID_RESOURCE
 420.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\mipmap-xxxhdpi-v4\\ic_action_content_save.png
 282.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\abc_btn_check_material.xml
-453.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\activity_apply.xml
+453.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\select_dialog_multichoice_material.xml
 436.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
 276.set=ANDROID_RESOURCE
 154.set=ANDROID_RESOURCE
@@ -481,7 +482,7 @@
 311.set=ANDROID_RESOURCE
 264.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
 111.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xxhdpi-v4\\abc_list_longpressed_holo.9.png
-461.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\activity_sign_calendar.xml
+461.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xxhdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png
 297.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
 234.set=ANDROID_RESOURCE
 127.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
@@ -537,7 +538,7 @@
 422.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\mipmap-hdpi-v4\\ic_search.png
 17.set=ANDROID_RESOURCE
 284.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-ldrtl-xxhdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png
-455.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-v21\\abc_action_bar_item_background_material.xml
+455.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xxhdpi-v4\\abc_list_pressed_holo_light.9.png
 438.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
 296.set=ANDROID_RESOURCE
 15.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\fragment_about.xml
@@ -664,7 +665,7 @@
 72.set=ANDROID_RESOURCE
 220.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
 323.set=ASSET
-450.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\anim\\abc_popup_exit.xml
+450.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\volmn_no.png
 246.set=ANDROID_RESOURCE
 124.set=NATIVE_RESOURCE
 116.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
@@ -760,7 +761,7 @@
 424.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\icon_comment_like.png
 37.set=ANDROID_RESOURCE
 286.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\design_layout_tab_text.xml
-457.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\activity_photo.xml
+457.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\fragment_my.xml
 149.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xxhdpi-v4\\abc_ic_menu_selectall_mtrl_alpha.png
 150.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
 321.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\folders\\2000\\1f\\main
@@ -898,7 +899,7 @@
 222.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
 343.set=ANDROID_RESOURCE
 281.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\folders\\2000\\1f\\main\\lib\\armeabi-v7a\\libffmpeg.so
-452.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\select_dialog_multichoice_material.xml
+452.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\button_bg.xml
 435.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
 266.set=ANDROID_RESOURCE
 144.set=ANDROID_RESOURCE
@@ -972,7 +973,7 @@
 57.set=ANDROID_RESOURCE
 308.set=ANDROID_RESOURCE
 288.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\design_navigation_item.xml
-459.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\icon_work_like.png
+459.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\mipmap-xhdpi-v4\\ic_videogame_asset_white_24dp.png
 109.set=ANDROID_RESOURCE
 182.set=ANDROID_RESOURCE
 152.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
@@ -989,7 +990,7 @@
 416.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\mipmap-xhdpi-v4\\share.png
 208.set=ANDROID_RESOURCE
 278.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\mipmap-xhdpi-v4\\ic_action_social_share.png
-449.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\volmn_no.png
+449.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\mipmap-hdpi-v4\\loge.png
 450.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
 10.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
 88.set=NATIVE_RESOURCE
@@ -1065,7 +1066,7 @@
 263.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
 434.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
 110.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\mediacontroller_button.xml
-460.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xxhdpi-v4\\abc_ic_commit_search_api_mtrl_alpha.png
+460.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\icon_work_like.png
 296.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
 224.set=ANDROID_RESOURCE
 126.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
@@ -1126,13 +1127,14 @@
 250.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\mipmap-xhdpi-v4\\shop.png
 421.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\ic_player_pause.png
 283.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\transforms\\mergeJniLibs\\debug\\folders\\2000\\1f\\main\\lib\\armeabi-v7a\\libOMX.18.so
-454.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-xxhdpi-v4\\abc_list_pressed_holo_light.9.png
+454.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\activity_apply.xml
 437.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
 286.set=ANDROID_RESOURCE
 164.set=ANDROID_RESOURCE
 14.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\mipmap-xhdpi-v4\\friends.png
 317.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\mipmap-xxhdpi-v4\\ic_friend.png
 179.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\mipmap-hdpi-v4\\ic_launcher.png
+462.set=ANDROID_RESOURCE
 180.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
 351.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
 340.set=ANDROID_RESOURCE
@@ -1196,7 +1198,7 @@
 361.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\mipmap-xhdpi-v4\\v2_pjkevi.png
 74.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
 394.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\main_title_bar.xml
-count=462
+count=463
 257.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\content_news_detail.xml
 428.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\menu\\menu_my.xml
 77.set=ANDROID_RESOURCE
@@ -1280,6 +1282,7 @@ count=462
 321.set=NATIVE_RESOURCE
 265.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
 112.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\mipmap-xhdpi-v4\\pagemode.png
+462.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\activity_sign_calendar.xml
 298.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
 244.set=ANDROID_RESOURCE
 128.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
@@ -1334,7 +1337,7 @@ count=462
 423.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-ldrtl-xxhdpi-v17\\abc_spinner_mtrl_am_alpha.9.png
 27.set=ANDROID_RESOURCE
 285.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\item_friend.xml
-456.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\fragment_my.xml
+456.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-v21\\abc_action_bar_item_background_material.xml
 439.base=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_
 16.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\notification_template_lines.xml
 148.file=D\:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\abc_seekbar_track_material.xml

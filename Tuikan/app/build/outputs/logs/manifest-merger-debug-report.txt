@@ -59,7 +59,7 @@ MERGED from [Tuikan:vitamio2:unspecified] D:\ReadPartner\Tuikan\vitamio2\build\i
 	android:allowBackup
 		ADDED from D:\ReadPartner\Tuikan\app\src\main\AndroidManifest.xml:14:9-35
 	android:icon
-		ADDED from D:\ReadPartner\Tuikan\app\src\main\AndroidManifest.xml:15:9-42
+		ADDED from D:\ReadPartner\Tuikan\app\src\main\AndroidManifest.xml:15:9-36
 	android:largeHeap
 		ADDED from D:\ReadPartner\Tuikan\app\src\main\AndroidManifest.xml:17:9-33
 	android:theme

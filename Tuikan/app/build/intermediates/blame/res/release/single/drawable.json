@@ -12,12 +12,12 @@
         "source": "C:\\Users\\77526\\.android\\build-cache\\df99e35df17221fdf3b3f41b58c6c3108acfc00f\\output\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
     },
     {
-        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\drawable\\bg_dialog.xml",
-        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\bg_dialog.xml"
-    },
-    {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\drawable\\return2.png",
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\return2.png"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\drawable\\bg_dialog.xml",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\drawable\\bg_dialog.xml"
     },
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\drawable\\comment_dialog_et_selector.xml",

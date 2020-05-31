@@ -1,19 +1,11 @@
 [
     {
-        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi\\read_book.png",
-        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-hdpi\\read_book.png"
-    },
-    {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi\\friend.png",
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-hdpi\\friend.png"
     },
     {
-        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi\\lzccsb.png",
-        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-hdpi\\lzccsb.png"
-    },
-    {
-        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi\\lzccc.png",
-        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-hdpi\\lzccc.png"
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi\\read_book.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-hdpi\\read_book.png"
     },
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi\\ic_search.png",
@@ -22,26 +14,6 @@
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi\\lzcc.png",
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-hdpi\\lzcc.png"
-    },
-    {
-        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi\\ic_setting.png",
-        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-hdpi\\ic_setting.png"
-    },
-    {
-        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi\\book_demo.png",
-        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-hdpi\\book_demo.png"
-    },
-    {
-        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi\\ic_navigation.png",
-        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-hdpi\\ic_navigation.png"
-    },
-    {
-        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi\\onload.png",
-        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-hdpi\\onload.png"
-    },
-    {
-        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi\\download.png",
-        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-hdpi\\download.png"
     },
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi\\sorce.png",
@@ -56,20 +28,12 @@
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-hdpi\\icon_book.png"
     },
     {
-        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi\\shop_img.png",
-        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-hdpi\\shop_img.png"
-    },
-    {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi\\lzccccc.png",
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-hdpi\\lzccccc.png"
     },
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi\\shop.png",
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-hdpi\\shop.png"
-    },
-    {
-        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi\\ic_action_content_save.png",
-        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-hdpi\\ic_action_content_save.png"
     },
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi\\lzc.png",
@@ -86,6 +50,46 @@
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi\\ic_reading.png",
         "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-hdpi\\ic_reading.png"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi\\lzccsb.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-hdpi\\lzccsb.png"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi\\lzccc.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-hdpi\\lzccc.png"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi\\ic_setting.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-hdpi\\ic_setting.png"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi\\book_demo.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-hdpi\\book_demo.png"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi\\loge.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-hdpi\\loge.png"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi\\ic_navigation.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-hdpi\\ic_navigation.png"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi\\onload.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-hdpi\\onload.png"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi\\download.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-hdpi\\download.png"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi\\shop_img.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-hdpi\\shop_img.png"
+    },
+    {
+        "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi\\ic_action_content_save.png",
+        "source": "D:\\ReadPartner\\Tuikan\\app\\src\\main\\res\\mipmap-hdpi\\ic_action_content_save.png"
     },
     {
         "merged": "D:\\ReadPartner\\Tuikan\\app\\build\\intermediates\\res\\merged\\release\\mipmap-hdpi\\lzccchh.png",
