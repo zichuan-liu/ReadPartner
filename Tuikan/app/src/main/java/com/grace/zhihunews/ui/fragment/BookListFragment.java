@@ -34,6 +34,7 @@ import com.grace.zhihunews.contract.BookListContact;
 import com.grace.zhihunews.network.entity.Book;
 import com.grace.zhihunews.network.entity.LoadBooks;
 import com.grace.zhihunews.network.entity.SignCalendarReq;
+import com.grace.zhihunews.ui.activity.BookActivity;
 import com.grace.zhihunews.ui.activity.ExchangeActivity;
 import com.grace.zhihunews.ui.activity.SearchActivity;
 import com.grace.zhihunews.ui.adapter.BooksAdapter;
@@ -108,7 +109,8 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
         mBooks = new ArrayList<>();
         isSign=false;
         booksAdapter = new BooksAdapter(getActivity(), mBooks);
-        mBookListPresenter = new BookListPresenterCompl((App) getActivity().getApplicationContext(), this);
+        mContext = getActivity();
+        mBookListPresenter = new BookListPresenterCompl((App) getActivity().getApplicationContext(), this, mContext);
     }
 
     @Override
@@ -322,6 +324,14 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
         List<Book> books = loadBooks.getBooks();
         mBooks.addAll(books);
         booksAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void gotoBooksPagerActivity(int id) {
+        Intent intent = new Intent(getActivity(), BookActivity.class);
+        Book book = mBooks.get(id);
+        intent.putExtra(BookActivity.KEY_PATH, book.getTxt_path());
+        startActivity(intent);
     }
 
 

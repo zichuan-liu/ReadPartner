@@ -10,6 +10,7 @@ public interface BookListContact {
 
     interface IBookListView extends BaseView {
         void showBook(LoadBooks loadBooks);
+        void gotoBooksPagerActivity(int id);
 
     }
 

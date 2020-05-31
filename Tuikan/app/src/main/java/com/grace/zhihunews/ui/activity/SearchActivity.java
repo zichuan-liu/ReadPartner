@@ -1,5 +1,6 @@
 package com.grace.zhihunews.ui.activity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -57,7 +58,7 @@ public class SearchActivity extends AppCompatActivity implements OnSearchListene
 
         mBooks = new ArrayList<>();
         booksAdapter = new BooksAdapter(this, mBooks);
-        mBookListPresenter = new BookListPresenterCompl((App) this.getApplicationContext(), this);
+        mBookListPresenter = new BookListPresenterCompl((App) this.getApplicationContext(), this, SearchActivity.this);
         searchViewDemo = (KylinSearchView) findViewById(R.id.sv_default);
         searchViewDemo.setOnSearchListener(this);
 
@@ -109,6 +110,11 @@ public class SearchActivity extends AppCompatActivity implements OnSearchListene
         List<Book> books = loadBooks.getBooks();
         mBooks.addAll(books);
         booksAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void gotoBooksPagerActivity(int id) {
+
     }
 
     @Override

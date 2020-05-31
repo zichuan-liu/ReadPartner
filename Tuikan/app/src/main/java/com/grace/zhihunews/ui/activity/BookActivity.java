@@ -1,12 +1,14 @@
 package com.grace.zhihunews.ui.activity;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 
 import com.grace.zhihunews.R;
-import com.grace.zhihunews.network.entity.Book;
 import com.grace.zhihunews.ui.view.BookPageContainer;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 
 /**
  * author : 刘子川
@@ -16,17 +18,18 @@ import com.grace.zhihunews.ui.view.BookPageContainer;
  */
 public class BookActivity extends Activity {
 
-    BookPageContainer book_page_container;
+    public static final String KEY_PATH = "book_path";
+
+    @BindView(R.id.book_page_container)
+    BookPageContainer book_pager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_read);
 
-        book_page_container = (BookPageContainer) findViewById(R.id.book_page_container);
-
-        Intent intent=getIntent();
-        Book book = (Book) intent.getSerializableExtra("book");
-        book_page_container.setFilePath(book);
+        ButterKnife.bind(this);
+        String path = getIntent().getStringExtra(KEY_PATH);
+        book_pager.setPath(path);
     }
 }
