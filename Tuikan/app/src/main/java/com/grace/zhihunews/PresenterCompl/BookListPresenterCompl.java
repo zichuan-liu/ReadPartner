@@ -1,5 +1,7 @@
 package com.grace.zhihunews.PresenterCompl;
 
+import android.content.Context;
+
 import com.grace.zhihunews.App;
 import com.grace.zhihunews.contract.BookListContact;
 import com.grace.zhihunews.deliveryLayer.IBookListProvider;
@@ -16,13 +18,15 @@ import de.greenrobot.event.EventBus;
 public class BookListPresenterCompl implements BookListContact.IBookListPresenter {
 
     private App app;
+    private Context context;
     private BookListContact.IBookListView mBookListView;
     private IBookListProvider mBookListProvider;
 
-    public BookListPresenterCompl(App app, BookListContact.IBookListView newListView) {
+    public BookListPresenterCompl(App app, BookListContact.IBookListView newListView, Context context) {
         this.app = app;
+        this.context = context;
         mBookListView = newListView;
-        mBookListProvider = new BookListProvider(app);
+        mBookListProvider = new BookListProvider(app,context);
 
         EventBus.getDefault().register(this);
     }

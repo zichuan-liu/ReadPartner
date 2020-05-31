@@ -75,7 +75,8 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
     protected void initVariables() {
         mBooks = new ArrayList<>();
         booksAdapter = new BooksAdapter(getActivity(), mBooks);
-        mBookListPresenter = new BookListPresenterCompl((App) getActivity().getApplicationContext(), this);
+        mContext = getActivity();
+        mBookListPresenter = new BookListPresenterCompl((App) getActivity().getApplicationContext(), this, mContext);
     }
 
     @Override

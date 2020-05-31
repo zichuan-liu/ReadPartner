@@ -1,6 +1,9 @@
 package com.grace.zhihunews.deliveryLayer;
 
+import android.content.Context;
+
 import com.grace.zhihunews.App;
+import com.grace.zhihunews.R;
 import com.grace.zhihunews.cache.ACache;
 import com.grace.zhihunews.cache.DBHelper;
 import com.grace.zhihunews.event.BooksLoadedEvent;
@@ -11,7 +14,16 @@ import com.grace.zhihunews.network.entity.LoadBooks;
 import com.grace.zhihunews.network.service.ZhifuService;
 
 
-
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FilterOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.util.List;
 
 import de.greenrobot.event.EventBus;
@@ -28,10 +40,12 @@ public class BookListProvider implements IBookListProvider {
 
     private App app;
     private ACache cache;
+    private Context context;
     private ZhifuService zhifuService;
 
-    public BookListProvider(App app) {
+    public BookListProvider(App app, Context context) {
         this.app = app;
+        this.context = context;
         cache = app.getCacheInstance();
         zhifuService = RetrofitFactory.getZhifuService();
     }
@@ -49,7 +63,29 @@ public class BookListProvider implements IBookListProvider {
                 public void onResponse(Call<LoadBooks> call, Response<LoadBooks> response) {
                     List<Book> preBooks = response.body().getBooks();
                     for (Book book : preBooks) {
+                        String fileName = book.getTitle()+".txt";
+                        File file = context.getExternalFilesDir(null);
+                        try {
+                            String rawPath = book.getTxt_path();
+                            InputStream inputStream = context.getResources().getAssets().open(rawPath);
+                            file = new File(file.getPath()+"/"+fileName);
+                            OutputStream outputStream = new FileOutputStream(file);
+                            BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(outputStream));
+                            BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
+                            String b;
+                            while ((b = br.readLine())!=null){
+                                bw.write(b);
+                            }
+                            bw.close();
+                            br.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
+
+                        book.setTxt_path(file.getPath());
                         DBHelper.getInstance(app).saveBook(book);
+
                     }
                     EventBus.getDefault().post(new BooksLoadedEvent(response.body()));
                 }
