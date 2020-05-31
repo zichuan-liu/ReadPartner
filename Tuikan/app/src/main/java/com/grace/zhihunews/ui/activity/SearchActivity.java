@@ -113,6 +113,11 @@ public class SearchActivity extends AppCompatActivity implements OnSearchListene
     }
 
     @Override
+    public void gotoBooksPagerActivity(int id) {
+
+    }
+
+    @Override
     public void showLoadFailureMsg(String errorMsg) {
 
     }

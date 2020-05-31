@@ -22,6 +22,7 @@ import com.grace.zhihunews.R;
 import com.grace.zhihunews.contract.BookListContact;
 import com.grace.zhihunews.network.entity.Book;
 import com.grace.zhihunews.network.entity.LoadBooks;
+import com.grace.zhihunews.ui.activity.BookActivity;
 import com.grace.zhihunews.ui.activity.BooksDetailActivity;
 import com.grace.zhihunews.ui.activity.ExchangeActivity;
 import com.grace.zhihunews.ui.activity.SearchActivity;
@@ -202,6 +203,14 @@ public class BookListFragment extends BaseFragment implements BookListContact.IB
         List<Book> books = loadBooks.getBooks();
         mBooks.addAll(books);
         booksAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void gotoBooksPagerActivity(int id) {
+        Intent intent = new Intent(getActivity(), BookActivity.class);
+        Book book = mBooks.get(id);
+        intent.putExtra(BookActivity.KEY_PATH, book.getTxt_path());
+        startActivity(intent);
     }
 
 

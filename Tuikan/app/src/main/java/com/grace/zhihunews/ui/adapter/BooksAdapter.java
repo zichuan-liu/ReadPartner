@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.grace.zhihunews.R;
 import com.grace.zhihunews.event.GotoBooksDetailEvent;
+import com.grace.zhihunews.event.GotoBooksPagerEvent;
 import com.grace.zhihunews.network.entity.Book;
 import com.grace.zhihunews.ui.activity.BookActivity;
 import com.squareup.picasso.Picasso;
@@ -64,17 +65,7 @@ public class BooksAdapter extends RecyclerView.Adapter<BooksAdapter.ViewHolder> 
         storyView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /**
-                 * https://www.jianshu.com/p/6e66d2b154fa
-                 * 传new GotoNewsDetailEvent(books.get(viewHolder.getLayoutPosition()).getId())的ID
-                 */
-                Log.i("lzc",  "嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻");
-                Intent intent = new Intent(mContext, BookActivity.class);
-//                Bundle bundle =new Bundle();
-//
-//                intent.putExtras(bundle);
-                mContext.startActivity(intent);
-
+                EventBus.getDefault().post(new GotoBooksPagerEvent(books.get(viewHolder.getLayoutPosition()).getId()));
             }
         });
         return viewHolder;

@@ -24,6 +24,9 @@ import android.widget.Scroller;
 import com.grace.zhihunews.R;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
@@ -59,6 +62,7 @@ public class BookPageView extends View {
 
     //滑动用
     private Scroller mScroller;
+    private String path;
 
     public BookPageView(Context context) {
         this(context, null);
@@ -75,6 +79,9 @@ public class BookPageView extends View {
     }
 
     //******************************初始化******************************
+    public void setPath(String path) {
+        this.path = path;
+    }
 
     //初始化变量
     private void init() {
@@ -969,7 +976,6 @@ public class BookPageView extends View {
     private ContentController mContentController = new ContentController(getContext());
 
     private class ContentController {
-
         private Context mContext;
         private static final int CACHE_PAGE = 50;//txt预计一行约500个汉字，共1000字节约1k。缓存50行约50k
         private static final int CACHE_PRE_PAGE = 10;
@@ -1032,7 +1038,9 @@ public class BookPageView extends View {
 
             String[] result = new String[endPage - startPage + 1];
 
-            InputStream inputStream = mContext.getResources().openRawResource(R.raw.a);
+            File file = new File(path);
+            if(!file.exists()) return result;
+            InputStream inputStream = new FileInputStream(file);
             BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
             int pageNum = 1;//当前页码，每次加载都是从txt第一行读取
 
@@ -1146,4 +1154,6 @@ public class BookPageView extends View {
     public void setTextSize(int textSize) {
         this.textSize = textSize;
     }
+
+    
 }

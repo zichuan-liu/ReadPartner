@@ -19,6 +19,7 @@ public class BookPageContainer extends ViewGroup {//继承ViewGroup,代码布局
     private BookPageView bookPager;
     private ViewGroup bottomToolVg;
     private TextView pageNumTv;
+    private String path;
 
     private int width, height;
 
@@ -146,4 +147,13 @@ public class BookPageContainer extends ViewGroup {//继承ViewGroup,代码布局
         mAnimator.start();
     }
 
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+        bookPager.setPath(path);
+        invalidate();
+    }
 }

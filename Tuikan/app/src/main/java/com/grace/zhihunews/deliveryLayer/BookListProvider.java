@@ -74,14 +74,13 @@ public class BookListProvider implements IBookListProvider {
                             BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
                             String b;
                             while ((b = br.readLine())!=null){
-                                bw.write(b);
+                                bw.write(b+'\n');
                             }
                             bw.close();
                             br.close();
                         } catch (IOException e) {
                             e.printStackTrace();
                         }
-
 
                         book.setTxt_path(file.getPath());
                         DBHelper.getInstance(app).saveBook(book);

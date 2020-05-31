@@ -8,6 +8,7 @@ import com.grace.zhihunews.deliveryLayer.IBookListProvider;
 import com.grace.zhihunews.deliveryLayer.BookListProvider;
 import com.grace.zhihunews.event.BooksLoadedEvent;
 import com.grace.zhihunews.event.GotoBooksDetailEvent;
+import com.grace.zhihunews.event.GotoBooksPagerEvent;
 import com.grace.zhihunews.event.LoadFailureEvent;
 
 import de.greenrobot.event.EventBus;
@@ -50,6 +51,10 @@ public class BookListPresenterCompl implements BookListContact.IBookListPresente
 
     public void onEvent(LoadFailureEvent event) {
         mBookListView.showLoadFailureMsg(event.errorMsg);
+    }
+
+    public void onEvent(GotoBooksPagerEvent event) {
+        mBookListView.gotoBooksPagerActivity(event.id);
     }
 
 }
